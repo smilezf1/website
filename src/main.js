@@ -5,9 +5,12 @@ import App from './App'
 import router from './router'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 Vue.config.productionTip = false
 /* eslint-disable no-new */
-Vue.use(iview)
+Vue.use(iview);
+Vue.use(VueAwesomeSwiper);
 new Vue({
   el: '#app',
   router,

@@ -1,7 +1,7 @@
 <template>
     <div class="index">
-     <Headerspace></Headerspace>
-    <!--  <Banner></Banner> -->
+    <!--  <Headerspace></Headerspace> -->
+     <Banner></Banner>
     </div>
 </template>
 <script>

@@ -1,30 +1,61 @@
 <template>
-    <div class="Banner">
-        <Carousel autoplay>
-            <Carousel-item>
-                <div><img src="../assets/banner1.jpg"></div>
-            </Carousel-item>
-            <Carousel-item>
-                <div><img src="../assets/banner1.jpg"></div>
-            </Carousel-item>
-            <Carousel-item>
-                <div><img src="../assets/banner1.jpg"></div>
-            </Carousel-item>
-        </Carousel>
-    </div>
+  <div class="Banner">
+    <swiper ref="mySwiper" :options="swiperOptions">
+      <swiper-slide class="bg1">
+          <div class='align-content'>
+              <h3><a href="javascript:;">让代码更安全,程序更有价值</a></h3>
+          </div>
+      </swiper-slide>
+      <swiper-slide class="bg2">22</swiper-slide>
+      <swiper-slide class="bg3">11</swiper-slide>
+      <swiper-slide class="bg4">11</swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+  </div>
 </template>
 <script>
-    export default {
-        name: "Banner",
-        data() {
-            return {
-                /*  bannerData: [{ id: 1, src: "../assets/banner1.jpg" }, { id: 2, src: "../assets/banner2.jpg" }, { id: 3, src: "../assets/banner3.jpg" }] */
-            }
+export default {
+  name: "Banner",
+  data() {
+    return {
+      swiperOptions: {
+        pagination: {
+          el: ".swiperOptions",
+          clickable: true
         }
+      }
+    };
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper;
     }
+  },
+  mounted() {
+    console.log(this.swiper);
+  }
+};
 </script>
 <style>
-    .Banner img {
-        width: 100%;
-    }
+.Banner img {
+  width: 100%;
+}
+.Banner,.Banner .align-content a{
+  color: white;
+}
+.Banner .swiper-slide{
+    height:480px;
+}
+.bg1 {
+  background: linear-gradient(to right, #211b54, #1c207a);
+}
+.bg2 {
+  background: linear-gradient(#0f092b, #1c092b);
+}
+.bg3 {
+  background: linear-gradient(#17265d, #120a39);
+}
+.bg4{
+    background:linear-gradient(#012d48,#01081b);
+}
 </style>

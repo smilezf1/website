@@ -4,11 +4,11 @@
         <div class="navigation">
             <div class="navigationContent">
                 <div class="navigationContentLeft">
-                    <img src="../assets/logo1.png">
+                    <img src="../assets/logo2.png">
                 </div>
                 <ul class="navigationContentMiddle">
-                    <li :class="{active:currentIndex===index}" v-for='(item,index) in navData' :key="item.id"
-                        v-on:mouseover="change(index)"><a href="javascript:;">{{item.name}}</a></li>
+                    <li :class="{select:currentIndex==index}" v-for='(item,index) in navData' :key="item.id"
+                      @mouseover="changeColor(index)" @mouseout="regainColor()"><a href="javascript:;">{{item.name}}</a></li>
                 </ul>
                 <div class="navigationContentRight">
 
@@ -26,17 +26,22 @@
                 theme1: 'light',
                 navData: [
                     { id: 1, name: "首页" },
-                    { id: 2, name: "产品与服务" },
-                    { id: 3, name: "关于我们" },
-                    { id: 4, name: "联系我们" }
+                    { id: 2, name: "安全产品" },
+                    { id: 3, name: "安全服务" },
+                    { id: 4, name: "关于我们" },
+                    {id:5,name:"联系我们"}
                 ],
-                currentIndex: 0
+                currentIndex:-1
             }
         },
         methods: {
-            change: function (index) {
-                this.currentIndex = index;
+           changeColor:function(index) {
+               this.currentIndex=index;
+            },
+            regainColor:function(){
+                this.currentIndex=-1;
             }
+            
         }
     }
 </script>
@@ -48,9 +53,7 @@
         left: 0;
         z-index: 2;
         height: 64px;
-        padding:20px 0;
-        box-sizing:border-box;
-        background:#00b4db linear-gradient(to right, #00b4db, #0083b0);
+        background:rgba(0,0,0,0.2);
     }
 
     .navigationContent {
@@ -61,13 +64,12 @@
         align-items: center;
 
     }
-   /*  50 24 */
-
     .navigationContentLeft {
         height: 100%;
     }
     .navigationContentLeft img{
-        width:60px;
+        width:200px;
+        margin-top:-67px;
     }
 
     .navigationContentMiddle {
@@ -80,14 +82,13 @@
         color: #fff;
         margin: 0 20px;
     }
-
-    .navigationContentMiddle .active {
-        /* color: #002BAD !important; */
-    }
+      .navigationContentMiddle .select{
+          color:skyblue;
+      }
 
     .navigationContentMiddle li a {
         color: inherit;
         font-weight: 400;
-        font-size: 20px;
+        font-size:14px;
     }
 </style>
