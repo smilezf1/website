@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "iview": "^3.5.4",
+    "jquery": "^3.5.1",
     "lib-flexible": "^0.3.2",
     "px2rem-loader": "^0.1.9",
     "swiper": "^5.4.1",

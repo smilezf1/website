@@ -19,9 +19,12 @@
         </ul>
         <ul class="navigationContentRight">
           <li>
-            <a href="javascript:;" @mouseover="changeBgColor()" @mouseout="removeBgColor()" :style="active"
-              >获取使用</a
-            >
+            <a
+              href="javascript:;"
+              @mouseover="changeBgColor()"
+              @mouseout="removeBgColor()"
+              :style="active"
+            >获取使用</a>
           </li>
         </ul>
       </div>
@@ -30,6 +33,7 @@
   </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
   name: "Headerspace",
   data() {
@@ -43,8 +47,12 @@ export default {
         { id: 5, name: "联系我们" }
       ],
       currentIndex: -1,
-      active: ""
+      active: "",
+      i:0
     };
+  },
+  mounted(){
+    window.addEventListener("scroll",this.handleScroll,true);//监听滚轮滚动事件
   },
   methods: {
     changeColor: function(index) {
@@ -54,11 +62,25 @@ export default {
       this.currentIndex = -1;
     },
     changeBgColor() {
-      this.active = "background-color:#2a62ff; border:1px solid transparent;transition: background-color 0.5s";
+      this.active =
+        "background-color:#2a62ff; border:1px solid transparent;transition: background-color 0.5s";
     },
-    removeBgColor(){
-        this.active=""
+    removeBgColor() {
+      this.active = "";
+    },
+    handleScroll(){
+      var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+      var scroll=scrollTop-this.i;
+      this.i=screenTop;
+      console.log(scroll)
+      if(scroll>0){
+      $(".navigation").css("background","#1a1c24","transition","all 0.3s linear")
+
+      }else{
+        console.log("上滑")
+      }
     }
+
   }
 };
 </script>
@@ -69,23 +91,23 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  height: 64px;
+  height:45px;
   background: rgba(0, 0, 0, 0.2);
 }
 
 .navigationContent {
-  width: 70%;
   height: 100%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  padding:0 20px;
+  justify-content:space-between;
 }
 .navigationContentLeft {
   height: 100%;
 }
 .navigationContentLeft img {
-  width: 150px;
-  margin-top: -44px;
+  width: 130px;
+  margin-top:-44px;
 }
 
 .navigationContentMiddle,
@@ -98,14 +120,13 @@ export default {
 .navigationContentRight li {
   color: #fff;
   margin: 0 30px;
-  padding: 0 30px;
-  line-height: 64px;
-  border-bottom: 3px solid transparent;
+  line-height:45px;
+  border-bottom:2px solid transparent;
 }
 .navigationContentMiddle .select {
   color: #00b7fa;
-  border-bottom: 3px solid #00b7fa;
-  transition: border-bottom 1s;
+  border-bottom: 2px solid #00b7fa;
+  transition: border-bottom 1s linear;
 }
 
 .navigationContentMiddle li a {
@@ -116,7 +137,7 @@ export default {
 }
 .navigationContentRight a {
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   padding: 6px 10px;
   border: 1px solid white;
 }

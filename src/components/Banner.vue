@@ -7,9 +7,9 @@
         </div>
         <div class="align-content1"><img src="../assets/img1.png"></div> -->
       </swiper-slide>
-      <swiper-slide class="bg2">22</swiper-slide>
-      <swiper-slide class="bg3">11</swiper-slide>
-      <swiper-slide class="bg4">11</swiper-slide>
+      <swiper-slide class="bg2"></swiper-slide>
+      <swiper-slide class="bg3"></swiper-slide>
+      <swiper-slide class="bg4"></swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
@@ -27,7 +27,7 @@ export default {
         clickable: true,
 
         loop: true,
-        autoplay: true
+        autoplay:false
       }
     };
   },

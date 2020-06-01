@@ -9,6 +9,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.config.productionTip = false
 import 'lib-flexible/flexible'
+import $ from 'jquery'
 /* eslint-disable no-new */
 Vue.use(iview);
 Vue.use(VueAwesomeSwiper);
