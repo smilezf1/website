@@ -8,6 +8,7 @@ import 'iview/dist/styles/iview.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.config.productionTip = false
+import 'lib-flexible/flexible'
 /* eslint-disable no-new */
 Vue.use(iview);
 Vue.use(VueAwesomeSwiper);

@@ -2,9 +2,10 @@
   <div class="Banner">
     <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide class="bg1">
-          <div class='align-content'>
-              <h3><a href="javascript:;">让代码更安全,程序更有价值</a></h3>
-          </div>
+        <!--  <div class="align-content">
+          <h3><a href="javascript:;">让代码更安全,程序更有价值</a></h3>
+        </div>
+        <div class="align-content1"><img src="../assets/img1.png"></div> -->
       </swiper-slide>
       <swiper-slide class="bg2">22</swiper-slide>
       <swiper-slide class="bg3">11</swiper-slide>
@@ -20,9 +21,13 @@ export default {
     return {
       swiperOptions: {
         pagination: {
-          el: ".swiperOptions",
+          el: ".swiper-pagination",
           clickable: true
-        }
+        },
+        clickable: true,
+
+        loop: true,
+        autoplay: true
       }
     };
   },
@@ -37,14 +42,12 @@ export default {
 };
 </script>
 <style>
-.Banner img {
-  width: 100%;
-}
-.Banner,.Banner .align-content a{
+.Banner,
+.Banner .align-content a {
   color: white;
 }
-.Banner .swiper-slide{
-    height:480px;
+.Banner .swiper-slide {
+  height: 480px;
 }
 .bg1 {
   background: linear-gradient(to right, #211b54, #1c207a);
@@ -55,7 +58,10 @@ export default {
 .bg3 {
   background: linear-gradient(#17265d, #120a39);
 }
-.bg4{
-    background:linear-gradient(#012d48,#01081b);
+.bg4 {
+  background: linear-gradient(#012d48, #01081b);
+}
+.swiper-pagination-bullet {
+  background: #fff;
 }
 </style>
