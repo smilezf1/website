@@ -78,6 +78,7 @@ export default {
   border: 1px solid #ebebeb;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
+  width:50%;
 }
 .Product .leftNav li {
   margin: 20px 0;
