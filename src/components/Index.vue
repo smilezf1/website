@@ -1,17 +1,19 @@
 <template>
     <div class="index">
-     <Headerspace></Headerspace>
+     <headerSpace></headerSpace>
      <Banner></Banner>
-     <Main></Main>
+     <homePage></homePage>
+     <footerSpace></footerSpace>
     </div>
 </template>
 <script>
-    import Headerspace from '@/components/Headerspace.vue'
+    import headerSpace from '@/components/headerSpace.vue'
     import Banner from '@/components/Banner.vue'
-    import Main from '@/components/Main.vue'
+    import homePage from '@/components/homePage.vue'
+    import footerSpace from '@/components/footerSpace.vue'
     export default{
         name:"Index",
-        components:{Headerspace,Banner,Main}
+        components:{headerSpace,Banner,homePage,footerSpace}
     }
 </script>
 <style>

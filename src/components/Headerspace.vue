@@ -14,17 +14,18 @@
             @mouseover="changeColor(index)"
             @mouseout="regainColor()"
           >
-            <a href="javascript:;">{{ item.name }}</a>
+            <router-link :to="item.link">{{ item.name }}</router-link>
           </li>
         </ul>
         <ul class="navigationContentRight">
           <li>
-            <a
-              href="javascript:;"
+            <router-link
+              to="/"
               @mouseover="changeBgColor()"
               @mouseout="removeBgColor()"
               :style="active"
-            >获取使用</a>
+              >获取使用</router-link
+            >
           </li>
         </ul>
       </div>
@@ -33,26 +34,27 @@
   </div>
 </template>
 <script>
-import $ from 'jquery'
+import $ from "jquery";
 export default {
-  name: "Headerspace",
+  name: "headerSpace",
   data() {
     return {
       theme1: "light",
       navData: [
-        { id: 1, name: "安全产品" },
-        { id: 2, name: "安全服务" },
-        { id: 3, name: "解决方案" },
-        { id: 4, name: "关于我们" },
-        { id: 5, name: "联系我们" }
+        { id: 0, name: "首页", link: "/" },
+        { id: 1, name: "安全产品", link: "/Product" },
+        { id: 2, name: "安全服务", link: "/Service" },
+        { id: 3, name: "解决方案", link: "/Project" },
+        { id: 4, name: "关于我们", link: "/About" },
+        { id: 5, name: "联系我们", link: "/Connect" }
       ],
-      currentIndex: -1,
+      currentIndex: 0,
       active: "",
-      i:0
+      i: 0
     };
   },
-  mounted(){
-    window.addEventListener("scroll",this.handleScroll,true);//监听滚轮滚动事件
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll, true); //监听滚轮滚动事件
   },
   methods: {
     changeColor: function(index) {
@@ -68,46 +70,54 @@ export default {
     removeBgColor() {
       this.active = "";
     },
-    handleScroll(){
-      var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
-      var scroll=scrollTop-this.i;
-      this.i=screenTop;
-      console.log(scroll)
-      if(scroll>0){
-      $(".navigation").css("background","#1a1c24","transition","all 0.3s linear")
-
-      }else{
-        console.log("上滑")
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      var scroll = scrollTop - this.i;
+      this.i = screenTop;
+      if (scroll >= 620) {
+        $(".navigation").css(
+          "background",
+          "#1a1c24",
+          "transition",
+          "all 0.3s linear"
+        );
+      } else {
+        $(".navigation").css("background", "");
       }
     }
-
   }
 };
 </script>
 <style>
+.headerspace {
+  height: 45px;
+}
 .navigation {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  height:45px;
-  background: rgba(0, 0, 0, 0.2);
+  height: 45px;
+  background: #333;
 }
 
 .navigationContent {
   height: 100%;
   margin: 0 auto;
   display: flex;
-  padding:0 20px;
-  justify-content:space-between;
+  padding: 0 20px;
+justify-content:space-around;
 }
 .navigationContentLeft {
   height: 100%;
 }
 .navigationContentLeft img {
   width: 130px;
-  margin-top:-44px;
+  margin-top: -44px;
 }
 
 .navigationContentMiddle,
@@ -120,8 +130,8 @@ export default {
 .navigationContentRight li {
   color: #fff;
   margin: 0 30px;
-  line-height:45px;
-  border-bottom:2px solid transparent;
+  line-height: 45px;
+  border-bottom: 2px solid transparent;
 }
 .navigationContentMiddle .select {
   color: #00b7fa;

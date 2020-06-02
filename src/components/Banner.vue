@@ -27,7 +27,7 @@ export default {
         clickable: true,
 
         loop: true,
-        autoplay:false
+        autoplay:true
       }
     };
   },
