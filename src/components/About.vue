@@ -4,27 +4,6 @@
     <div class="About-top">
       <img src="../assets/about.png" style="width:100%" />
     </div>
-    <div class="About-content">
-      <div class="nav">
-        <ul>
-          <li>
-            <router-link to="/"
-              ><img src="../assets/intro.png" /><span
-                >公司简介</span
-              ></router-link
-            >
-          </li>
-          <li>
-            <router-link to="/"
-              ><img src="../assets/course.png" /><span
-                >发展历程</span
-              ></router-link
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- 公司简介-->
-    </div>
   </div>
 </template>
 <script>
@@ -45,7 +24,7 @@ export default {
   margin: 20px auto;
 }
 .About-content .nav {
-  width: 8%;
+  width:12%;
   border: 1px solid #ebebeb;
 }
 .About-content .nav ul {
@@ -56,7 +35,7 @@ export default {
   padding: 10px 0;
   text-align: center;
 }
-.About-content .nav :not(:last-child){
+.About-content .nav li:not(:last-child){
 border-bottom:1px solid #ebebeb;
 }
 .About-content .nav a {
