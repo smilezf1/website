@@ -43,6 +43,7 @@ export default {
 .footerSpace {
   background: #091b25;
   color: rgb(102, 102, 102);
+  padding:10px;
 }
 .footerSpace .container {
   min-width: 600px;
@@ -79,5 +80,8 @@ export default {
 .footerSpace .right img {
   width: 100px;
   margin-top: 10px;
+}
+.footerSpace .bottom{
+  text-align:center;
 }
 </style>

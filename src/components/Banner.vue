@@ -1,15 +1,10 @@
 <template>
   <div class="Banner">
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide class="bg1">
-        <!--  <div class="align-content">
-          <h3><a href="javascript:;">让代码更安全,程序更有价值</a></h3>
-        </div>
-        <div class="align-content1"><img src="../assets/img1.png"></div> -->
-      </swiper-slide>
-      <swiper-slide class="bg2"></swiper-slide>
-      <swiper-slide class="bg3"></swiper-slide>
-      <swiper-slide class="bg4"></swiper-slide>
+      <swiper-slide class="bg1">1</swiper-slide>
+      <swiper-slide class="bg2">2</swiper-slide>
+      <swiper-slide class="bg3">3</swiper-slide>
+      <swiper-slide class="bg4">4</swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
@@ -27,7 +22,10 @@ export default {
         clickable: true,
 
         loop: true,
-        autoplay:true
+        autoplay: {
+          delay:3000,
+          disableOnInteraction:false
+        }
       }
     };
   },
@@ -62,6 +60,15 @@ export default {
   background: linear-gradient(#012d48, #01081b);
 }
 .swiper-pagination-bullet {
+  background: #fff;
+}
+.swiper-pagination-bullet {
+  width: 50px;
+  height: 2.5px;
+  background-color: rgba(190, 190, 190, 0.5);
+  border-radius: 2px;
+}
+.swiper-pagination-bullet-active {
   background: #fff;
 }
 </style>

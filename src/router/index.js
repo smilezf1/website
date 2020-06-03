@@ -19,7 +19,7 @@ import SelfInspection from '@/components/product/SelfInspection.vue'
 Vue.use(Router)
 export default new Router({
   routes: [
-    { path: "/", name: "Evaluating", component: Index },
+    { path: "/", name: "About", component:About},
     {
       path: "/Product", name: "Product", component: Product,redirect:"/Product/Evaluating",
       children: [

@@ -4,20 +4,20 @@
     <div class="container">
       <ul class="leftNav">
         <li v-for="(item, index) in navList" :key="index">
-          <router-link :to="item.path" @click.native="goTo(item.path)">{{
-            item.name
-          }}</router-link>
+          <router-link :to="item.path">{{ item.name }}</router-link>
         </li>
       </ul>
       <router-view />
     </div>
+    <footerSpace></footerSpace>
   </div>
 </template>
 <script>
 import headerSpace from "@/components/headerSpace";
+import footerSpace from '@/components/footerSpace'
 export default {
   name: "Procuct",
-  components: { headerSpace },
+  components: { headerSpace,footerSpace },
   data() {
     return {
       navList: [
@@ -60,11 +60,7 @@ export default {
       ]
     };
   },
-  methods: {
-    goTo(path) {
-      console.log(path);
-    }
-  }
+  methods: {}
 };
 </script>
 <style>
@@ -75,10 +71,10 @@ export default {
   margin: 20px auto;
 }
 .Product .leftNav {
+  width:35%;
   border: 1px solid #ebebeb;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.8);
-  width:50%;
 }
 .Product .leftNav li {
   margin: 20px 0;
@@ -89,15 +85,19 @@ export default {
   font-weight: 500;
 }
 .productContent {
+  width:75%;
   margin-left: 20px;
 }
 .productBanner {
   position: relative;
 }
+.productBanner img{
+  width:100%;
+}
 .productBannerContent {
   position: absolute;
   top: 20px;
-  left: 30px;
+  left: 10px;
   color: white;
 }
 .productBannerContent h3 {
@@ -117,5 +117,42 @@ export default {
   border-radius: 3px;
   padding: 4px 6px;
   font-size: 11px;
+}
+/* 产品介绍 */
+.productIntroduce{
+  margin:10px 0;
+}
+.productIntroduce h3,.produtctTrait h3{
+  font-size:20px;
+  color:#333;
+  font-weight:400;
+}
+.productIntroduce p{
+  color:#666;
+  font-size:10px;
+  letter-spacing:1px;
+  margin-top:10px;
+  text-indent:2em;
+  line-height:15px;  
+}
+/* 产品特点 */
+.productTraitContent{
+  display:flex; 
+}
+.productTraitContent{
+  margin-top:10px;
+}
+.productTraitContent li{
+  text-align:center;
+  margin-right:30px;
+}
+.productTraitContent li p{
+  font-size:12px;
+  color:#333;
+  margin-bottom:6px;
+}
+.productTraitContent li span{
+  color:#666;
+  font-size:10px;
 }
 </style>

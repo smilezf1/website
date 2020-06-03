@@ -45,6 +45,11 @@
       <h3>荣誉资质</h3>
       <div class="container">
         <img src="../assets/honor.png" />
+       <ul>
+         <li>
+           <img/>
+         </li>
+       </ul>
       </div>
     </div>
   </div>
