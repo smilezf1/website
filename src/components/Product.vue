@@ -100,6 +100,9 @@ export default {
   left: 10px;
   color: white;
 }
+.productTraitContent span{
+  line-height:29px;
+}
 .productBannerContent h3 {
   font-size: 21px;
   font-weight: 500;
@@ -120,7 +123,10 @@ export default {
 }
 /* 产品介绍 */
 .productIntroduce{
-  margin:10px 0;
+  margin:20px 0;
+}
+.produtctTrait{
+  margin-top:20px;
 }
 .productIntroduce h3,.produtctTrait h3{
   font-size:20px;

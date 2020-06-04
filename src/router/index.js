@@ -16,12 +16,15 @@ import Virtual from '@/components/product/Virtual.vue'
 import SecretKey from '@/components/product/SecretKey.vue'
 import Encryption from '@/components/product/Encryption.vue'
 import SelfInspection from '@/components/product/SelfInspection.vue'
+import Gain from '@/components/Gain.vue'
+import xx from '@/components/xx.vue'
+
 Vue.use(Router)
 export default new Router({
   routes: [
-    { path: "/", name: "Index", component:Index},
+    { path: "/", name: "Index", component: Index},
     {
-      path: "/Product", name: "Product", component: Product,redirect:"/Product/Evaluating",
+      path: "/Product", name: "Product", component: Product, redirect: "/Product/Evaluating",
       children: [
         { path: "Evaluating", component: Evaluating },
         { path: "ComplianceEvaluating", component: ComplianceEvaluating },
@@ -36,6 +39,7 @@ export default new Router({
     { path: "/Service", name: "Service", component: Service },
     { path: "/Project", name: "Project", component: Project },
     { path: "/About", name: "About", component: About },
-    { path: "/Connect", name: "Connect", component: Connect }
+    { path: "/Connect", name: "Connect", component: Connect },
+    { path: "/Gain", name: "Gain", component: Gain }
   ]
 })

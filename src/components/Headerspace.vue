@@ -6,68 +6,82 @@
         <div class="navigationContentLeft">
           <img src="../assets/logo2.png" />
         </div>
-        <!--  <ul class="navigationContentMiddle">
+        <ul class="navigationContentMiddle">
           <li
-            :class="{ select: currentIndex == index }"
-            v-for="(item, index) in navData"
-            :key="item.id"
-            @mouseover="changeColor(index)"
+            @mouseover="changeColor(0)"
+            :class="{ select: currentIndex == 0 }"
             @mouseout="regainColor()"
           >
-            <router-link :to="item.link">{{ item.name }}</router-link>
+            <router-link to="/" enter-active-class="animate__bounce"
+              >首页</router-link
+            >
           </li>
-        </ul>-->
-        <el-menu
-          :default-active="activeIndex"
-          class="el-menu-demo"
-          mode="horizontal"
-          @select="handleSelect"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#ffd04b"
-        >
-          <el-menu-item index="1">
-            <router-link to="/">首页</router-link>
-          </el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">安全产品</template>
-            <el-menu-item index="2-1">移动应用安全评测</el-menu-item>
-            <el-menu-item index="2-2">移动应用评测系统</el-menu-item>
-            <el-menu-item index="2-1">移动应用合规评测系统</el-menu-item>
-            <el-menu-item index="2-2">移动应用安全防护</el-menu-item>
-            <el-menu-item index="2-1">移动应用加固系统</el-menu-item>
-            <el-menu-item index="2-2">移动应用源码加固编译器</el-menu-item>
-            <el-menu-item index="2-1">移动应用源码虚拟化编译器</el-menu-item>
-            <el-menu-item index="2-2">移动应用安全业务</el-menu-item>
-            <el-menu-item index="2-1">移动应用秘钥白盒插件</el-menu-item>
-            <el-menu-item index="2-2">移动应用环境自查插件</el-menu-item>
-            <el-menu-item index="2-1">移动应用数据加密插件</el-menu-item>
-          </el-submenu>
-          <el-submenu index="3">
-            <template slot="title">安全服务</template>
-            <el-menu-item index="3-1">移动应用安全咨询</el-menu-item>
-            <el-menu-item index="3-2">移动应用安全渗透</el-menu-item>
-          </el-submenu>
-          <el-submenu index="4">
-            <template slot="title">关于我们</template>
-            <el-menu-item index="4-1">公司简介</el-menu-item>
-            <el-menu-item index="4-2">发展历程</el-menu-item>
-          </el-submenu>
-          <el-menu-item index="5">
-            <router-link to="/">联系我们</router-link>
-          </el-menu-item>
-        </el-menu>
-
-        <ul class="navigationContentRight">
-          <li>
-            <router-link
-              to="/"
-              @mouseover="changeBgColor()"
-              @mouseout="removeBgColor()"
-              :style="active"
-            >获取使用</router-link>
+          <li
+            @mouseover="changeColor(1)"
+            :class="{ select: currentIndex == 1 }"
+            @mouseout="regainColor()"
+          >
+            <router-link to="/Product">安全产品</router-link>
+            <div class="pullDown">
+              <router-link to="/">移动应用安全评测</router-link>
+              <router-link to="/">移动应用评测系统</router-link>
+              <router-link to="/">移动应用合规评测系统</router-link>
+              <router-link to="/">移动应用安全防护</router-link>
+              <router-link to="/">移动应用加固系统</router-link>
+              <router-link to="/">移动应用源码加固编译器</router-link>
+              <router-link to="/">移动应用源码虚拟化编译器</router-link>
+              <router-link to="/">移动应用安全业务</router-link>
+              <router-link to="/">移动应用秘钥白盒插件</router-link>
+              <router-link to="/">移动应用环境自查插件</router-link>
+              <router-link to="/">移动应用数据加密插件</router-link>
+            </div>
+          </li>
+          <li
+            @mouseover="changeColor(2)"
+            :class="{ select: currentIndex == 2 }"
+            @mouseout="regainColor()"
+          >
+            <router-link to="/Service">安全服务</router-link>
+            <div class="pullDown">
+              <router-link to="/">移动应用安全咨询</router-link>
+              <router-link to="/">移动应用安全渗透</router-link>
+            </div>
+          </li>
+          <li
+            @mouseover="changeColor(3)"
+            :class="{ select: currentIndex == 3 }"
+            @mouseout="regainColor()"
+          >
+            <router-link to="/Project">解决方案</router-link>
+          </li>
+          <li
+            @mouseover="changeColor(4)"
+            :class="{ select: currentIndex == 4 }"
+            @mouseout="regainColor()"
+          >
+            <router-link to="/About">关于我们</router-link>
+            <div class="pullDown" style="display:none">
+              <router-link to="/">公司简介</router-link>
+              <router-link to="/">发展历程</router-link>
+            </div>
+          </li>
+          <li
+            @mouseover="changeColor(5)"
+            :class="{ select: currentIndex == 5 }"
+            @mouseout="regainColor()"
+          >
+            <router-link to="/Connect">联系我们</router-link>
           </li>
         </ul>
+        <div class="navigationContentRight">
+          <router-link
+            to="/Gain"
+            @mouseover.native="changeBgColor()"
+            @mouseout.native="removeBgColor()"
+            :style="active"
+            >获取使用</router-link
+          >
+        </div>
       </div>
     </div>
     <!-- 导航结束 -->
@@ -88,10 +102,9 @@ export default {
         { id: 4, name: "关于我们", link: "/About" },
         { id: 5, name: "联系我们", link: "/Connect" }
       ],
-      currentIndex: -1,
+      currentIndex: 0,
       active: "",
-      i: 0,
-      activeIndex: "1"
+      i: 0
     };
   },
   mounted() {
@@ -99,14 +112,16 @@ export default {
   },
   methods: {
     changeColor: function(index) {
+      console.log(index);
       this.currentIndex = index;
     },
     regainColor: function() {
       this.currentIndex = -1;
     },
     changeBgColor() {
+      console.log;
       this.active =
-        "background-color:#2a62ff; border:1px solid transparent;transition: background-color 0.5s";
+        "background-color:#2a62ff; border:1px solid transparent;transition: background-color 0.5s  linear";
     },
     removeBgColor() {
       this.active = "";
@@ -170,17 +185,37 @@ export default {
   height: 100%;
   align-items: center;
 }
+.navigationContentMiddle li {
+  position: relative;
+}
+.navigationContentMiddle li .pullDown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  background: rgba(20, 22, 28, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 0;
+  overflow: hidden;
+}
+.navigationContentMiddle li .pullDown a {
+  display: block;
+}
 .navigationContentMiddle li,
 .navigationContentRight li {
   color: #fff;
-  margin: 0 30px;
+  padding: 0 30px;
   line-height: 45px;
   border-bottom: 1px solid transparent;
 }
-.navigationContentMiddle .select {
+.navigationContentMiddle .select > a {
   color: #00b7fa;
-  border-bottom: 1px solid #00b7fa;
   transition: border-bottom 1s linear;
+}
+.navigationContentMiddle .select {
+  border-bottom: 2px solid #00b7fa;
 }
 
 .navigationContentMiddle li a {
