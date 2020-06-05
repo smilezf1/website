@@ -6,23 +6,34 @@
     </div>
     <!-- 联系地址 -->
     <div class="connectAddress">
-      <p>联系地址</p>
-      <div class="address">上海市松江区沈砖公路5555号韵博智谷8709-8711</div>
+      <p>公司地址</p>
       <baidu-map
         :center="center"
         :zoom="25"
-        @click="getPoint"
-        class="map"
         id="map"
+        ak="er1y12cHwwo0MvygGKGizpduaN4qjkhs"
+        @ready="handler"
       >
-        <bm-view id="mapContent" />
+        <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
+        <bm-marker
+          :position="center"
+          :dragging="true"
+          animation="BMAP_ANIMATION_BOUNCE"
+        >
+        </bm-marker>
+        <bm-overlay
+          pane="labelPane"
+          :class="{ sample: true, active }"
+          @draw="draw"
+        >
+          <div class="info">
+            <span class="address"
+              >上海市松江区沈砖公路5555号韵博智谷8709-8711</span
+            >
+            <span class="triangle"></span>
+          </div>
+        </bm-overlay>
       </baidu-map>
-    </div>
-    <!-- 商务合作 -->
-    <div class="cooperation">
-      <p>商务合作</p>
-      <span>联系电话:021-61730101</span>
-      <span>市场合作:marketing@@manxi-safe.com</span>
     </div>
     <!-- 底部 -->
     <footerSpace></footerSpace>
@@ -36,29 +47,23 @@ export default {
   components: { headerSpace, footerSpace },
   data() {
     return {
-      temp: {
-        address: "",
-        lat: "",
-        lng: ""
-      },
       center: {
         lng: 121.258716,
         lat: 31.097119
       },
-      location: "厦门市",
-      keyword: "" // 地图搜索关键字
+      active: false
     };
   },
-  mounted() {},
-
   methods: {
-    getPoint(e) {
-      this.temp.lng = e.point.lng;
-      this.temp.lat = e.point.lat;
-      const geocoder = new BMap.Geocoder();
-      geocoder.getLocation(e.point, rs => {
-        this.temp.address = rs.address;
-      });
+    handler({ BMap, map }) {
+      console.log(map);
+    },
+    draw({ el, BMap, map }) {
+      const pixel = map.pointToOverlayPixel(
+        new BMap.Point(121.258716, 31.097119)
+      );
+      el.style.left = pixel.x - 180 + "px";
+      el.style.top = pixel.y - 105 + "px";
     }
   }
 };
@@ -71,12 +76,12 @@ export default {
 .cooperation {
   font-weight: 400;
   margin: 20px;
+  text-align: center;
 }
 .connectAddress p,
 .cooperation p {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #333;
   font-size: 18px;
 }
 .cooperation span {
@@ -88,8 +93,37 @@ export default {
   font-size: 13px;
   margin-bottom: 10px;
 }
-#mapContent {
-  width:80%;
-  height: 250px;
+#map {
+  width: 50%;
+  height: 400px;
+  margin: 0 auto;
+}
+.sample {
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 10px;
+  color: #333;
+  position: absolute;
+}
+.info {
+  position: relative;
+}
+.info .address {
+  font-size: 10px;
+}
+.info .triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid white;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  box-shadow:0 0 1px rgba(0, 0, 0,0.1);
 }
 </style>

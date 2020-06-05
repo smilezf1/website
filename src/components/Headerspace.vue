@@ -7,22 +7,24 @@
           <img src="../assets/logo2.png" />
         </div>
         <ul class="navigationContentMiddle">
-          <li
-            @mouseover="changeColor(0)"
-            :class="{ select: currentIndex == 0 }"
-            @mouseout="regainColor()"
-          >
-            <router-link to="/" enter-active-class="animate__bounce"
+          <li>
+            <router-link
+              to="/"
+              @mouseover="changeColor(0)"
+              :class="{ select: currentIndex == 0 }"
+              @mouseout="regainColor()"
               >首页</router-link
             >
           </li>
-          <li
-            @mouseover="changeColor(1)"
-            :class="{ select: currentIndex == 1 }"
-            @mouseout="regainColor()"
-          >
-            <router-link to="/Product">安全产品</router-link>
-            <div class="pullDown">
+          <li>
+            <router-link
+              to="/Product"
+              @mouseover.native="changeColor(1)"
+              :class="{ select: currentIndex == 1 }"
+              @mouseout.native="regainColor()"
+              >安全产品</router-link
+            >
+            <div class="pullDown" style="display:none">
               <router-link to="/">移动应用安全评测</router-link>
               <router-link to="/">移动应用评测系统</router-link>
               <router-link to="/">移动应用合规评测系统</router-link>
@@ -36,34 +38,54 @@
               <router-link to="/">移动应用数据加密插件</router-link>
             </div>
           </li>
-          <li
-            @mouseover="changeColor(2)"
-            :class="{ select: currentIndex == 2 }"
-            @mouseout="regainColor()"
-          >
-            <router-link to="/Service">安全服务</router-link>
-            <div class="pullDown">
-              <router-link to="/">移动应用安全咨询</router-link>
-              <router-link to="/">移动应用安全渗透</router-link>
-            </div>
+          <li>
+            <router-link
+              to="/Service"
+              @mouseover.native="
+                changeColor(2);
+                reveal($event);
+              "
+              :class="{ select: currentIndex == 2 }"
+              @mouseout.native="
+                regainColor();
+                hide($event);
+              "
+              >安全服务
+
+              <div class="pullDown">
+                <router-link to="/">移动应用安全咨询</router-link>
+                <router-link to="/">移动应用安全渗透</router-link>
+              </div>
+            </router-link>
           </li>
-          <li
-            @mouseover="changeColor(3)"
-            :class="{ select: currentIndex == 3 }"
-            @mouseout="regainColor()"
-          >
-            <router-link to="/Project">解决方案</router-link>
+          <li>
+            <router-link
+              to="/Project"
+              @mouseover.native="changeColor(3)"
+              :class="{ select: currentIndex == 3 }"
+              @mouseout.native="regainColor()"
+              >解决方案</router-link
+            >
           </li>
-          <li
-            @mouseover="changeColor(4)"
-            :class="{ select: currentIndex == 4 }"
-            @mouseout="regainColor()"
-          >
-            <router-link to="/About">关于我们</router-link>
-            <div class="pullDown" style="display:none">
-              <router-link to="/">公司简介</router-link>
-              <router-link to="/">发展历程</router-link>
-            </div>
+          <li>
+            <router-link
+              to="/About"
+              @mouseover.native="
+                changeColor(4);
+                reveal($event);
+              "
+              :class="{ select: currentIndex == 4 }"
+              @mouseout.native="
+                regainColor();
+                hide($event);
+              "
+              >关于我们
+
+              <ul class="pullDown">
+                <li><router-link to="/">公司简介</router-link></li>
+                <li><router-link to="/">发展历程</router-link></li>
+              </ul>
+            </router-link>
           </li>
           <li
             @mouseover="changeColor(5)"
@@ -119,7 +141,7 @@ export default {
       this.currentIndex = -1;
     },
     changeBgColor() {
-      console.log;
+      console.log("哈哈");
       this.active =
         "background-color:#2a62ff; border:1px solid transparent;transition: background-color 0.5s  linear";
     },
@@ -146,6 +168,22 @@ export default {
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    reveal(e) {
+      $(e.target)
+        .children(".pullDown")
+        .addClass("dropDownActive")
+   /*    $(e.target)
+        .children(".pullDown")
+        .siblings()
+        .removeClass("dropDownActive"); */
+    },
+
+    hide(e) {
+      $(e.target)
+        .parent()
+        .children(".pullDown")
+        .removeClass("dropDownActive");
     }
   }
 };
@@ -193,22 +231,30 @@ export default {
   top: 100%;
   left: 0;
   z-index: 2;
-  background: rgba(20, 22, 28, 0.8);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
+  transition: max-height 1s ease;
+}
+.navigationContentMiddle li .dropDownActive {
+  max-height: 200px;
+  transition: max-height 1s ease;
 }
 .navigationContentMiddle li .pullDown a {
   display: block;
+  padding: 5px;
 }
-.navigationContentMiddle li,
+.navigationContentMiddle > li,
 .navigationContentRight li {
   color: #fff;
-  padding: 0 30px;
   line-height: 45px;
   border-bottom: 1px solid transparent;
+}
+.navigationContentMiddle > li > a {
+  padding: 16px 30px;
 }
 .navigationContentMiddle .select > a {
   color: #00b7fa;

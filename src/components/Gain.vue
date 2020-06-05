@@ -107,7 +107,8 @@ export default {
   font-size: 18px;
   font-weight: 400;
   padding-bottom: 10px;
-  border-bottom: 1px solid #333;
   margin-bottom: 10px;
+  text-align:center;
+  color:#4383EB;
 }
 </style>

@@ -16,7 +16,7 @@ import BaiduMap from 'vue-baidu-map'
 Vue.use(VueAwesomeSwiper);
 Vue.use(ElementUI);
 Vue.use(router);
-Vue.use(BaiduMap,{ak:'er1y12cHwwo0MvygGKGizpduaN4qjkhs'})
+Vue.use(BaiduMap, { ak: 'er1y12cHwwo0MvygGKGizpduaN4qjkhs' })
 new Vue({
   el: '#app',
   router,

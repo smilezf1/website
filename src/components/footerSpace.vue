@@ -21,7 +21,7 @@ export default {
     return {
       menuList: [
         { id: 1, name: "上海蛮犀科技有限公司" },
-        { id: 2, name: "联系电话:021-61730101" },
+        { id: 2, name: "联系电话:021-57677921" },
         { id: 3, name: "联系邮箱:service@manxi-safe.com" },
         {
           id: 4,

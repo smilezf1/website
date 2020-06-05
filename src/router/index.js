@@ -18,11 +18,10 @@ import Encryption from '@/components/product/Encryption.vue'
 import SelfInspection from '@/components/product/SelfInspection.vue'
 import Gain from '@/components/Gain.vue'
 import xx from '@/components/xx.vue'
-
 Vue.use(Router)
 export default new Router({
   routes: [
-    { path: "/", name: "Index", component: Index},
+    { path: "/", name: "Index",component:Index},
     {
       path: "/Product", name: "Product", component: Product, redirect: "/Product/Evaluating",
       children: [
