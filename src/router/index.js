@@ -20,25 +20,78 @@ import Gain from '@/components/Gain.vue'
 import xx from '@/components/xx.vue'
 Vue.use(Router)
 export default new Router({
-  routes: [
-    { path: "/", name: "Index",component:Index},
+  routes: [{
+      path: "/",
+      name: "Gain",
+      component: Gain
+    },
     {
-      path: "/Product", name: "Product", component: Product, redirect: "/Product/Evaluating",
-      children: [
-        { path: "Evaluating", component: Evaluating },
-        { path: "ComplianceEvaluating", component: ComplianceEvaluating },
-        { path: "Reinforce", component: Reinforce },
-        { path: "Code", component: Code },
-        { path: "Virtual", component: Virtual },
-        { path: "SecretKey", component: SecretKey },
-        { path: "SelfInspection", component: SelfInspection },
-        { path: "Encryption", component: Encryption },
+      path: "/Product",
+      name: "Product",
+      component: Product,
+      redirect: "/Product/Evaluating",
+      children: [{
+          path: "Evaluating",
+          component: Evaluating
+        },
+        {
+          path: "ComplianceEvaluating",
+          component: ComplianceEvaluating
+        },
+        {
+          path: "Reinforce",
+          component: Reinforce
+        },
+        {
+          path: "Code",
+          component: Code
+        },
+        {
+          path: "Virtual",
+          component: Virtual
+        },
+        {
+          path: "SecretKey",
+          component: SecretKey
+        },
+        {
+          path: "SelfInspection",
+          component: SelfInspection
+        },
+        {
+          path: "Encryption",
+          component: Encryption
+        },
       ]
     },
-    { path: "/Service", name: "Service", component: Service },
-    { path: "/Project", name: "Project", component: Project },
-    { path: "/About", name: "About", component: About },
-    { path: "/Connect", name: "Connect", component: Connect },
-    { path: "/Gain", name: "Gain", component: Gain }
+    {
+      path: "/Service",
+      name: "Service",
+      component: Service
+    },
+    {
+      path: "/Project",
+      name: "Project",
+      component: Project
+    },
+    {
+      path: "/About",
+      name: "About",
+      component: About
+    },
+    {
+      path: "/Connect",
+      name: "Connect",
+      component: Connect
+    },
+    {
+      path: "/Gain",
+      name: "Gain",
+      component: Gain
+    }, {
+      path: "/xx",
+      name: "xx",
+      component: xx
+    }
   ]
 })

@@ -65,7 +65,7 @@
             >解决方案</router-link>
           </li>
           <li>
-           <!--  <router-link
+            <!--  <router-link
               to="/About"
               @mouseover.native="
                 changeColor(4);
@@ -76,7 +76,7 @@
                 regainColor();
                 hide($event);
               "
-            > -->
+            >-->
             <router-link to="/About">
               关于我们
               <div class="pullDown">
@@ -86,9 +86,9 @@
             </router-link>
           </li>
           <li
-            @mouseover.native="changeColor(5)"
+            @mouseover="changeColor(5)"
             :class="{ select: currentIndex == 5 }"
-            @mouseout.native="regainColor()"
+            @mouseout="regainColor()"
           >
             <router-link to="/Connect">联系我们</router-link>
           </li>
@@ -183,7 +183,7 @@ export default {
 </script>
 <style>
 .headerspace {
-  height: 45px;
+  height:60px;
 }
 .navigation {
   width: 100%;
@@ -191,7 +191,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  height: 45px;
+  height:60px;
   background: #01acf3;
 }
 
@@ -207,7 +207,7 @@ export default {
 }
 .navigationContentLeft img {
   width: 130px;
-  margin-top: -44px;
+  margin-top: -37px;
 }
 
 .navigationContentMiddle,
@@ -230,8 +230,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /*  max-height: 0;
-  overflow: hidden; */
+  max-height: 0;
+  overflow: hidden;
   transition: max-height 0.5s ease;
 }
 .navigationContentMiddle li .dropDownActive {
@@ -241,7 +241,7 @@ export default {
 .navigationContentMiddle > li,
 .navigationContentRight li {
   color: #fff;
-  line-height:30px;
+  line-height: 30px;
   border-bottom: 1px solid transparent;
 }
 .navigationContentMiddle > li > a {
@@ -257,15 +257,15 @@ export default {
 
 .navigationContentMiddle li a {
   color: inherit;
-  font-size: 11px;
+  font-size: 16px;
   box-sizing: border-box;
   width: 100%;
   text-align: center;
-  position:relative;
+  position: relative;
 }
 .navigationContentRight a {
   color: white;
-  font-size: 10px;
+  font-size: 16px;
   padding: 6px 10px;
   border: 1px solid white;
 }

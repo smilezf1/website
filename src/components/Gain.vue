@@ -9,16 +9,10 @@
     <div class="immediately">
       <h2>立即联系</h2>
       <!-- 表单 -->
-      <el-form
-        :model="ruleForm"
-        :rules="rules"
-        ref="ruleForm"
-        label-width="auto"
-        class="menu"
-      >
+      <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="auto" class="menu">
         <!-- 公司名称 联系人 联系邮箱 联系电话 所在地 所属行业 -->
         <el-form-item label="公司名称" prop="name">
-          <el-input v-model="ruleForm.name" size="medium"></el-input>
+          <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
         <el-form-item label="联系人" prop="contacts">
           <el-input v-model="ruleForm.contacts"></el-input>
@@ -30,12 +24,24 @@
           <el-input v-model="ruleForm.phone"></el-input>
         </el-form-item>
         <el-form-item label="所在地" prop="address">
-          <el-input v-model="ruleForm.address"></el-input>
+          <el-select v-model="value" placeholder="请选择地址">
+            <el-option
+              v-for="item in cities"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            >
+              <span style="float:left">{{item.label}}</span>
+              <span style="float:right;color: #8492a6; font-size: 13px">{{item.value}}</span>
+            </el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="所属行业" prop="industry">
           <el-input v-model="ruleForm.industry"></el-input>
         </el-form-item>
-        <el-button type="primary" class="submit">提交</el-button>
+        <el-form-item>m
+           <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        </el-form-item>
       </el-form>
     </div>
     <!-- 底部 -->
@@ -44,10 +50,10 @@
 </template>
 <script>
 import HeaderSpace from "@/components/HeaderSpace";
-import FooterSpace from '@/components/FooterSpace';
+import FooterSpace from "@/components/FooterSpace";
 export default {
   name: "gain",
-  components: { HeaderSpace,FooterSpace},
+  components: { HeaderSpace, FooterSpace },
   data() {
     return {
       ruleForm: {
@@ -83,7 +89,34 @@ export default {
         industry: [
           { required: true, message: "请选择所属行业", trigger: "blur" }
         ]
-      }
+      },
+      cities: [
+        {
+          value: "Beijing",
+          label: "北京"
+        },
+        {
+          value: "Shanghai",
+          label: "上海"
+        },
+        {
+          value: "Nanjing",
+          label: "南京"
+        },
+        {
+          value: "Chengdu",
+          label: "成都"
+        },
+        {
+          value: "Shenzhen",
+          label: "深圳"
+        },
+        {
+          value: "Guangzhou",
+          label: "广州"
+        }
+      ],
+      value: ""
     };
   }
 };
@@ -108,7 +141,7 @@ export default {
   font-weight: 400;
   padding-bottom: 10px;
   margin-bottom: 10px;
-  text-align:center;
-  color:#4383EB;
+  text-align: center;
+  color: #4383eb;
 }
 </style>
