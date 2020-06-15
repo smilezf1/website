@@ -2,7 +2,15 @@
   <div class="footerSpace">
     <div class="container">
       <ul class="left">
-        <li v-for="(item,index) in menuList" :key="index" @mouseover="changeColor(index,$event)"><router-link to="/"  :class="{select:currentIndex==index}">{{item.name}}</router-link></li>
+        <li
+          v-for="(item, index) in menuList"
+          :key="index"
+          @mouseover="changeColor(index, $event)"
+        >
+          <router-link to="/" :class="{ select: currentIndex == index }">{{
+            item.name
+          }}</router-link>
+        </li>
       </ul>
       <div class="right">
         <div class="rightContent">
@@ -29,27 +37,28 @@ export default {
         },
         { id: 5, name: "公司地址:上海市松江区沈砖公路5555号韵博智谷" }
       ],
-      currentIndex:-1
+      currentIndex: -1
     };
   },
-  methods:{
-      changeColor:function(index,e){
-       this.currentIndex=index;
-      }
+  methods: {
+    changeColor: function(index, e) {
+      this.currentIndex = index;
+    }
   }
 };
 </script>
 <style>
 .footerSpace {
+  width:100%;
   background: #091b25;
   color: rgb(102, 102, 102);
-  padding:10px;
+  padding: 10px;
 }
 .footerSpace .container {
   min-width: 600px;
   width: 600px;
   margin: 0 auto;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
   padding: 20px 0;
   display: flex;
@@ -62,11 +71,11 @@ export default {
   padding-right: 30px;
   margin-right: 30px;
 }
-.footerSpace .container .left a{
-    color:#666;
+.footerSpace .container .left a {
+  color: #666;
 }
-.footerSpace .container .left .select{
-    color:white;
+.footerSpace .container .left .select {
+  color: white;
 }
 .footerSpace .right {
   text-align: center;
@@ -81,7 +90,8 @@ export default {
   width: 100px;
   margin-top: 10px;
 }
-.footerSpace .bottom{
-  text-align:center;
+.footerSpace .bottom {
+  text-align: center;
+  font-size: 12px;
 }
 </style>

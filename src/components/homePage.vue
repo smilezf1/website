@@ -44,12 +44,29 @@
     <div class="honor">
       <h3>荣誉资质</h3>
       <div class="container">
-        <img src="../assets/honor.png" />
-       <ul>
-         <li>
-           <img/>
-         </li>
-       </ul>
+        <ul>
+          <el-row>
+            <img src="../assets/honor_02.png" title="中华人民共和国公安部"/>
+            <img src="../assets/honor_03.png" title="湖北省公安厅"/>
+            <img src="../assets/honor_04.png" title="深圳市公安局"/>
+            <img src="../assets/honor_05.png" title="武汉市公安局"/>
+            <img src="../assets/honor_06.png" title="南宁市公安局"
+          /></el-row>
+          <el-row>
+            <img src="../assets/honor_08.png" title="国家信息中心"/>
+            <img src="../assets/honor_09.png" title="国家互联网应急中心"/>
+            <img src="../assets/honor_10.png" title="公安部第三研究所"/>
+            <img src="../assets/honor_11.png" title="深圳市信息安全评测中心"/>
+            <img src="../assets/honor_12.png" title="深圳市电子教务资源中心"
+          /></el-row>
+          <el-row>
+            <img src="../assets/honor_13.png" title="国家信息中心"/>
+            <img src="../assets/honor_14.png" title="广东省国家税务局"/>
+            <img src="../assets/honor_15.png" title="国家超级计算深圳中心"/>
+            <img src="../assets/honor_16.png" title="深圳市南山区人民政府"/>
+            <img src="../assets/honor_17.png" title="中国信息安全测评中心"
+          /></el-row>
+        </ul>
       </div>
     </div>
   </div>
@@ -118,8 +135,8 @@ export default {
 }
 .securiptProductTop {
   margin-top: 10px;
-  padding: 10px;
-  font-size: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
   background: #f8f8f8;
   color: #7c7c7c;
   font-weight: 600;
@@ -130,7 +147,7 @@ export default {
 .securiptProductContainer h3,
 .solution h3,
 .honor h3 {
-  font-size: 20px;
+  font-size: 25px;
   color: #333;
   text-align: center;
   margin-top: 5px;
@@ -145,13 +162,18 @@ export default {
   display: flex;
   justify-content: space-around;
 }
+.honor .container img {
+  width: 220px;
+}
 .securiptProductContainer ul {
-  border: 1px solid #333;
+  width:400px;
   padding: 20px;
+  box-shadow:0px 0px 10px #00000030;
+  box-sizing:border-box;
 }
 .securiptProductContainer ul li {
-  margin: 20px 0;
-  font-size: 14px;
+  margin: 30px 0;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,25 +203,26 @@ export default {
   position: relative;
 }
 .solution .container ul li img {
-  width: 300px;
+  width: 400px;
 }
 .solution .container ul li span {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 /* 荣誉资质 */
-.honor{
+.honor {
   padding: 20px;
 }
-.honor .container{
-  text-align:center;
+.honor .container {
+  width: 1200px;
+  margin: 20px auto;
+  text-align: center;
 }
-.honor img{
-  width:60%;
-
+.honor img {
+  margin-right: 5px;
 }
 </style>

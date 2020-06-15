@@ -17,81 +17,90 @@ import SecretKey from '@/components/product/SecretKey.vue'
 import Encryption from '@/components/product/Encryption.vue'
 import SelfInspection from '@/components/product/SelfInspection.vue'
 import Gain from '@/components/Gain.vue'
+import safetyEvaluation from '@/components/product/safetyEvaluation.vue'
+import safetyProtection from '@/components/product/safetyProtection.vue'
+import safetyService from '@/components/product/safetyService.vue'
 import xx from '@/components/xx.vue'
 Vue.use(Router)
 export default new Router({
   routes: [{
-      path: "/",
-      name: "Gain",
-      component: Gain
+    path: "/",
+    name: "Index",
+    component: Index
+  },
+  {
+    path: "/Product",
+    name: "Product",
+    component: Product,
+    redirect: "/Product/Evaluating",
+    children: [{
+      path: "Evaluating",
+      component: Evaluating
     },
     {
-      path: "/Product",
-      name: "Product",
-      component: Product,
-      redirect: "/Product/Evaluating",
-      children: [{
-          path: "Evaluating",
-          component: Evaluating
-        },
-        {
-          path: "ComplianceEvaluating",
-          component: ComplianceEvaluating
-        },
-        {
-          path: "Reinforce",
-          component: Reinforce
-        },
-        {
-          path: "Code",
-          component: Code
-        },
-        {
-          path: "Virtual",
-          component: Virtual
-        },
-        {
-          path: "SecretKey",
-          component: SecretKey
-        },
-        {
-          path: "SelfInspection",
-          component: SelfInspection
-        },
-        {
-          path: "Encryption",
-          component: Encryption
-        },
-      ]
+      path: "ComplianceEvaluating",
+      component: ComplianceEvaluating
     },
     {
-      path: "/Service",
-      name: "Service",
-      component: Service
+      path: "Reinforce",
+      component: Reinforce
     },
     {
-      path: "/Project",
-      name: "Project",
-      component: Project
+      path: "Code",
+      component: Code
     },
     {
-      path: "/About",
-      name: "About",
-      component: About
+      path: "Virtual",
+      component: Virtual
     },
     {
-      path: "/Connect",
-      name: "Connect",
-      component: Connect
+      path: "SecretKey",
+      component: SecretKey
     },
     {
-      path: "/Gain",
-      name: "Gain",
-      component: Gain
-    }, {
-      path: "/xx",
-      name: "xx",
-      component: xx
-    }
+      path: "SelfInspection",
+      component: SelfInspection
+    },
+    {
+      path: "Encryption",
+      component: Encryption
+    },
+    {
+      path: "safetyEvaluation",
+      component: safetyEvaluation
+    },
+    { path: "safetyProtection", component: safetyProtection },
+    { path: "safetyService", component: safetyService }
+    ]
+  },
+  {
+    path: "/Service",
+    name: "Service",
+    component: Service
+  },
+  {
+    path: "/Project",
+    name: "Project",
+    component: Project
+  },
+  {
+    path: "/About",
+    name: "About",
+    component: About
+  },
+  {
+    path: "/Connect",
+    name: "Connect",
+    component: Connect
+  },
+  {
+    path: "/Gain",
+    name: "Gain",
+    component: Gain
+  }, {
+    path: "/xx",
+    name: "xx",
+    component: xx
+  }
   ]
 })

@@ -2,6 +2,7 @@
   <div class="reinforce">
     <div class="productContent">
       <div class="productBanner">
+        <!-- 移动应用加固系统 -->
         <img src="../../assets/product1.png" />
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用加固系统</h3>

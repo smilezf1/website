@@ -10,7 +10,7 @@
     import headerSpace from '@/components/headerSpace.vue'
     import Banner from '@/components/Banner.vue'
     import homePage from '@/components/homePage.vue'
-    import footerSpace from '@/components/footerSpace.vue'
+    import footerSpace from '@/components/Footerspace.vue'
     export default{
         name:"Index",
         components:{headerSpace,Banner,homePage,footerSpace}

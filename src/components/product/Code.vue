@@ -4,6 +4,7 @@
       <div class="productBanner">
         <img src="../../assets/product1.png" />
         <div class="productBannerContent">
+          <!-- 移动应用源码加固编译器 -->
           <h3>蛮犀安全移动应用源码加固编译器</h3>
           <article>
             蛮犀科技吸取同类产品相关优势并结合市场监管需求,采用静态代码、资源、数据扫描检测、运行时数据挖掘，
@@ -27,16 +28,19 @@
           <h3>产品特点</h3>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
-              <img :src="item.imgSrc" />
-              <p>{{ item.title }}</p>
-              <span style="text-align:left">{{ item.content }}</span>
+              <div class="productTraitContentTop">
+                <img :src="item.imgSrc" />
+                <p>{{ item.title }}</p>
+              </div>
+              <div class="productTraitContentContainer">
+                <span>{{ item.content }}</span>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  
 </template>
 <script>
 export default {

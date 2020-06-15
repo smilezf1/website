@@ -27,9 +27,13 @@
           <h3>产品特点</h3>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
-              <img :src="item.imgSrc" />
-              <p>{{ item.title }}</p>
-              <span style="text-align:left">{{ item.content }}</span>
+              <div class="productTraitContentTop">
+                <img :src="item.imgSrc" />
+                <p>{{ item.title }}</p>
+              </div>
+              <div class="productTraitContentContainer">
+                <span>{{ item.content }}</span>
+              </div>
             </li>
           </ul>
         </div>

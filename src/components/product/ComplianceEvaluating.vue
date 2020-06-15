@@ -1,4 +1,5 @@
 <template>
+<!-- 移动应用合规评测系统 -->
   <div class="complianceEvaluating">
     <div class="productContent">
       <div class="productBanner">
