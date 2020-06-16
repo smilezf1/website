@@ -13,9 +13,8 @@ import $ from 'jquery'
 import animate from 'animate.css'
 import BaiduMap from 'vue-baidu-map' //引用百度地图组件
 /* eslint-disable no-new */
-Vue.use(VueAwesomeSwiper);
+Vue.use(VueAwesomeSwiper, router);
 Vue.use(ElementUI);
-Vue.use(router);
 Vue.use(BaiduMap, {
   ak: 'er1y12cHwwo0MvygGKGizpduaN4qjkhs'
 })

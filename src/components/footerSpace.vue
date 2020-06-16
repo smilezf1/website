@@ -49,7 +49,7 @@ export default {
 </script>
 <style>
 .footerSpace {
-  width:100%;
+  /* width:100%; */
   background: #091b25;
   color: rgb(102, 102, 102);
   padding: 10px;

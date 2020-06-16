@@ -1,10 +1,12 @@
 <template>
-<div class="companyIntroduce">
-    公司简介页面
-</div>
+  <div class="companyIntroduce">
+    <div class="companyIntroduceBanner">
+      <img src="../../assets/about.png" />
+    </div>
+  </div>
 </template>
 <script>
-export default{
-    name:""
-}
+export default {
+  name: "companyIntroduce"
+};
 </script>

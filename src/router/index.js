@@ -20,6 +20,9 @@ import Gain from '@/components/Gain.vue'
 import safetyEvaluation from '@/components/product/safetyEvaluation.vue'
 import safetyProtection from '@/components/product/safetyProtection.vue'
 import safetyService from '@/components/product/safetyService.vue'
+//About文件下的组件
+import companyIntroduce from '@/components/About/companyIntroduce.vue';
+import devHistroy from '@/components/About/devHistroy.vue';
 import xx from '@/components/xx.vue'
 Vue.use(Router)
 export default new Router({
@@ -86,7 +89,15 @@ export default new Router({
   {
     path: "/About",
     name: "About",
-    component: About
+    component: About,
+    children: [{
+      path: "/About/companyIntroduce",
+      component: companyIntroduce
+    },
+    {
+      path: "/About/devHistroy",
+      component: devHistroy
+    }]
   },
   {
     path: "/Connect",
@@ -101,6 +112,10 @@ export default new Router({
     path: "/xx",
     name: "xx",
     component: xx
+  },
+  {
+    path: "/devHistroy",
+    component: devHistroy
   }
   ]
 })
