@@ -216,7 +216,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(to bottom, #6dd5ed, #2193b0);
+  background: #1a1c24;
 }
 .navigationContent {
   width: 60%;
