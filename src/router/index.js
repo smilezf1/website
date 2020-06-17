@@ -23,6 +23,9 @@ import safetyService from '@/components/product/safetyService.vue'
 //About文件下的组件
 import companyIntroduce from '@/components/About/companyIntroduce.vue';
 import devHistroy from '@/components/About/devHistroy.vue';
+//Service文件夹下的组件
+import percolationTest from '@/components/Service/percolationTest.vue';
+import securityConsulting from '@/components/Service/securityConsulting.vue';
 import xx from '@/components/xx.vue'
 Vue.use(Router)
 export default new Router({
@@ -79,7 +82,16 @@ export default new Router({
   {
     path: "/Service",
     name: "Service",
-    component: Service
+    component: Service,
+    redirect: "/Service/percolationTest",
+    children: [{
+      path: "percolationTest",
+      component: percolationTest
+    }, {
+      path: "securityConsulting",
+      component: securityConsulting
+    }
+    ]
   },
   {
     path: "/Project",
@@ -90,12 +102,13 @@ export default new Router({
     path: "/About",
     name: "About",
     component: About,
+    redirect: "/About/companyIntroduce",
     children: [{
-      path: "/About/companyIntroduce",
+      path: "companyIntroduce",
       component: companyIntroduce
     },
     {
-      path: "/About/devHistroy",
+      path: "devHistroy",
       component: devHistroy
     }]
   },

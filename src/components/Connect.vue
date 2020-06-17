@@ -62,8 +62,8 @@ export default {
       const pixel = map.pointToOverlayPixel(
         new BMap.Point(121.258716, 31.097119)
       );
-      el.style.left = pixel.x - 180 + "px";
-      el.style.top = pixel.y - 105 + "px";
+      el.style.left = pixel.x - 155 + "px";
+      el.style.top = pixel.y - 95 + "px";
     }
   }
 };
@@ -82,7 +82,7 @@ export default {
 .cooperation p {
   margin-bottom: 20px;
   padding-bottom: 10px;
-  font-size: 18px;
+  font-size:22px;
 }
 .cooperation span {
   display: block;
@@ -99,7 +99,7 @@ export default {
   margin: 0 auto;
 }
 .sample {
-  width: 250px;
+  width:300px;
   height: 40px;
   line-height: 40px;
   background: rgba(255, 255, 255, 0.7);

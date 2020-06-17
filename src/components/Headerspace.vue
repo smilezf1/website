@@ -3,16 +3,18 @@
     <!-- 导航开始 -->
     <div class="navigation">
       <div class="navigationContent">
+        <!-- 导航左部分 -->
         <div class="navigationContentLeft">
           <img src="../assets/logo2.png" />
         </div>
+        <!-- 导航中间部分 -->
         <ul class="navigationContentMiddle">
           <li>
             <router-link
               to="/"
               @mouseover.native="changeColor(0)"
               :class="{ select: currentIndex == 0 }"
-              @mouseout.native="regainColor()"
+              @mouseout.self="regainColor()"
               >首页</router-link
             >
           </li>
@@ -21,27 +23,53 @@
               to="/Product"
               @mouseover.native="changeColor(1), reveal($event)"
               :class="{ select: currentIndex == 1 }"
-              @mouseout.native="regainColor(), hide($event)"
+              @mouseout.self="regainColor()"
             >
               安全产品
-              <div class="pullDown" style="width:560px">
-                <el-row :gutter="18">
-                  <el-col :span="6"
-                    ><router-link to="/">移动应用安全评测</router-link>
-                    <router-link to="/">移动应用评测系统</router-link>
-                    <router-link to="/">移动应用合规评测系统</router-link>
+              <div
+                class="pullDown"
+                style="width:600px"
+                @mouseout="hide($event)"
+              >
+                <el-row :gutter="24">
+                  <el-col :span="10"
+                    ><router-link to="/Product/safetyEvaluation"
+                      >移动应用安全评测</router-link
+                    >
+                    <router-link to="/Product/Evaluating"
+                      >移动应用评测系统</router-link
+                    >
+                    <router-link to="/Product/ComplianceEvaluating"
+                      >移动应用合规评测系统</router-link
+                    >
                   </el-col>
-                  <el-col :span="6">
-                    <router-link to="/">移动应用安全防护</router-link>
-                    <router-link to="/">移动应用加固系统</router-link>
-                    <router-link to="/">移动应用源码加固编译器</router-link>
-                    <router-link to="/">移动应用源码虚拟化编译器</router-link>
+                  <el-col :span="10">
+                    <router-link to="/Product/safetyProtection"
+                      >移动应用安全防护</router-link
+                    >
+                    <router-link to="/Product/Reinforce"
+                      >移动应用加固系统</router-link
+                    >
+                    <router-link to="/Product/Code"
+                      >移动应用源码加固编译器</router-link
+                    >
+                    <router-link to="/Product/Virtual"
+                      >移动应用源码虚拟化编译器</router-link
+                    >
                   </el-col>
-                  <el-col :span="6">
-                    <router-link to="/">移动应用安全业务</router-link>
-                    <router-link to="/">移动应用秘钥白盒插件</router-link>
-                    <router-link to="/">移动应用环境自查插件</router-link>
-                    <router-link to="/">移动应用数据加密插件</router-link>
+                  <el-col :span="10">
+                    <router-link to="/Product/safetyService"
+                      >移动应用安全业务</router-link
+                    >
+                    <router-link to="/Product/SecretKey"
+                      >移动应用秘钥白盒插件</router-link
+                    >
+                    <router-link to="/Product/SelfInspection"
+                      >移动应用环境自查插件</router-link
+                    >
+                    <router-link to="/Product/Encryption"
+                      >移动应用数据加密插件</router-link
+                    >
                   </el-col>
                 </el-row>
               </div>
@@ -52,12 +80,16 @@
               to="/Service"
               @mouseover.native="changeColor(2), reveal($event)"
               :class="{ select: currentIndex == 2 }"
-              @mouseout.native="regainColor(), hide($event)"
+              @mouseout.self="regainColor()"
             >
               安全服务
-              <div class="pullDown">
-                <router-link to="/">移动应用安全咨询</router-link>
-                <router-link to="/">移动应用安全渗透</router-link>
+              <div class="pullDown" @mouseout="hide($event)">
+                <router-link to="/Service/securityConsulting"
+                  >移动应用安全咨询</router-link
+                >
+                <router-link to="/Service/percolationTest"
+                  >移动应用安全渗透</router-link
+                >
               </div>
             </router-link>
           </li>
@@ -66,7 +98,7 @@
               to="/Project"
               @mouseover.native="changeColor(3), reveal($event)"
               :class="{ select: currentIndex == 3 }"
-              @mouseout.native="regainColor(), hide($event)"
+              @mouseout.self="regainColor()"
               >解决方案</router-link
             >
           </li>
@@ -75,32 +107,31 @@
               to="/About"
               @mouseover.native="changeColor(4), reveal($event)"
               :class="{ select: currentIndex == 4 }"
-              @mouseout.native="regainColor(), hide($event)"
+              @mouseout.self="regainColor(), hide($event)"
             >
               关于我们
               <div class="pullDown">
-                <router-link to="/">公司简介</router-link>
-                <router-link to="/">发展历程</router-link>
+                <router-link to="/About/companyIntroduce">公司简介</router-link>
+                <router-link to="/About/devHistroy">发展历程</router-link>
               </div>
             </router-link>
           </li>
           <li
             @mouseover="changeColor(5)"
             :class="{ select: currentIndex == 5 }"
-            @mouseout="regainColor()"
+            @mouseout.self="regainColor()"
           >
             <router-link to="/Connect">联系我们</router-link>
           </li>
         </ul>
+        <!-- 导航右边 -->
         <ul class="navigationContentRight">
-          <li>
-            <router-link
-              to="/Gain"
-              @mouseover.native="changeBgColor()"
-              @mouseout.native="removeBgColor()"
-              :style="active"
-              >获取使用</router-link
-            >
+          <li
+            @mouseover="changeColor(6)"
+            :class="{ select: currentIndex == 6 }"
+            @mouseout.self="regainColor()"
+          >
+            <router-link to="/Gain">获取使用</router-link>
           </li>
         </ul>
       </div>
@@ -138,10 +169,6 @@ export default {
     regainColor: function() {
       this.currentIndex = -1;
     },
-    changeBgColor() {},
-    removeBgColor() {
-      this.active = "";
-    },
     handleScroll() {
       var scrollTop =
         window.pageYOffset ||
@@ -159,34 +186,40 @@ export default {
       $(e.target)
         .children(".pullDown")
         .addClass("dropDownActive");
-    },
-
-    hide(e) {
       $(e.target)
+        .parent("li")
+        .siblings()
+        .children("a")
         .children(".pullDown")
         .removeClass("dropDownActive");
-      console.log($(e.target));
+    },
+    hide(e) {
+      /*  $(e.target)
+        .parents("li")
+        .children("a")
+        .children(".pullDown")
+        .removeClass("dropDownActive"); */
+      $(e.target).removeClass("dropDownActive");
     }
   }
 };
 </script>
 <style>
-.headerspace{
+.headerspace {
   height: 64px;
 }
 .navigation {
-   height: 64px;
-  line-height:60px;
+  height: 64px;
+  line-height: 64px;
   width: 100%;
   position: fixed;
-  line-height: 64px;
   top: 0;
   left: 0;
   z-index: 2;
   background: linear-gradient(to bottom, #6dd5ed, #2193b0);
 }
-
 .navigationContent {
+  width: 60%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -194,11 +227,15 @@ export default {
   justify-content: space-around;
 }
 .navigationContentLeft {
+  width: 130px;
   height: 100%;
+  position: relative;
 }
 .navigationContentLeft img {
   width: 130px;
-  margin-top: -37px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .navigationContentMiddle,
@@ -212,8 +249,8 @@ export default {
 }
 .navigationContentMiddle li .pullDown {
   position: absolute;
-  top: 66px;
   padding: 0 10px;
+  top: 66px;
   left: 0;
   z-index: 2;
   background: #fff;
@@ -225,20 +262,25 @@ export default {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
+  text-align: center;
+}
+.navigationContentMiddle li .pullDown .el-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .navigationContentMiddle li .pullDown .el-col {
-  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .navigationContentMiddle li .pullDown a {
   font-size: 13px;
-  box-sizing: border-box;
 }
 .navigationContentMiddle li .dropDownActive {
-  max-height: 280px;
+  max-height: 456px;
   transition: max-height 0.5s ease;
 }
-.navigationContentMiddle > li,
-.navigationContentRight li {
+.navigationContentMiddle > li {
   color: #fff;
   margin-right: 20px;
 }
@@ -262,6 +304,9 @@ export default {
 .navigationContentRight a {
   color: white;
   font-size: 16px;
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 .navigationContentRight {
   margin-left: 20px;

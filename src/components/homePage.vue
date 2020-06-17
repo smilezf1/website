@@ -35,7 +35,11 @@
       <div class="container">
         <ul>
           <li v-for="(item, index) in solutionList" :key="index">
-            <img :src="item.imgSrc" /><span>{{ item.name }}</span>
+            <img
+              :src="item.imgSrc"
+              @mouseover="zoom($event)"
+              @mouseout="recover($event)"
+            /><span>{{ item.name }}</span>
           </li>
         </ul>
       </div>
@@ -72,6 +76,7 @@
   </div>
 </template>
 <script>
+import $ from "jquery";
 export default {
   name: "homePage",
   data() {
@@ -115,6 +120,14 @@ export default {
       ]
     };
   },
+  methods: {
+    zoom(e) {
+      $(e.target).css({ width: "500px", transition: "width 0.5s" });
+    },
+    recover(e) {
+      $(e.target).css({ width: "" });
+    }
+  },
   mounted() {
     console.log(this.securityProductList);
   }
@@ -150,7 +163,7 @@ export default {
   font-size: 25px;
   color: #333;
   text-align: center;
-  margin-top: 5px;
+  margin: 20px 0;
   font-weight: 500;
 }
 .securiptProductContainer {
@@ -166,10 +179,10 @@ export default {
   width: 220px;
 }
 .securiptProductContainer ul {
-  width:400px;
+  width: 400px;
   padding: 20px;
-  box-shadow:0px 0px 10px #00000030;
-  box-sizing:border-box;
+  box-shadow: 0px 0px 10px #00000030;
+  box-sizing: border-box;
 }
 .securiptProductContainer ul li {
   margin: 30px 0;
@@ -186,7 +199,7 @@ export default {
   justify-content: space-between;
 }
 .el-icon-mobile-phone {
-  color: #1989fa;
+  color: rgb(78, 186, 212);
   margin-right: 5px;
 }
 /* 解决方案 */
@@ -199,18 +212,22 @@ export default {
   padding: 20px;
 }
 .solution .container ul li {
+  width: 400px;
+  height: 615px;
   color: white;
   position: relative;
+  overflow: hidden;
 }
 .solution .container ul li img {
   width: 400px;
+  cursor: pointer;
 }
 .solution .container ul li span {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
 }
 /* 荣誉资质 */

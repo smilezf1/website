@@ -1,53 +1,44 @@
 <template>
-  <div class="selfInspection">
-    <div class="productContent">
-      <div class="productBanner">
-        <img src="../../assets/develop.jpg" />
-        <div class="productBannerContent">
-          <h3>蛮犀安全移动应用环境自查插件</h3>
-          <!-- 移动应用环境自查插件 -->
-          <article>
-            蛮犀科技吸取同类产品相关优势并结合市场监管需求,采用静态代码、资源、数据扫描检测、运行时数据挖掘，
-            运行是内容检测等技术,依据网络安全等级保护要求、中国金融移动支付客户端技术规范、移动互联网应用软件安全评估大纲等评估要求研制的移动应用安全评测平台
-          </article>
-          <router-link to="/Gain" class="productBannerUse"
-            >立即获取使用</router-link
-          >
-        </div>
+  <div class="securityConsulting">
+    <!-- 蛮犀安全咨询服务 -->
+    <!-- banner -->
+    <div class="percolationTestBanner">
+      <img src="../../assets/develop.jpg" />
+      <div class="percolationTestBannerContent">
+        <h3>蛮犀安全咨询服务</h3>
+        <article>移动应用人工渗透测试、移动应用漏洞专项分析</article>
       </div>
-      <!-- 产品介绍 -->
-      <div class="productBox">
-        <div class="productIntroduce">
-          <h3>产品介绍</h3>
-          <p>
-            全面检测移动应用中存在的安全漏洞、不和规项,并将权限滥用、信息非法收集、信息泄露等严重问题,结合时下相关法律法规和监管要求,为监管机构、测评机构等有效地提供行政执法依据。
-          </p>
-        </div>
-        <!-- 产品特点 -->
-        <div class="produtctTrait">
-          <h3>产品特点</h3>
-          <ul class="productTraitContent">
-            <li v-for="(item, index) in traitList" :key="index">
-              <div class="productTraitContentTop">
-                <img :src="item.imgSrc" />
-                <p>{{ item.title }}</p>
-              </div>
-              <div class="productTraitContentContainer">
-                <span>{{ item.content }}</span>
-              </div>
-            </li>
-          </ul>
-        </div>
+    </div>
+    <div class="percolationTestBox">
+      <!-- 服务介绍 -->
+      <div class="serviceIntroduce">
+        <h3>服务介绍</h3>
+        <p>移动应用人工渗透测试、移动应用漏洞专项分析</p>
+      </div>
+      <!-- 业务范围 -->
+      <div class="businessScope">
+        <h3>业务范围</h3>
+        <ul class="businessScopeContent">
+          <li v-for="(item, index) in scopeList" :key="index">
+            <div class="businessScopeContentTop">
+              <img :src="item.imgSrc" />
+              <p>{{ item.title }}</p>
+            </div>
+            <div class="businessScopeContentContainer">
+              <span>{{ item.content }}</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "Evaluating",
+  name: "securityConsulting",
   data() {
     return {
-      traitList: [
+      scopeList: [
         {
           id: 1,
           imgSrc: require("../../assets/string.png"),

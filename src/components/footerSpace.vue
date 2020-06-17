@@ -6,6 +6,7 @@
           v-for="(item, index) in menuList"
           :key="index"
           @mouseover="changeColor(index, $event)"
+          @mouseout="recoverColor(index, $event)"
         >
           <router-link to="/" :class="{ select: currentIndex == index }">{{
             item.name
@@ -43,6 +44,9 @@ export default {
   methods: {
     changeColor: function(index, e) {
       this.currentIndex = index;
+    },
+    recoverColor: function(index) {
+      this.currentIndex = -1;
     }
   }
 };
@@ -58,7 +62,7 @@ export default {
   min-width: 600px;
   width: 600px;
   margin: 0 auto;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   padding: 20px 0;
   display: flex;
@@ -85,6 +89,7 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  margin-left: 10px;
 }
 .footerSpace .right img {
   width: 100px;
@@ -92,6 +97,7 @@ export default {
 }
 .footerSpace .bottom {
   text-align: center;
-  font-size: 12px;
+  font-size: 15px;
+  margin-bottom:10px;
 }
 </style>

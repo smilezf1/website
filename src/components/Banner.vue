@@ -1,10 +1,18 @@
 <template>
   <div class="Banner">
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide class="bg1">1</swiper-slide>
-      <swiper-slide class="bg2">2</swiper-slide>
-      <swiper-slide class="bg3">3</swiper-slide>
-      <swiper-slide class="bg4">4</swiper-slide>
+      <swiper-slide class="bg1"
+        ><img src="../assets/banner1.gif"
+      /></swiper-slide>
+      <swiper-slide class="bg2"
+        ><img src="../assets/banner2.png"
+      /></swiper-slide>
+      <swiper-slide class="bg3"
+        ><img src="../assets/banner3.gif"
+      /></swiper-slide>
+      <swiper-slide class="bg4"
+        ><img src="../assets/banner4.png"
+      /></swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
@@ -23,8 +31,8 @@ export default {
 
         loop: true,
         autoplay: {
-          delay:3000,
-          disableOnInteraction:false
+          delay: 4000,
+          disableOnInteraction: false
         }
       }
     };
@@ -45,9 +53,9 @@ export default {
   color: white;
 }
 .Banner .swiper-slide {
-  height: 480px;
+  height:663px;
 }
-.bg1 {
+/* bg1 {
   background: linear-gradient(to right, #211b54, #1c207a);
 }
 .bg2 {
@@ -58,13 +66,16 @@ export default {
 }
 .bg4 {
   background: linear-gradient(#012d48, #01081b);
+} */
+.Banner img {
+  width:100%;
 }
 .swiper-pagination-bullet {
   background: #fff;
 }
 .swiper-pagination-bullet {
   width: 50px;
-  height: 2.5px;
+  height: 4.5px;
   background-color: rgba(190, 190, 190, 0.5);
   border-radius: 2px;
 }

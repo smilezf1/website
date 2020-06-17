@@ -2,11 +2,11 @@
   <div class="Product">
     <headerSpace></headerSpace>
     <div class="container">
-      <ul class="leftNav">
+      <!--  <ul class="leftNav">
         <li v-for="(item, index) in navList" :key="index">
           <router-link :to="item.path">{{ item.name }}</router-link>
         </li>
-      </ul>
+      </ul> -->
       <router-view />
     </div>
     <footerSpace></footerSpace>
@@ -57,9 +57,9 @@ export default {
           name: "移动应用数据加密插件",
           path: "/Product/Encryption"
         },
-        { id: 9, name: "移动应用安全评测", path: "/SelfInspection" },
-        { id: 10, name: "移动应用安全防护", path: "/safetyProtection" },
-        { id: 11, name: "移动应用安全业务", path: "/safetyService" }
+        { id: 9, name: "移动应用安全评测", path: "/Product/SelfInspection" },
+        { id: 10, name: "移动应用安全防护", path: "/Product/safetyProtection" },
+        { id: 11, name: "移动应用安全业务", path: "/Product/safetyService" }
       ]
     };
   },
@@ -67,12 +67,6 @@ export default {
 };
 </script>
 <style>
-.container {
-  width: 80%;
-  margin: 10px 20px;
-  display: flex;
-  margin: 20px auto;
-}
 .Product .leftNav {
   width: 35%;
   border: 1px solid #ebebeb;
@@ -85,37 +79,34 @@ export default {
   font-family: ".Product .leftNav ";
   text-align: center;
   font-weight: 500;
-  font-size:16px;
-  padding:10px 0;
-}
-.productContent {
-  width:80%;
-  margin-left: 20px;
+  font-size: 16px;
+  padding: 10px 0;
 }
 .productBanner {
   position: relative;
 }
 .productBanner img {
   width: 100%;
+  height: 500px;
 }
 .productBannerContent {
   position: absolute;
   top: 20px;
-  left: 10px;
+  left: 40px;
   color: white;
 }
 .productTraitContent span {
-  line-height:40px;
+  line-height: 40px;
 }
 .productBannerContent h3 {
   font-size: 21px;
-  font-weight:700;
+  font-weight: 700;
 }
 .productBannerContent article {
   font-size: 15px;
   margin-top: 10px;
   letter-spacing: 1px;
-  line-height:25px;
+  line-height: 25px;
 }
 .productBannerUse {
   display: inline-block;
@@ -123,8 +114,8 @@ export default {
   color: white;
   border: 1px solid white;
   border-radius: 3px;
-  padding: 6px 8px;
-  font-size:14px;
+  padding: 10px 15px;
+  font-size: 14px;
 }
 /* 产品介绍 */
 .productIntroduce {
@@ -133,46 +124,53 @@ export default {
 .produtctTrait {
   margin-top: 20px;
 }
+.productBox {
+  margin: 0 20px;
+}
 .productIntroduce h3,
 .produtctTrait h3 {
-  font-size: 20px;
+  font-size: 26px;
   color: #333;
-  font-weight:700;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 .productIntroduce p {
   color: #666;
- font-size:16px;
+  font-size: 16px;
   letter-spacing: 1px;
   margin-top: 10px;
   text-indent: 2em;
   line-height: 28px;
+  text-align: center;
 }
 /* 产品特点 */
 .productTraitContent {
   display: flex;
 }
 .productTraitContent {
-  margin-top: 10px;
+  width: 65%;
+  margin: 0 auto;
 }
 .productTraitContent li {
-  margin:0 30px;
-  padding:20px;
+  margin: 0 30px;
+  padding: 20px;
 }
 .productTraitContent li p {
-  font-size:20px;
+  font-size: 20px;
   color: #333;
-  margin-bottom: 6px;
+  margin: 20px 0;
 }
 .productTraitContent li span {
   color: #666;
-  font-size:15px;
- text-align:left;
-  }
-  .productTraitContentTop{
-    text-align:center;
-  }
-  .productTraitContentContainer{
-    text-align:justify;
-    text-indent:2em;
-  }
+  font-size: 15px;
+  text-align: left;
+}
+.productTraitContentTop {
+  text-align: center;
+}
+.productTraitContentContainer {
+  text-align: justify;
+  text-indent: 2em;
+}
 </style>
