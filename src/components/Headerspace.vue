@@ -1,141 +1,62 @@
 <template>
   <div class="headerspace">
     <!-- 导航开始 -->
-    <div class="navigation">
-      <div class="navigationContent">
-        <!-- 导航左部分 -->
-        <div class="navigationContentLeft">
-          <img src="../assets/logo2.png" />
-        </div>
-        <!-- 导航中间部分 -->
-        <ul class="navigationContentMiddle">
-          <li>
-            <router-link
-              to="/"
-              @mouseover.native="changeColor(0)"
-              :class="{ select: currentIndex == 0 }"
-              @mouseout.self="regainColor()"
-              >首页</router-link
+    <transition name="slide-fade">
+      <div class="navigation" :class="{ minNavigation: navigationBg == 1 }">
+        <div class="navigationContent">
+          <!-- 导航左部分 -->
+          <div class="navigationContentLeft">
+            <img src="../assets/logo2.png" />
+          </div>
+          <!-- 导航中间部分 -->
+          <ul class="navigationContentMiddle">
+            <li
+              v-for="(item, index) in navData"
+              :key="index"
+              @mouseover="showDropDown(index)"
+              @mouseout="hiddenDropDown(index)"
             >
-          </li>
-          <li>
-            <router-link
-              to="/Product"
-              @mouseover.native="changeColor(1), reveal($event)"
-              :class="{ select: currentIndex == 1 }"
-              @mouseout.self="regainColor()"
-            >
-              安全产品
-              <div
-                class="pullDown"
-                style="width:600px"
-                @mouseout="hide($event)"
+              <router-link
+                :to="item.link"
+                @mouseover.native="changeColor(index)"
+                @mouseout.native="recoverColor()"
+                :class="{ item_select: item_SelectIndex == index }"
               >
-                <el-row :gutter="24">
-                  <el-col :span="10"
-                    ><router-link to="/Product/safetyEvaluation"
-                      >移动应用安全评测</router-link
+                {{ item.name }}
+                <transition name="slide-fade">
+                  <div
+                    class="pullDown"
+                    v-if="item.child"
+                    v-show="item.child.show"
+                    :class="{ pullDownSpecial: index == 1 }"
+                  >
+                    <router-link
+                      v-for="(item_child, item_child_index) in item.child
+                        .childContent"
+                      :key="item_child_index"
+                      :to="item_child.src"
+                      @mouseover.native="changeChildColor(item_child_index)"
+                      @mouseout.native="recoverChildColor()"
+                      :class="{
+                        item_child_select:
+                          item_child_SelectIndex == item_child_index
+                      }"
+                      >{{ item_child.content }}</router-link
                     >
-                    <router-link to="/Product/Evaluating"
-                      >移动应用评测系统</router-link
-                    >
-                    <router-link to="/Product/ComplianceEvaluating"
-                      >移动应用合规评测系统</router-link
-                    >
-                  </el-col>
-                  <el-col :span="10">
-                    <router-link to="/Product/safetyProtection"
-                      >移动应用安全防护</router-link
-                    >
-                    <router-link to="/Product/Reinforce"
-                      >移动应用加固系统</router-link
-                    >
-                    <router-link to="/Product/Code"
-                      >移动应用源码加固编译器</router-link
-                    >
-                    <router-link to="/Product/Virtual"
-                      >移动应用源码虚拟化编译器</router-link
-                    >
-                  </el-col>
-                  <el-col :span="10">
-                    <router-link to="/Product/safetyService"
-                      >移动应用安全业务</router-link
-                    >
-                    <router-link to="/Product/SecretKey"
-                      >移动应用秘钥白盒插件</router-link
-                    >
-                    <router-link to="/Product/SelfInspection"
-                      >移动应用环境自查插件</router-link
-                    >
-                    <router-link to="/Product/Encryption"
-                      >移动应用数据加密插件</router-link
-                    >
-                  </el-col>
-                </el-row>
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              to="/Service"
-              @mouseover.native="changeColor(2), reveal($event)"
-              :class="{ select: currentIndex == 2 }"
-              @mouseout.self="regainColor()"
-            >
-              安全服务
-              <div class="pullDown" @mouseout="hide($event)">
-                <router-link to="/Service/securityConsulting"
-                  >移动应用安全咨询</router-link
-                >
-                <router-link to="/Service/percolationTest"
-                  >移动应用安全渗透</router-link
-                >
-              </div>
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              to="/Project"
-              @mouseover.native="changeColor(3), reveal($event)"
-              :class="{ select: currentIndex == 3 }"
-              @mouseout.self="regainColor()"
-              >解决方案</router-link
-            >
-          </li>
-          <li>
-            <router-link
-              to="/About"
-              @mouseover.native="changeColor(4), reveal($event)"
-              :class="{ select: currentIndex == 4 }"
-              @mouseout.self="regainColor(), hide($event)"
-            >
-              关于我们
-              <div class="pullDown">
-                <router-link to="/About/companyIntroduce">公司简介</router-link>
-                <router-link to="/About/devHistroy">发展历程</router-link>
-              </div>
-            </router-link>
-          </li>
-          <li
-            @mouseover="changeColor(5)"
-            :class="{ select: currentIndex == 5 }"
-            @mouseout.self="regainColor()"
-          >
-            <router-link to="/Connect">联系我们</router-link>
-          </li>
-        </ul>
-        <!-- 导航右边 -->
-        <ul class="navigationContentRight">
-          <li
-            @mouseover="changeColor(6)"
-            :class="{ select: currentIndex == 6 }"
-            @mouseout.self="regainColor()"
-          >
-            <router-link to="/Gain">获取使用</router-link>
-          </li>
-        </ul>
+                  </div>
+                </transition>
+              </router-link>
+            </li>
+          </ul>
+          <!-- 导航右边 -->
+          <ul class="navigationContentRight">
+            <li>
+              <router-link to="/Gain">获取使用</router-link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </transition>
     <!-- 导航结束 -->
   </div>
 </template>
@@ -147,76 +68,163 @@ export default {
     return {
       theme1: "light",
       navData: [
-        { id: 0, name: "首页", link: "/" },
-        { id: 1, name: "安全产品", link: "/Product" },
-        { id: 2, name: "安全服务", link: "/Service" },
-        { id: 3, name: "解决方案", link: "/Project" },
-        { id: 4, name: "关于我们", link: "/About" },
-        { id: 5, name: "联系我们", link: "/Connect" }
+        { id: 0, name: "首页", link: "/", child: null },
+        {
+          id: 1,
+          name: "安全产品",
+          link: "/Product",
+          child: {
+            show: false,
+            childContent: [
+              { content: "移动应用安全评测", src: "/Product/safetyEvaluation" },
+              { content: "移动应用评测系统", src: "/Product/Evaluating" },
+              {
+                content: "移动应用合规评测系统",
+                src: "/Product/ComplianceEvaluating"
+              },
+              { content: "移动应用安全防护", src: "/Product/safetyProtection" },
+              { content: "移动应用加固系统", src: "/Product/Reinforce" },
+              { content: "移动应用源码加固编译器", src: "/Product/Code" },
+              { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" },
+              { content: "移动应用安全业务", src: "/Product/safetyService" },
+              { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" },
+              {
+                content: "移动应用环境自查插件",
+                src: "/Product/SelfInspection"
+              },
+              { content: "移动应用数据加密插件", src: "/Product/Encryption" }
+            ]
+          }
+        },
+        {
+          id: 2,
+          name: "安全服务",
+          link: "/Service",
+          child: {
+            show: false,
+            childContent: [
+              {
+                content: "移动应用安全咨询",
+                src: "/Service/securityConsulting"
+              },
+              { content: "移动应用安全渗透", src: "/Service/percolationTest" }
+            ]
+          }
+        },
+        { id: 3, name: "解决方案", link: "/Project", child: null },
+        {
+          id: 4,
+          name: "关于我们",
+          link: "/About",
+          child: {
+            show: false,
+            childContent: [
+              { content: "公司简介", src: "/About/companyIntroduce" },
+              { content: "发展历程", src: "/About/devHistroy" }
+            ]
+          }
+        },
+        { id: 5, name: "联系我们", link: "/Connect", child: null }
       ],
+
       currentIndex: 0,
       active: "",
-      i: 0
+      i: 0,
+      showIndex: "",
+      item_child_SelectIndex: -1,
+      item_SelectIndex: -1,
+      navigationBg: 0
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll, true); //监听滚轮滚动事件
+    window.addEventListener("scroll", this.handleScroll, true); //监听滚轮事件
   },
   methods: {
-    changeColor: function(index) {
-      this.currentIndex = index;
-    },
-    regainColor: function() {
-      this.currentIndex = -1;
-    },
     handleScroll() {
-      var scrollTop =
+      let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      var scroll = scrollTop - this.i;
-      this.i = screenTop;
-      if (scroll >= 620) {
-        $(".navigation").css("transition", "all 0.3s linear");
+      this.i = scrollTop;
+      if (scrollTop >= 620) {
+        this.navigationBg = 1;
       } else {
-        $(".navigation").css("background", "");
+        this.navigationBg = 0;
       }
     },
-    reveal(e) {
-      $(e.target)
-        .children(".pullDown")
-        .addClass("dropDownActive");
-      $(e.target)
-        .parent("li")
-        .siblings()
-        .children("a")
-        .children(".pullDown")
-        .removeClass("dropDownActive");
+    showDropDown(index) {
+      let child = this.navData[index].child;
+      if (child) {
+        child.show = true;
+      }
     },
-    hide(e) {
-      /*  $(e.target)
-        .parents("li")
-        .children("a")
-        .children(".pullDown")
-        .removeClass("dropDownActive"); */
-      $(e.target).removeClass("dropDownActive");
+    hiddenDropDown(index) {
+      let child = this.navData[index].child;
+      if (child) {
+        child.show = false;
+      }
+    },
+    changeChildColor(index) {
+      this.item_child_SelectIndex = index;
+    },
+    recoverChildColor() {
+      this.item_child_SelectIndex = -1;
+    },
+    changeColor(index) {
+      this.item_SelectIndex = index;
+    },
+    recoverColor() {
+      this.item_SelectIndex = -1;
     }
   }
 };
 </script>
 <style>
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.pullDownSpecial {
+  width: 600px !important;
+  flex-flow: wrap !important;
+  flex-direction: row !important;
+  text-align: left;
+}
+.pullDownSpecial a {
+  display: inline-block;
+  width: 30% !important;
+}
+.item_child_select {
+  color: #6aa3ea !important;
+}
+.item_select {
+  color: #6aa3ea !important;
+  border-bottom: 2px solid white !important;
+}
 .headerspace {
+  width: 100%;
   height: 64px;
+  position: fixed;
+  z-index: 2;
 }
 .navigation {
   height: 64px;
   line-height: 64px;
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
-  background: #1a1c24;
+  /*  background: #282d3a; */
+  background: transparent;
+}
+.minNavigation {
+  background: #282d3a;
 }
 .navigationContent {
   width: 60%;
@@ -248,20 +256,17 @@ export default {
   position: relative;
 }
 .navigationContentMiddle li .pullDown {
+  width: 100%;
   position: absolute;
   padding: 0 10px;
   top: 66px;
   left: 0;
   z-index: 2;
-  background: #fff;
-  color: #333;
-  box-shadow: 0 0 4px #999;
+  background-color: #272b2e;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
   text-align: center;
 }
 .navigationContentMiddle li .pullDown .el-row {
@@ -275,6 +280,9 @@ export default {
 }
 .navigationContentMiddle li .pullDown a {
   font-size: 13px;
+  margin-right: 5px;
+  width: 100%;
+  color: white;
 }
 .navigationContentMiddle li .dropDownActive {
   max-height: 456px;
@@ -293,13 +301,14 @@ export default {
 .navigationContentMiddle .select {
   border-bottom: 2px solid white;
 }
-.navigationContentMiddle li a {
+.navigationContentMiddle li > a {
   color: inherit;
   font-size: 16px;
   box-sizing: border-box;
   width: 100%;
   position: relative;
   border-bottom: 2px solid transparent;
+  font-family: "黑体";
 }
 .navigationContentRight a {
   color: white;
@@ -307,6 +316,7 @@ export default {
   padding: 10px 15px;
   border: 1px solid white;
   border-radius: 5px;
+  font-family: "黑体";
 }
 .navigationContentRight {
   margin-left: 20px;

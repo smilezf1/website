@@ -17,13 +17,16 @@
         <h3>安全产品</h3>
         <div class="container">
           <ul v-for="(item, index) in securityProductList" :key="index">
+            <!--     <div class="decorate"></div> -->
+            <img src="../assets/icon.png" class="decorate" />
             <li>
-              <i class="el-icon-mobile-phone" style="font-size:50px"></i
-              ><span>{{ item[0].name }}</span>
+              <span>{{ item[0].name }}</span>
             </li>
             <li v-for="(item, index) in item" :key="index">
-              <router-link class="left" to="/">{{ item.name }}</router-link>
-              <router-link class="right" to="/">查看详情>></router-link>
+              <router-link class="left" to="/" title="点击查看详情">{{
+                item.name
+              }}</router-link>
+              <!-- <router-link class="right" to="/">查看详情>></router-link> -->
             </li>
           </ul>
         </div>
@@ -148,9 +151,9 @@ export default {
 }
 .securiptProductTop {
   margin-top: 10px;
-  padding: 10px 20px;
+  padding: 20px;
   font-size: 16px;
-  background: #f8f8f8;
+  background: #f5f5f5;
   color: #7c7c7c;
   font-weight: 600;
 }
@@ -160,20 +163,27 @@ export default {
 .securiptProductContainer h3,
 .solution h3,
 .honor h3 {
-  font-size: 25px;
-  color: #333;
+  font-size: 34px;
+  color: #2b2b2b;
   text-align: center;
   margin: 20px 0;
   font-weight: 500;
 }
 .securiptProductContainer {
-  margin-top: 30px;
+  background: url("../assets/section-bg.jpg");
+  padding: 20px 0;
+}
+.securiptProductContainer h3 {
+  color: white;
 }
 .securiptProductContainer .container {
-  padding: 5px 20px;
+  padding: 20px;
   margin: 20px;
   display: flex;
   justify-content: space-around;
+}
+.securiptProductContainer .container a {
+  font-size: 18px;
 }
 .honor .container img {
   width: 220px;
@@ -181,8 +191,14 @@ export default {
 .securiptProductContainer ul {
   width: 400px;
   padding: 20px;
-  box-shadow: 0px 0px 10px #00000030;
+  /* box-shadow: 0px 0px 10px #00000030; */
   box-sizing: border-box;
+  border-radius: 10px;
+  background: white;
+}
+.securiptProductContainer ul .decorate {
+  display: block;
+  margin: 0 auto;
 }
 .securiptProductContainer ul li {
   margin: 30px 0;
@@ -191,8 +207,13 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.securiptProductContainer ul li .left {
-  margin-right: 30px;
+.securiptProductContainer ul li > span {
+  color: #2b2b2b;
+  font-weight: 700;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 22px;
+  margin: 0 auto;
 }
 .securiptProductContainer ul li:not(:first-child) {
   display: flex;
@@ -201,6 +222,9 @@ export default {
 .el-icon-mobile-phone {
   color: rgb(78, 186, 212);
   margin-right: 5px;
+}
+.securiptProductContainer a {
+  margin: 0 auto;
 }
 /* 解决方案 */
 .solution {

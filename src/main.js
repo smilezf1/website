@@ -10,7 +10,6 @@ import 'element-ui/lib/theme-chalk/index.css' //引用elementUI中的样式
 Vue.config.productionTip = false
 import 'lib-flexible/flexible'
 import $ from 'jquery'
-import animate from 'animate.css'
 import BaiduMap from 'vue-baidu-map' //引用百度地图组件
 /* eslint-disable no-new */
 Vue.use(VueAwesomeSwiper, router);

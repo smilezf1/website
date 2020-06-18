@@ -23,7 +23,7 @@ export default {
 }
 .percolationTestBannerContent {
   position: absolute;
-  top: 20px;
+  top: 85px;
   left: 40px;
   color: white;
 }
@@ -39,11 +39,14 @@ export default {
 }
 /* 服务介绍 */
 .serviceIntroduce {
-  margin: 20px 0;
+  margin: 30px 0;
+}
+.businessScope {
+  margin: 30px 0;
 }
 .serviceIntroduce h3,
 .businessScope h3 {
-  font-size: 26px;
+  font-size: 34px;
   color: #333;
   text-align: center;
   margin-bottom: 20px;
@@ -51,7 +54,7 @@ export default {
 }
 .serviceIntroduce p {
   color: #666;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   margin-top: 10px;
   text-indent: 2em;
@@ -77,8 +80,8 @@ export default {
   text-align: center;
 }
 .businessScopeContentContainer span {
-  color: #666;
-  font-size: 15px;
+  color: #2b2b2b;
+  font-size: 16px;
   text-align: left;
   line-height: 40px;
 }

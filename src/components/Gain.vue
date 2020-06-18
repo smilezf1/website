@@ -3,7 +3,7 @@
     <HeaderSpace></HeaderSpace>
     <!-- 图片 -->
     <div class="banner">
-      <img src="../assets/connect.png" />
+      <img src="../assets/develop.jpg" />
     </div>
     <!-- 立即联系 -->
     <div class="immediately">
@@ -156,13 +156,14 @@ export default {
   text-align: c;
 }
 .immediately {
+  /* 高度测试 */
+  height: 700px;
   margin: 10px 20px;
 }
 .immediately h2 {
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 400;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   text-align: center;
 }
 .immediately .el-button--primary {

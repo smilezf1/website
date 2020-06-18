@@ -26,7 +26,7 @@ export default {
 .companyProfileTitle,
 .enterpriseConceptTtitle {
   text-align: center;
-  font-size: 24px;
+  font-size: 34px;
   margin-top: 10px;
   font-weight: normal;
 }
@@ -37,7 +37,7 @@ export default {
   text-align: justify;
 }
 .companyProfileContent p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 40px;
 }
 .enterpriseConcept {

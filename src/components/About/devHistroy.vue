@@ -120,7 +120,7 @@ export default {
 </script>
 <style>
 .developmentHistoryTitle {
-  font-size: 24px;
+  font-size: 34px;
   margin: 20px 0 40px 0;
   text-align: center;
   font-weight:normal;

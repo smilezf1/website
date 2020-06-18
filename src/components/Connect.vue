@@ -2,7 +2,7 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/connect.png" />
+      <img src="../assets/develop.jpg" />
     </div>
     <!-- 联系地址 -->
     <div class="connectAddress">
@@ -27,9 +27,11 @@
           @draw="draw"
         >
           <div class="info">
-            <span class="address"
-              >上海市松江区沈砖公路5555号韵博智谷8709-8711</span
-            >
+            <p class="companyName">上海蛮犀科技有限公司</p>
+            <p class="phone">电话:021-57677921</p>
+            <p class="address">
+              地址:上海市松江区沈砖公路5555号韵博智谷8709-8711
+            </p>
             <span class="triangle"></span>
           </div>
         </bm-overlay>
@@ -62,8 +64,8 @@ export default {
       const pixel = map.pointToOverlayPixel(
         new BMap.Point(121.258716, 31.097119)
       );
-      el.style.left = pixel.x - 155 + "px";
-      el.style.top = pixel.y - 95 + "px";
+      el.style.left = pixel.x - 170 + "px";
+      el.style.top = pixel.y - 180 + "px";
     }
   }
 };
@@ -71,6 +73,11 @@ export default {
 <style>
 .banner img {
   width: 100%;
+  height:400px;
+}
+/* test */
+.connectAddress{
+  height:700px;
 }
 .connectAddress,
 .cooperation {
@@ -78,39 +85,47 @@ export default {
   margin: 20px;
   text-align: center;
 }
+.connectAddress > p {
+  margin: 20px 0;
+}
 .connectAddress p,
 .cooperation p {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  font-size:22px;
+  font-size:34px;
 }
 .cooperation span {
   display: block;
   font-size: 11px;
   margin-bottom: 10px;
 }
-.connectAddress .address {
-  font-size: 13px;
+.info {
+  padding: 0 10px;
+}
+.info .address {
   margin-bottom: 10px;
 }
+.info .address,
+.info .companyName,
+.info .phone {
+  font-size: 13px;
+}
 #map {
-  width: 50%;
+  width: 40%;
   height: 400px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .sample {
-  width:300px;
-  height: 40px;
+  width: 320px;
   line-height: 40px;
-  background: rgba(255, 255, 255, 0.7);
+  background: white;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
   font-size: 10px;
   color: #333;
   position: absolute;
+  box-sizing: border-box;
 }
 .info {
   position: relative;
+  border: 1px solid #ababab;
 }
 .info .address {
   font-size: 10px;
@@ -119,11 +134,11 @@ export default {
   display: inline-block;
   width: 0;
   height: 0;
-  border: 5px solid transparent;
-  border-top: 5px solid white;
+  border: 10px solid transparent;
+  border-top: 10px solid white;
   position: absolute;
   top: 100%;
   left: 50%;
-  box-shadow:0 0 1px rgba(0, 0, 0,0.1);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="Banner">
     <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide class="bg1"
-        ><img src="../assets/banner1.gif"
+        ><img src="../assets/banner1.png"
       /></swiper-slide>
       <swiper-slide class="bg2"
         ><img src="../assets/banner2.png"
@@ -48,12 +48,19 @@ export default {
 };
 </script>
 <style>
-.Banner,
-.Banner .align-content a {
-  color: white;
+@keyframes slidein {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(0.5);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 .Banner .swiper-slide {
-  height:663px;
+  height: 663px;
 }
 /* bg1 {
   background: linear-gradient(to right, #211b54, #1c207a);
@@ -68,18 +75,20 @@ export default {
   background: linear-gradient(#012d48, #01081b);
 } */
 .Banner img {
-  width:100%;
+  width: 100%;
 }
 .swiper-pagination-bullet {
-  background: #fff;
+  /*  background: #fff; */
+ /*  animation: 3s linear 1s slidein; */
 }
 .swiper-pagination-bullet {
-  width: 50px;
-  height: 4.5px;
-  background-color: rgba(190, 190, 190, 0.5);
+  width: 70px;
+  height: 4px;
+  background: rgba(190, 190, 190, 0.5);
   border-radius: 2px;
 }
 .swiper-pagination-bullet-active {
   background: #fff;
+  /* animation: 6s linear 1s slidein; */
 }
 </style>
