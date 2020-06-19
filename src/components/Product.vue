@@ -54,6 +54,13 @@ export default {
   border-radius: 3px;
   padding: 10px 15px;
   font-size: 16px;
+  background: transparent;
+  transition: background 1.5s ease;
+}
+.productBannerContent .getUseSelect {
+  background: #6aa3ea;
+  border: none;
+  transition: all 1.5s ease;
 }
 /* 产品介绍 */
 .productIntroduce {

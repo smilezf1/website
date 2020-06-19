@@ -51,7 +51,13 @@
           <!-- 导航右边 -->
           <ul class="navigationContentRight">
             <li>
-              <router-link to="/Gain">获取使用</router-link>
+              <router-link
+                to="/Gain"
+                :class="{ getUseSelect: getUseIndex == 1 }"
+                @mouseover.native="getUse()"
+                @mouseout.native="recovergetUse()"
+                >获取使用</router-link
+              >
             </li>
           </ul>
         </div>
@@ -66,7 +72,6 @@ export default {
   name: "headerSpace",
   data() {
     return {
-      theme1: "light",
       navData: [
         { id: 0, name: "首页", link: "/", child: null },
         {
@@ -133,7 +138,8 @@ export default {
       showIndex: "",
       item_child_SelectIndex: -1,
       item_SelectIndex: -1,
-      navigationBg: 0
+      navigationBg: 0,
+      getUseIndex: 0
     };
   },
   mounted() {
@@ -175,6 +181,12 @@ export default {
     },
     recoverColor() {
       this.item_SelectIndex = -1;
+    },
+    getUse() {
+      this.getUseIndex = 1;
+    },
+    recovergetUse() {
+      this.getUseIndex = 0;
     }
   }
 };
@@ -297,6 +309,7 @@ export default {
   display: inline-block;
   height: 100%;
   box-sizing: border-box;
+  transition: all 1s ease;
 }
 .navigationContentMiddle .select {
   border-bottom: 2px solid white;
@@ -317,6 +330,13 @@ export default {
   border: 1px solid white;
   border-radius: 5px;
   font-family: "黑体";
+  background: transparent;
+  transition: background 1.5s ease;
+}
+.navigationContentRight .getUseSelect {
+  background: #6aa3ea;
+  border: none;
+  transition: all 1.5s ease;
 }
 .navigationContentRight {
   margin-left: 20px;

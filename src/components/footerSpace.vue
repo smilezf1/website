@@ -39,7 +39,7 @@ export default {
 .footerSpace {
   background: #2d2c2e;
   color: white;
-  padding: 30px;
+  padding: 5px 0;
 }
 .footerSpace .container {
   min-width: 600px;

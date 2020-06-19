@@ -76,13 +76,14 @@ export default {
 } */
 .Banner img {
   width: 100%;
+  height: 100%;
 }
 .swiper-pagination-bullet {
   /*  background: #fff; */
- /*  animation: 3s linear 1s slidein; */
+  /*  animation: 3s linear 1s slidein; */
 }
 .swiper-pagination-bullet {
-  width: 70px;
+  width: 80px;
   height: 4px;
   background: rgba(190, 190, 190, 0.5);
   border-radius: 2px;
@@ -90,5 +91,8 @@ export default {
 .swiper-pagination-bullet-active {
   background: #fff;
   /* animation: 6s linear 1s slidein; */
+}
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 40px;
 }
 </style>

@@ -9,7 +9,12 @@
             蛮犀科技吸取同类产品相关优势并结合市场监管需求,采用静态代码、资源、数据扫描检测、运行时数据挖掘，
             运行是内容检测等技术,依据网络安全等级保护要求、中国金融移动支付客户端技术规范、移动互联网应用软件安全评估大纲等评估要求研制的移动应用安全评测平台
           </article>
-          <router-link to="/Gains" class="productBannerUse"
+          <router-link
+            to="/Gains"
+            class="productBannerUse"
+            :class="{ getUseSelect: getUseIndex == 1 }"
+            @mouseover.native="getUse()"
+            @mouseout.native="recovergetUse()"
             >立即获取使用</router-link
           >
         </div>
@@ -76,8 +81,17 @@ export default {
           content:
             "系统出具的评测报告中，针对每一项评测项都进行详细的描述其中对于评测过程更是详细到具体的操作过程，使阅读者可根据操作过程进行复现，排除针对，使评测系统透明公开，有理可籍。"
         }
-      ]
+      ],
+      getUseIndex: 0
     };
+  },
+  methods: {
+    getUse() {
+      this.getUseIndex = 1;
+    },
+    recovergetUse() {
+      this.getUseIndex = 0;
+    }
   }
 };
 </script>

@@ -7,7 +7,7 @@
     </div>
     <!-- 立即联系 -->
     <div class="immediately">
-      <h2>立即联系</h2>
+      <h2>联系我们</h2>
       <!-- 表单 -->
       <el-form
         :model="ruleForm"
@@ -161,15 +161,28 @@ export default {
   margin: 10px 20px;
 }
 .immediately h2 {
-  font-size: 34px;
-  font-weight: 400;
-  margin-bottom: 40px;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 40px 10px;
   text-align: center;
 }
 .immediately .el-button--primary {
   width: 100%;
+  background: #6aa3ea;
+  font-size: 16px;
+  padding: 15px 0;
 }
 .immediately .el-select {
   width: 100%;
+}
+.el-form-item__label {
+  font-size: 16px;
+  color: #2b2b2b;
+}
+.el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
+  color: #6aa3ea;
+}
+ .el-form-item__content {
+  margin-left: 140px !important;
 }
 </style>
