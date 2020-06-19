@@ -44,7 +44,7 @@ export default {
   margin: 30px 0;
 }
 .enterpriseConceptContent {
-  width: 60%;
+  width: 80%;
   margin: 20px auto;
   display: flex;
   justify-content: space-around;

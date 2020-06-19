@@ -91,7 +91,7 @@ export default {
               { content: "移动应用加固系统", src: "/Product/Reinforce" },
               { content: "移动应用源码加固编译器", src: "/Product/Code" },
               { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" },
-              { content: "移动应用安全业务", src: "/Product/safetyService" },
+              { content: "移动应用安全业务", src: "/Product/Insurance" },
               { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" },
               {
                 content: "移动应用环境自查插件",
@@ -152,7 +152,7 @@ export default {
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       this.i = scrollTop;
-      if (scrollTop >= 620) {
+      if (scrollTop >=40) {
         this.navigationBg = 1;
       } else {
         this.navigationBg = 0;
@@ -232,11 +232,12 @@ export default {
   width: 100%;
   top: 0;
   left: 0;
-  /*  background: #282d3a; */
   background: transparent;
+  transition: background 0.3s ease;
 }
 .minNavigation {
-  background: #282d3a;
+  background: #1a1c24;
+  transition: background 0.3s ease;
 }
 .navigationContent {
   width: 60%;

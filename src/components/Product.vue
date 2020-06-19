@@ -15,8 +15,7 @@ export default {
   components: { headerSpace, footerSpace },
   data() {
     return {};
-  },
-  methods: {}
+  }
 };
 </script>
 <style>

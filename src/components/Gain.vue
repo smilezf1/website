@@ -148,7 +148,7 @@ export default {
   width: 100%;
 }
 .menu {
-  width: 20%;
+  width: 25%;
   margin: 0 auto;
   text-align: center;
 }
@@ -161,7 +161,7 @@ export default {
   margin: 10px 20px;
 }
 .immediately h2 {
-  font-size: 42px;
+  font-size: 36px;
   font-weight: 700;
   margin: 40px 10px;
   text-align: center;
@@ -182,7 +182,7 @@ export default {
 .el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
   color: #6aa3ea;
 }
- .el-form-item__content {
+.el-form-item__content {
   margin-left: 140px !important;
 }
 </style>

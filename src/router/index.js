@@ -19,7 +19,7 @@ import SelfInspection from '@/components/product/SelfInspection.vue'
 import Gain from '@/components/Gain.vue'
 import safetyEvaluation from '@/components/product/safetyEvaluation.vue'
 import safetyProtection from '@/components/product/safetyProtection.vue'
-import safetyService from '@/components/product/safetyService.vue'
+import Insurance from '@/components/product/Insurance.vue'
 //About文件下的组件
 import companyIntroduce from '@/components/About/companyIntroduce.vue';
 import devHistroy from '@/components/About/devHistroy.vue';
@@ -76,7 +76,7 @@ export default new Router({
       component: safetyEvaluation
     },
     { path: "safetyProtection", component: safetyProtection },
-    { path: "safetyService", component: safetyService }
+    { path: "Insurance", component:Insurance }
     ]
   },
   {

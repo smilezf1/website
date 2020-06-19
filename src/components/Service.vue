@@ -53,7 +53,7 @@ export default {
   font-weight: normal;
 }
 .serviceIntroduce p {
-  color: #666;
+  color: #2b2b2b;
   font-size: 18px;
   letter-spacing: 1px;
   margin-top: 10px;

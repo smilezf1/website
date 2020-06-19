@@ -126,7 +126,7 @@ export default {
   font-weight:normal;
 }
 .history {
-  width: 13%;
+  width: 16%;
   margin: 0 auto;
 }
 .historyTitle {

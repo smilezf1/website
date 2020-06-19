@@ -1,5 +1,5 @@
 <template>
-  <div class="safetyService">
+  <div class="Insurance">
     <!--  移动应用安全业务 -->
     <div class="productContent">
       <div class="productBanner">
@@ -49,7 +49,7 @@
 </template>
 <script>
 export default {
-  name: "safety service",
+  name: "Insurance",
   data() {
     return {
       traitList: [

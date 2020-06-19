@@ -2,11 +2,11 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/develop.jpg" />
+      <img src="../assets/connect.jpg" style="height:500px" />
     </div>
     <!-- 联系地址 -->
     <div class="connectAddress">
-      <p>公司地址</p>
+      <p class="title">公司地址</p>
       <baidu-map
         :center="center"
         :zoom="25"
@@ -27,10 +27,8 @@
           @draw="draw"
         >
           <div class="info">
-            <p class="companyName">上海蛮犀科技有限公司</p>
-            <p class="phone">电话:021-57677921</p>
             <p class="address">
-              地址:上海市松江区沈砖公路5555号韵博智谷8709-8711
+              上海市松江区沈砖公路5555号韵博智谷8709-8711
             </p>
             <span class="triangle"></span>
           </div>
@@ -65,7 +63,7 @@ export default {
         new BMap.Point(121.258716, 31.097119)
       );
       el.style.left = pixel.x - 170 + "px";
-      el.style.top = pixel.y - 180 + "px";
+      el.style.top = pixel.y - 100 + "px";
     }
   }
 };
@@ -73,11 +71,11 @@ export default {
 <style>
 .banner img {
   width: 100%;
-  height:400px;
+  height: 400px;
 }
 /* test */
-.connectAddress{
-  height:700px;
+.connectAddress {
+  height: 700px;
 }
 .connectAddress,
 .cooperation {
@@ -88,9 +86,17 @@ export default {
 .connectAddress > p {
   margin: 20px 0;
 }
-.connectAddress p,
-.cooperation p {
-  font-size:34px;
+.companyDetails {
+  width: 40%;
+  margin: 0 auto;
+}
+.companyDetails p {
+  text-align: left;
+  margin: 10px 0;
+}
+.connectAddress .title,
+.cooperation .title {
+  font-size: 34px;
 }
 .cooperation span {
   display: block;
@@ -111,7 +117,7 @@ export default {
 #map {
   width: 40%;
   height: 400px;
-  margin: 30px auto;
+  margin: 130px auto;
 }
 .sample {
   width: 320px;
@@ -125,10 +131,11 @@ export default {
 }
 .info {
   position: relative;
-  border: 1px solid #ababab;
+  /* border: 1px solid #ababab; */
+  box-shadow: 0 0 10px #0000003b;
 }
 .info .address {
-  font-size: 10px;
+  font-size: 13px;
 }
 .info .triangle {
   display: inline-block;
