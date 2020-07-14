@@ -2,7 +2,7 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/connect.jpg" style="height:500px" />
+      <img src="../assets/connect.png"/>
     </div>
     <!-- 联系地址 -->
     <div class="connectAddress">
@@ -40,8 +40,8 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/headerSpace.vue";
-import footerSpace from "@/components/footerSpace.vue";
+import headerSpace from "@/components/common/Headerspace.vue";
+import footerSpace from "@/components/common/footerSpace.vue";
 export default {
   name: "Connect",
   components: { headerSpace, footerSpace },
@@ -71,7 +71,6 @@ export default {
 <style>
 .banner img {
   width: 100%;
-  height: 400px;
 }
 /* test */
 .connectAddress {

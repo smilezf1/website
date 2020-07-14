@@ -2,13 +2,13 @@
   <div class="Banner">
     <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide class="bg1"
-        ><img src="../assets/banner1.png"
+        ><img src="../assets/slideshow1.png"
       /></swiper-slide>
       <swiper-slide class="bg2"
-        ><img src="../assets/banner2.png"
+        ><img src="../assets/slideshow2.png"
       /></swiper-slide>
       <swiper-slide class="bg3"
-        ><img src="../assets/banner3.gif"
+        ><img src="../assets/slideshow3.png"
       /></swiper-slide>
       <swiper-slide class="bg4"
         ><img src="../assets/banner4.png"
@@ -79,20 +79,16 @@ export default {
   height: 100%;
 }
 .swiper-pagination-bullet {
-  /*  background: #fff; */
-  /*  animation: 3s linear 1s slidein; */
-}
-.swiper-pagination-bullet {
-  width: 80px;
-  height: 4px;
-  background: rgba(190, 190, 190, 0.5);
-  border-radius: 2px;
+  width: 80px !important;
+  height: 4px !important ;
+  background: rgba(190, 190, 190, 0.5) !important;
+  border-radius: 2px !important;
 }
 .swiper-pagination-bullet-active {
-  background: #fff;
+  background: #fff !important;
   /* animation: 6s linear 1s slidein; */
 }
 .swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: 40px;
+  bottom: 40px !important;
 }
 </style>

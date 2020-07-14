@@ -19,7 +19,7 @@
         <ul class="enterpriseConceptContent">
           <li v-for="item in navItem" :key="item.id">
             <div class="enterpriseConceptContentTop">
-              <img src="../../assets/icon.png" />
+              <img :src="item.imgSrc" />
               <span>{{ item.title }}</span>
             </div>
             <div class="enterpriseConceptContentBottom">
@@ -49,11 +49,27 @@ export default {
         }
       ],
       navItem: [
-        { id: 1, title: "愿景", content: "全球移动应用安全引领者" },
-        { id: 2, title: "使命", content: "保证移动智能生活信息安全" },
-        { id: 3, title: "服务观", content: "客户至上" },
+        {
+          id: 1,
+          imgSrc: require("../../assets/icon.png"),
+          title: "愿景",
+          content: "全球移动应用安全引领者"
+        },
+        {
+          id: 2,
+          imgSrc: require("../../assets/icon1.png"),
+          title: "使命",
+          content: "保证移动智能生活信息安全"
+        },
+        {
+          id: 3,
+          imgSrc: require("../../assets/icon2.png"),
+          title: "服务观",
+          content: "客户至上"
+        },
         {
           id: 4,
+          imgSrc: require("../../assets/icon4.png"),
           title: "价值观",
           content: "服务、细致、协同、承担、自信、务实"
         }
@@ -71,7 +87,7 @@ export default {
   text-align: center;
 }
 .enterpriseConcept {
-  background: url("../../assets/section-bg.jpg") center center;
+  background: url("../../assets/section-bg.jpg") center;
   padding: 70px 0;
 }
 .enterpriseConceptTtitle {

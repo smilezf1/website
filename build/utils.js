@@ -18,8 +18,9 @@ exports.cssLoaders = function (options) {
   const cssLoader = {
     loader: 'css-loader',
     options: {
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
     }
+
   }
 
   const postcssLoader = {
@@ -52,6 +53,7 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
+        publicPath:"../../",
         fallback: 'vue-style-loader'
       })
     } else {

@@ -6,8 +6,8 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/headerSpace";
-import FooterSpace from "@/components/FooterSpace";
+import headerSpace from "@/components/common/Headerspace.vue";
+import FooterSpace from "@/components/common/FooterSpace";
 export default {
   name: "Service",
   components: { headerSpace, FooterSpace }

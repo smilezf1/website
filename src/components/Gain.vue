@@ -17,7 +17,11 @@
         class="menu"
       >
         <!-- 公司名称 联系人 联系邮箱 联系电话 所在地 所属行业 -->
-        <el-form-item label="公司名称" prop="name">
+        <el-form-item
+          label="公司名称"
+          prop="name"
+          :label-position="labelPosition"
+        >
           <el-input v-model="ruleForm.name"></el-input>
         </el-form-item>
         <el-form-item label="联系人" prop="contacts">
@@ -29,20 +33,15 @@
         <el-form-item label="联系电话" prop="phone">
           <el-input v-model="ruleForm.phone"></el-input>
         </el-form-item>
-        <el-form-item label="所在地" prop="address">
-          <el-select v-model="ruleForm.address" placeholder="请选择地址">
-            <el-option
-              v-for="item in cities"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
-              <span style="float:left">{{ item.label }}</span>
-              <span style="float:right;color: #8492a6; font-size: 13px">{{
-                item.value
-              }}</span>
-            </el-option>
-          </el-select>
+        <el-form-item label="所在地" prop="selectedOptions">
+          <el-cascader
+            size="large"
+            :options="options"
+            v-model="ruleForm.selectedOptions"
+            @change="handleChange"
+            style="width:100%"
+            placeholder="请选择地址"
+          ></el-cascader>
         </el-form-item>
         <el-form-item label="所属行业" prop="industry">
           <el-input v-model="ruleForm.industry"></el-input>
@@ -59,8 +58,17 @@
   </div>
 </template>
 <script>
-import HeaderSpace from "@/components/HeaderSpace";
-import FooterSpace from "@/components/FooterSpace";
+import HeaderSpace from "@/components/common/Headerspace.vue";
+import FooterSpace from "@/components/common/FooterSpace";
+import {
+  provinceAndCityData,
+  regionData,
+  provinceAndCityDataPlus,
+  regionDataPlus,
+  CodeToText,
+  TextToCode
+} from "element-china-area-data";
+
 export default {
   name: "gain",
   components: { HeaderSpace, FooterSpace },
@@ -71,8 +79,8 @@ export default {
         contacts: "",
         email: "",
         phone: "",
-        address: "",
-        industry: ""
+        industry: "",
+        selectedOptions: ""
       },
       rules: {
         name: [{ required: true, message: "请输入公司名称", trigger: "blur" }],
@@ -95,38 +103,17 @@ export default {
             trigger: ["blur", "change"]
           }
         ],
-        address: [{ required: true, message: "请输入所在地", trigger: "blur" }],
+        selectedOptions: [
+          { required: true, message: "请输入所在地", trigger: "blur" }
+        ],
         industry: [
           { required: true, message: "请选择所属行业", trigger: "blur" }
         ]
       },
-      cities: [
-        {
-          value: "Beijing",
-          label: "北京"
-        },
-        {
-          value: "Shanghai",
-          label: "上海"
-        },
-        {
-          value: "Nanjing",
-          label: "南京"
-        },
-        {
-          value: "Chengdu",
-          label: "成都"
-        },
-        {
-          value: "Shenzhen",
-          label: "深圳"
-        },
-        {
-          value: "Guangzhou",
-          label: "广州"
-        }
-      ],
-      value: ""
+      options: regionData,
+      selectedOptions: [],
+      value: "",
+      labelPosition: "left"
     };
   },
   methods: {
@@ -135,10 +122,14 @@ export default {
         if (valid) {
           this.$message({ message: "提交成功!", type: "success" });
           this.$refs[formName].resetFields();
+          this.selectedOptions = "";
         } else {
           return false;
         }
       });
+    },
+    handleChange(value) {
+      console.log(value);
     }
   }
 };
@@ -148,9 +139,13 @@ export default {
   width: 100%;
 }
 .menu {
-  width: 25%;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
+}
+.menu .el-form-item {
+  width: 60%;
+  margin: 20px auto;
 }
 .menu .submit {
   text-align: c;
@@ -179,10 +174,10 @@ export default {
   font-size: 16px;
   color: #2b2b2b;
 }
-.el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
-  color: #6aa3ea;
-}
 .el-form-item__content {
   margin-left: 140px !important;
+}
+.el-form-item__label {
+  text-align: left;
 }
 </style>

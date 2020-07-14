@@ -3,37 +3,36 @@
     <!-- 安全产品 -->
     <div class="securityProduct">
       <div class="securiptProductTop">
-        <div class="securipTproductTopLeft">
-          <span
-            >蛮犀资讯
-            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;《工业和信息化部337号令》解读</span
-          >
-        </div>
-        <div class="securipTproductTopRight">
-          <router-link class="more" to="/">更多>></router-link>
+        <div class="securiptProductTopContent">
+          <div class="securipTproductTopLeft">
+            <div class="newsItem">
+               蛮犀资讯 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+              <transition class="newsItemContent" name="slide" mode="out-in">
+                <p :key="text.id">
+                  {{ text.val }}
+                </p>
+              </transition>
+            </div>
+          </div>
+          <div class="securipTproductTopRight">
+            <router-link class="more" to="/">更多>></router-link>
+          </div>
         </div>
       </div>
       <div class="securiptProductContainer">
         <h3>安全产品</h3>
         <div class="container">
           <ul v-for="(item, index) in securityProductList" :key="index">
-            <!--     <div class="decorate"></div> -->
-            <img src="../assets/icon.png" class="decorate" />
-            <li>
-              <span>{{ item[0].name }}</span>
-            </li>
-            <li v-for="(item, index) in item" :key="index">
-              <router-link class="left" to="/" title="点击查看详情">{{
-                item.name
-              }}</router-link>
-              <!-- <router-link class="right" to="/">查看详情>></router-link> -->
+            <img :src="item.imgSrc" class="decorate" />
+            <li v-for="(item, index) in item.subs" :key="index">
+              <span>{{ item.name }}</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <!-- 解决方案 -->
-    <div class="solution">
+    <!--  <div class="solution">
       <h3>解决方案</h3>
       <div class="container">
         <ul>
@@ -43,13 +42,13 @@
               @mouseover="zoom($event)"
               @mouseout="recover($event)"
             /><span>{{ item.name }}</span>
-          </li>
+          </li
         </ul>
       </div>
-    </div>
+    </div> -->
     <!-- 荣誉资质 -->
     <div class="honor">
-      <h3>荣誉资质</h3>
+      <h3>合作伙伴</h3>
       <div class="container">
         <ul>
           <el-row>
@@ -76,6 +75,23 @@
         </ul>
       </div>
     </div>
+    <!-- 宣传 -->
+    <div class="publicity">
+      <div class="publicityContent">
+        <div class="publicityContentColumn">
+          <h3 class="publicityContentColumnNumber">100%</h3>
+          <p>覆盖企业移动化生命周期</p>
+        </div>
+        <div class="publicityContentColumn">
+          <h3 class="publicityContentColumnNumber">10万+</h3>
+          <p>管理移动设备</p>
+        </div>
+        <div class="publicityContentColumn">
+          <h3 class="publicityContentColumnNumber">2000+</h3>
+          <p>服务的客户</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -85,43 +101,70 @@ export default {
   data() {
     return {
       securityProductList: [
-        [
-          { id: 0, name: "移动应用安全评测" },
-          { id: 1, name: "移动应用漏洞评测" },
-          { id: 2, name: "移动应用合规评测" },
-          { id: 3, name: "移动应用个人信息安全评测" },
-          { id: 4, name: "移动应用持续监督" }
-        ],
-        [
-          { id: 0, name: "移动应用安全防护" },
-          { id: 1, name: "应用程序安全加固" },
-          {
-            id: 2,
-            name: "应用代码源保护"
-          },
-          {
-            id: 3,
-            name: "应用数据资源保护"
-          },
-          {
-            id: 4,
-            name: "用户交互信息保护"
-          }
-        ],
-        [
-          { id: 0, name: "移动应用安全业务" },
-          { id: 1, name: "通信数据保护" },
-          { id: 2, name: "程序密钥保护" },
-          { id: 3, name: "业务落地数据保护" },
-          { id: 4, name: "设备环境自查" }
-        ]
+        {
+          imgSrc: require("../assets/icon.png"),
+          subs: [
+            { id: 0, name: "移动应用安全评测" },
+            { id: 1, name: "移动应用漏洞评测" },
+            { id: 2, name: "移动应用合规评测" },
+            { id: 3, name: "移动应用个人信息安全评测" },
+            { id: 4, name: "移动应用持续监督" }
+          ]
+        },
+        {
+          imgSrc: require("../assets/icon1.png"),
+          subs: [
+            { id: 0, name: "移动应用安全防护" },
+            { id: 1, name: "应用程序安全加固" },
+            {
+              id: 2,
+              name: "应用代码源保护"
+            },
+            {
+              id: 3,
+              name: "应用数据资源保护"
+            },
+            {
+              id: 4,
+              name: "用户交互信息保护"
+            }
+          ]
+        },
+        {
+          imgSrc: require("../assets/icon2.png"),
+          subs: [
+            { id: 0, name: "移动应用安全业务" },
+            { id: 1, name: "通信数据保护" },
+            { id: 2, name: "程序密钥保护" },
+            { id: 3, name: "业务落地数据保护" },
+            { id: 4, name: "设备环境自查" }
+          ]
+        }
       ],
       solutionList: [
         { id: 1, name: "金融", imgSrc: require("../assets/solution1.jpg") },
         { id: 2, name: "政府", imgSrc: require("../assets/solution2.jpg") },
         { id: 3, name: "企业", imgSrc: require("../assets/solution2.jpg") }
-      ]
+      ],
+      newsList: [
+        "《工业和信息化部337号令》解读1",
+        "《工业和信息化部337号令》解读2",
+        "《工业和信息化部337号令》解读3",
+        "《工业和信息化部337号令》解读1"
+      ],
+      number: 0
     };
+  },
+  computed: {
+    text() {
+      return {
+        id: this.number,
+        val: this.newsList[this.number]
+      };
+    }
+  },
+  mounted() {
+    this.startMove();
   },
   methods: {
     zoom(e) {
@@ -129,10 +172,17 @@ export default {
     },
     recover(e) {
       $(e.target).css({ width: "" });
+    },
+    startMove() {
+      let timer = setTimeout(() => {
+        if (this.number === 3) {
+          this.number = 0;
+        } else {
+          this.number += 1;
+        }
+        this.startMove();
+      }, 3000);
     }
-  },
-  mounted() {
-    console.log(this.securityProductList);
   }
 };
 </script>
@@ -150,12 +200,39 @@ export default {
   clear: both;
 }
 .securiptProductTop {
-  margin-top: 10px;
-  padding: 20px;
-  font-size: 16px;
-  background: #f5f5f5;
-  color: #7c7c7c;
+  width: 100%;
+  background: #6aa3ea;
+  color: white;
   font-weight: 600;
+  padding: 25px 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+.newsItem {
+  width: 350px;
+  height: 100%;
+  overflow: hidden;
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s linear;
+}
+.slide-leave-to {
+  transform: translateY(-20px);
+}
+.slide-enter {
+  transform: translateY(20px);
+}
+.securiptProductTopContent {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.securiptProductTopContent:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .securipTproductTopRight .more {
   color: inherit;
@@ -170,17 +247,18 @@ export default {
   font-weight: 500;
 }
 .securiptProductContainer {
-  background: url("../assets/section-bg.jpg");
+  background: url("../assets/section-bg.jpg") center;
   padding: 20px 0;
 }
 .securiptProductContainer h3 {
   color: white;
 }
 .securiptProductContainer .container {
-  padding: 20px;
-  margin: 20px;
+  width: 1200px;
+  padding: 20px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 .securiptProductContainer .container a {
   font-size: 18px;
@@ -189,7 +267,7 @@ export default {
   width: 220px;
 }
 .securiptProductContainer ul {
-  width: 400px;
+  width: 320px;
   padding: 20px;
   /* box-shadow: 0px 0px 10px #00000030; */
   box-sizing: border-box;
@@ -209,7 +287,6 @@ export default {
 }
 .securiptProductContainer ul li > span {
   color: #2b2b2b;
-  font-weight: 700;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   font-size: 22px;
@@ -265,5 +342,36 @@ export default {
 }
 .honor img {
   margin-right: 5px;
+}
+/* 宣传 */
+.publicity {
+  height: 300px;
+  background-image: url("../assets/data_bg.svg");
+  background-size: cover;
+  background-position: bottom center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.publicityContent {
+  width: 1200px;
+  border: 1px solid white;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.publicityContentColumnNumber {
+  font-size: 48px;
+  font-weight: 500;
+}
+.publicityContentColumn {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.publicityContentColumn > p {
+  color: #00f0ff;
+  font-size: 16px;
+  margin-top: 10px;
 }
 </style>

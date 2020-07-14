@@ -23,8 +23,8 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/headerSpace";
-import Footerspace from "@/components/Footerspace";
+import headerSpace from "@/components/common/Headerspace.vue";
+import Footerspace from "@/components/common/Footerspace";
 export default {
   name: "Project",
   components: { headerSpace, Footerspace },
@@ -56,7 +56,7 @@ export default {
 }
 .function {
   height: 100%;
-  background: url("../assets/section-bg.jpg");
+  background: url("../assets/section-bg.jpg") center;
   padding: 40px 0;
   margin: 20px 0;
 }

@@ -26,7 +26,8 @@ import devHistroy from '@/components/About/devHistroy.vue';
 //Service文件夹下的组件
 import percolationTest from '@/components/Service/percolationTest.vue';
 import securityConsulting from '@/components/Service/securityConsulting.vue';
-import xx from '@/components/xx.vue'
+//测试
+import xx from '@/components/xx.vue';
 Vue.use(Router)
 export default new Router({
   routes: [{
@@ -76,7 +77,7 @@ export default new Router({
       component: safetyEvaluation
     },
     { path: "safetyProtection", component: safetyProtection },
-    { path: "Insurance", component:Insurance }
+    { path: "Insurance", component: Insurance }
     ]
   },
   {
@@ -121,10 +122,6 @@ export default new Router({
     path: "/Gain",
     name: "Gain",
     component: Gain
-  }, {
-    path: "/xx",
-    name: "xx",
-    component: xx
   },
   {
     path: "/devHistroy",

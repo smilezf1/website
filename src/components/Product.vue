@@ -8,8 +8,8 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/headerSpace";
-import footerSpace from "@/components/footerSpace";
+import headerSpace from "@/components/common/Headerspace.vue";
+import footerSpace from "@/components/common/footerSpace";
 export default {
   name: "Procuct",
   components: { headerSpace, footerSpace },

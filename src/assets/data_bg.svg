@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="230px" viewBox="0 0 1440 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="54.6661019%" y1="114.766374%" x2="54.6661019%" y2="-107.114295%" id="linearGradient-1">
+            <stop stop-color="#007DFF" offset="0%"></stop>
+            <stop stop-color="#00CCFF" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="1440" height="230"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0.615319293" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0.615319293" offset="0%"></stop>
+            <stop stop-color="#56A7F3" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-6" points="240 245 399.000007 210.122524 491.000007 230 620.999991 200 679.999991 227 773.999991 197 865.999991 227 978.999991 144 1049.99999 225 1133.99999 214 1224.99999 239"></polygon>
+        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="986.999991" height="103">
+            <rect x="239" y="143" width="986.999991" height="103" fill="white"></rect>
+            <use xlink:href="#path-6" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.000000, -3023.000000)" id="数据">
+            <g transform="translate(0.000000, 3023.000000)">
+                <g id="Group">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="BG" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <polygon id="波形图-前" fill="url(#linearGradient-4)" mask="url(#mask-3)" points="257.102766 264.404285 356.667296 216.480651 459.144804 230.80453 535.65309 223.90124 637.282972 213.326663 727.229902 227.183547 814.528853 201.638364 877.496809 216.480651 956.266951 169.162536 1035.05986 221.031846 1098.04649 201.638362 1180.21573 265.230366"></polygon>
+                    <g id="波形图-后" mask="url(#mask-3)">
+                        <use fill-opacity="0.370000005" fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+                        <use stroke-opacity="0.421365489" stroke="#FFFFFF" mask="url(#mask-7)" stroke-width="2" xlink:href="#path-6"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

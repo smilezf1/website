@@ -7,10 +7,10 @@
     </div>
 </template>
 <script>
-    import headerSpace from '@/components/headerSpace.vue'
+    import headerSpace from '@/components/common/Headerspace.vue'
     import Banner from '@/components/Banner.vue'
     import homePage from '@/components/homePage.vue'
-    import footerSpace from '@/components/Footerspace.vue'
+    import footerSpace from '@/components/common/Footerspace.vue'
     export default{
         name:"Index",
         components:{headerSpace,Banner,homePage,footerSpace}
