@@ -5,17 +5,29 @@
       <div class="securiptProductTop">
         <div class="securiptProductTopContent">
           <div class="securipTproductTopLeft">
+            <p class="newsTitle">
+              蛮犀资讯 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            </p>
             <div class="newsItem">
-               蛮犀资讯 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
               <transition class="newsItemContent" name="slide" mode="out-in">
                 <p :key="text.id">
-                  {{ text.val }}
+                  <router-link
+                    to="/Article"
+                    @mouseover.native="stopRoll()"
+                    @mouseout.native="beginRoll()"
+                    >{{ text.val }}</router-link
+                  >
                 </p>
               </transition>
             </div>
           </div>
-          <div class="securipTproductTopRight">
-            <router-link class="more" to="/">更多>></router-link>
+          <div class="securipTproductTopRight newsBtn">
+            <router-link to="/" @click.native="prev()"
+              ><img src="../assets/newsPrev.png"
+            /></router-link>
+            <router-link to="/" @click.native="next()">
+              <img src="../assets/newsNext.png"
+            /></router-link>
           </div>
         </div>
       </div>
@@ -47,31 +59,33 @@
       </div>
     </div> -->
     <!-- 荣誉资质 -->
-    <div class="honor">
+    <div class="partner">
       <h3>合作伙伴</h3>
       <div class="container">
         <ul>
           <el-row>
-            <img src="../assets/honor_02.png" title="中华人民共和国公安部"/>
-            <img src="../assets/honor_03.png" title="湖北省公安厅"/>
-            <img src="../assets/honor_04.png" title="深圳市公安局"/>
-            <img src="../assets/honor_05.png" title="武汉市公安局"/>
-            <img src="../assets/honor_06.png" title="南宁市公安局"
-          /></el-row>
+            <img src="../assets/partner1.png" title="漏洞银行" />
+            <img
+              src="../assets/partner2.png"
+              title="上海纽盾科技股份有限公司"
+            />
+            <img src="../assets/partner3.png" title="观安" />
+            <img
+              src="../assets/partner4.png"
+              title="上海市网络与信息安全应急管理事务中心"
+            />
+            <img src="../assets/partner5.png" title="国家互联网应急中心" />
+          </el-row>
           <el-row>
-            <img src="../assets/honor_08.png" title="国家信息中心"/>
-            <img src="../assets/honor_09.png" title="国家互联网应急中心"/>
-            <img src="../assets/honor_10.png" title="公安部第三研究所"/>
-            <img src="../assets/honor_11.png" title="深圳市信息安全评测中心"/>
-            <img src="../assets/honor_12.png" title="深圳市电子教务资源中心"
-          /></el-row>
-          <el-row>
-            <img src="../assets/honor_13.png" title="国家信息中心"/>
-            <img src="../assets/honor_14.png" title="广东省国家税务局"/>
-            <img src="../assets/honor_15.png" title="国家超级计算深圳中心"/>
-            <img src="../assets/honor_16.png" title="深圳市南山区人民政府"/>
-            <img src="../assets/honor_17.png" title="中国信息安全测评中心"
-          /></el-row>
+            <img src="../assets/partner6.png" title="山东省公安厅" />
+            <img src="../assets/partner7.png" title="完美世界游戏" />
+            <img
+              src="../assets/partner8.png"
+              title="上海市网络技术综合应用研究所"
+            />
+            <img src="../assets/partner9.png" title="盛趣游戏" />
+            <img src="../assets/partner10.png" title="信安在线" />
+          </el-row>
         </ul>
       </div>
     </div>
@@ -147,12 +161,13 @@ export default {
         { id: 3, name: "企业", imgSrc: require("../assets/solution2.jpg") }
       ],
       newsList: [
-        "《工业和信息化部337号令》解读1",
-        "《工业和信息化部337号令》解读2",
-        "《工业和信息化部337号令》解读3",
-        "《工业和信息化部337号令》解读1"
+        "APP违法违规收集使用个人信息专项治理报告",
+        "好酒沈醉酬佳节，十分酒，一分歌。",
+        "伟大历程，初心不忘 | 热烈庆祝中国共产党建党99周年",
+        "APP违法违规收集使用个人信息专项治理报告"
       ],
-      number: 0
+      number: 0,
+      timer: null
     };
   },
   computed: {
@@ -174,44 +189,77 @@ export default {
       $(e.target).css({ width: "" });
     },
     startMove() {
-      let timer = setTimeout(() => {
+      this.timer = setTimeout(() => {
         if (this.number === 3) {
           this.number = 0;
         } else {
           this.number += 1;
         }
         this.startMove();
-      }, 3000);
+      }, 4000);
+    },
+    stopRoll() {
+      clearTimeout(this.timer);
+    },
+    beginRoll() {
+      this.startMove();
+    },
+    prev() {
+      clearTimeout(this.timer);
+      if (this.number === 0) {
+        this.number = 2;
+      } else {
+        this.number -= 1;
+      }
+    },
+    next() {
+      clearTimeout(this.timer);
+      if (this.number === 3) {
+        this.number = 0;
+      } else {
+        this.number += 1;
+      }
     }
   }
 };
 </script>
 <style>
 /* 安全产品 */
-.securipTproductTopLeft {
-  float: left;
-}
-.securipTproductTopRight {
-  float: right;
-}
-.securiptProductTop:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 .securiptProductTop {
   width: 100%;
   background: #6aa3ea;
   color: white;
-  font-weight: 600;
-  padding: 25px 0;
+  padding: 10px 0;
   box-sizing: border-box;
   box-sizing: border-box;
+}
+.newsTitle {
+  display: inline-block;
+  font-size: 18px;
 }
 .newsItem {
   width: 350px;
   height: 100%;
   overflow: hidden;
+  position: relative;
+  bottom: -4px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.newsBtn {
+  display: flex;
+  flex-direction: column;
+}
+.newsBtn a {
+  margin-bottom: 5px;
+}
+.newsItem a {
+  color: white;
+}
+.newsItem p {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
 .slide-enter-active,
 .slide-leave-active {
@@ -228,23 +276,21 @@ export default {
   margin: 0 auto;
   font-size: 14px;
   box-sizing: border-box;
-}
-.securiptProductTopContent:after {
-  content: "";
-  display: block;
-  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .securipTproductTopRight .more {
   color: inherit;
 }
 .securiptProductContainer h3,
 .solution h3,
-.honor h3 {
+.partner h3 {
   font-size: 34px;
   color: #2b2b2b;
   text-align: center;
   margin: 20px 0;
-  font-weight: 500;
+  font-weight: 700;
 }
 .securiptProductContainer {
   background: url("../assets/section-bg.jpg") center;
@@ -262,9 +308,6 @@ export default {
 }
 .securiptProductContainer .container a {
   font-size: 18px;
-}
-.honor .container img {
-  width: 220px;
 }
 .securiptProductContainer ul {
   width: 320px;
@@ -332,16 +375,20 @@ export default {
   font-weight: 500;
 }
 /* 荣誉资质 */
-.honor {
+.partner {
   padding: 20px;
 }
-.honor .container {
+.partner .container {
   width: 1200px;
   margin: 20px auto;
   text-align: center;
 }
-.honor img {
-  margin-right: 5px;
+.partner img {
+  margin-right: 10px;
+}
+.partner .container .el-row {
+  margin: 40px 0;
+  padding: 10px 0;
 }
 /* 宣传 */
 .publicity {
@@ -355,7 +402,6 @@ export default {
 }
 .publicityContent {
   width: 1200px;
-  border: 1px solid white;
   margin: 0 auto;
   color: white;
   display: flex;
@@ -365,9 +411,6 @@ export default {
 .publicityContentColumnNumber {
   font-size: 48px;
   font-weight: 500;
-}
-.publicityContentColumn {
-  border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
 .publicityContentColumn > p {
   color: #00f0ff;

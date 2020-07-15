@@ -26,6 +26,8 @@ import devHistroy from '@/components/About/devHistroy.vue';
 //Service文件夹下的组件
 import percolationTest from '@/components/Service/percolationTest.vue';
 import securityConsulting from '@/components/Service/securityConsulting.vue';
+//文章页面
+import Article from '@/components/Article.vue'
 //测试
 import xx from '@/components/xx.vue';
 Vue.use(Router)
@@ -34,6 +36,11 @@ export default new Router({
     path: "/",
     name: "Index",
     component: Index
+  },
+  {
+    path: "/Article",
+    name: "Article",
+    component: Article
   },
   {
     path: "/Product",

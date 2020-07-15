@@ -27,23 +27,29 @@ export default {
   height: 500px;
 }
 .productBannerContent {
+  width: 1200px;
+  margin: 0 auto;
   position: absolute;
-  top: 85px;
-  left: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   color: white;
 }
 .productTraitContent span {
   line-height: 40px;
 }
 .productBannerContent h3 {
-  font-size: 24px;
+  font-size: 56px;
   font-weight: 700;
+  font-family: "-apple-system, system-ui, BlinkMacSystemFont, " Segoe UI
+    ", Roboto, " Helvetica Neue ", Arial, sans-serif;";
+  margin-bottom: 20px;
 }
 .productBannerContent article {
   font-size: 18px;
   margin-top: 10px;
   letter-spacing: 1px;
-  line-height: 25px;
+  line-height: 35px;
 }
 .productBannerUse {
   display: inline-block;
@@ -77,23 +83,23 @@ export default {
   color: #333;
   text-align: center;
   margin-bottom: 30px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .productIntroduce p {
   color: #2b2b2b;
   font-size: 18px;
   letter-spacing: 1px;
   margin-top: 10px;
-  text-indent: 2em;
   line-height: 28px;
-  text-align: center;
+  width: 1200px;
+  margin: 20px auto;
 }
 /* 产品特点 */
 .productTraitContent {
   display: flex;
 }
 .productTraitContent {
-  width: 65%;
+  width: 1200px;
   margin: 0 auto;
 }
 .productTraitContent li {

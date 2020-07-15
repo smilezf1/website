@@ -4,14 +4,12 @@
       <swiper-slide class="bg1"
         ><img src="../assets/slideshow1.png"
       /></swiper-slide>
-      <swiper-slide class="bg2"
-        ><img src="../assets/slideshow2.png"
-      /></swiper-slide>
+      <swiper-slide class="bg2"><img src="../assets/slideshow4.png"/></swiper-slide>
       <swiper-slide class="bg3"
-        ><img src="../assets/slideshow3.png"
+        ><img src="../assets/slideshow5.png"
       /></swiper-slide>
       <swiper-slide class="bg4"
-        ><img src="../assets/banner4.png"
+        ><img src="../assets/banner5.png"
       /></swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -59,8 +57,11 @@ export default {
     transform: scaleX(1);
   }
 }
+.Banner {
+  font-size: 0;
+}
 .Banner .swiper-slide {
-  height: 663px;
+  height: auto;
 }
 /* bg1 {
   background: linear-gradient(to right, #211b54, #1c207a);
@@ -74,9 +75,12 @@ export default {
 .bg4 {
   background: linear-gradient(#012d48, #01081b);
 } */
+.Banner {
+  width: 100%;
+}
 .Banner img {
   width: 100%;
-  height: 100%;
+  height: 500px;
 }
 .swiper-pagination-bullet {
   width: 80px !important;

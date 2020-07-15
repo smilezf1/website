@@ -11,9 +11,11 @@ Vue.config.productionTip = false
 import 'lib-flexible/flexible'
 import $ from 'jquery'
 import BaiduMap from 'vue-baidu-map' //引用百度地图组件
+import animate from 'animate.css'
 /* eslint-disable no-new */
 Vue.use(VueAwesomeSwiper, router);
 Vue.use(ElementUI);
+Vue.use(animate);
 Vue.use(BaiduMap, {
   ak: 'er1y12cHwwo0MvygGKGizpduaN4qjkhs'
 })

@@ -117,29 +117,18 @@ export default {
   padding: 20px 0;
 }
 .footerSpace .container {
-  width: 80%;
+  width: 1200px;
   margin: 0 auto;
   font-size: 15px;
   font-weight: 400;
   padding: 20px 0;
-  text-align: center;
 }
 .footerSpace .containerBox {
-  display: inline-block;
-}
-.footerSpace .containerBox:after {
-  display: block;
-  content: "";
-  clear: both;
-}
-.footerSpace .containerBox .left {
-  float: left;
+  display: flex;
+  justify-content: space-around;
 }
 .footerSpace .containerBox .left .select {
   color: white !important;
-}
-.footerSpace .containerBox .right {
-  float: right;
 }
 .footerSpace .container li {
   margin: 20px 0;
@@ -151,15 +140,15 @@ export default {
   display: flex;
 }
 .footerSpace .container .left .row1 {
-  margin: 0 20px;
   text-align: left;
+  margin-right: 40px;
 }
 .footerSpace .container .left h3 {
-  font-size: 14px;
+  font-size: 16px;
 }
 .footerSpace .container .left a {
   color: #6d6e7e;
-  font-size: 12px;
+  font-size: 14px;
 }
 .footerSpace .container .left .select {
   color: white;

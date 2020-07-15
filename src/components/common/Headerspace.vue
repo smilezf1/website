@@ -30,19 +30,22 @@
                     v-show="item.child.show"
                     :class="{ pullDownSpecial: index == 1 }"
                   >
-                    <router-link
-                      v-for="(item_child, item_child_index) in item.child
-                        .childContent"
-                      :key="item_child_index"
-                      :to="item_child.src"
-                      @mouseover.native="changeChildColor(item_child_index)"
-                      @mouseout.native="recoverChildColor()"
-                      :class="{
-                        item_child_select:
-                          item_child_SelectIndex == item_child_index
-                      }"
-                      >{{ item_child.content }}</router-link
-                    >
+                    <div class="pullDownContent">
+                      <router-link
+                        v-for="(item_child, item_child_index) in item.child
+                          .childContent"
+                        :key="item_child_index"
+                        :to="item_child.src"
+                        @mouseover.native="changeChildColor(item_child_index)"
+                        @mouseout.native="recoverChildColor()"
+                        :class="{
+                          item_child_select:
+                            item_child_SelectIndex == item_child_index
+                        }"
+                      >
+                        {{ item_child.content }}
+                      </router-link>
+                    </div>
                   </div>
                 </transition>
               </router-link>
@@ -81,23 +84,23 @@ export default {
           child: {
             show: false,
             childContent: [
-              { content: "移动应用安全评测", src: "/Product/safetyEvaluation" },
-              { content: "移动应用评测系统", src: "/Product/Evaluating" },
+              /*  { content: "移动应用安全评测", src: "/Product/safetyEvaluation" }, */
+              { content: "移动应用评测系统", src: "/Product/Evaluating" }, //1
               {
                 content: "移动应用合规评测系统",
                 src: "/Product/ComplianceEvaluating"
-              },
-              { content: "移动应用安全防护", src: "/Product/safetyProtection" },
-              { content: "移动应用加固系统", src: "/Product/Reinforce" },
-              { content: "移动应用源码加固编译器", src: "/Product/Code" },
-              { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" },
-              { content: "移动应用安全业务", src: "/Product/Insurance" },
-              { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" },
-              {
+              }, //1
+              /*   { content: "移动应用安全防护", src: "/Product/safetyProtection" }, */
+              { content: "移动应用加固系统", src: "/Product/Reinforce" }, //1
+              { content: "移动应用源码加固编译器", src: "/Product/Code" }, //1
+              { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" }, //1
+              /*  { content: "移动应用安全业务", src: "/Product/Insurance" }, */
+              { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" } //1
+              /*   {
                 content: "移动应用环境自查插件",
                 src: "/Product/SelfInspection"
               },
-              { content: "移动应用数据加密插件", src: "/Product/Encryption" }
+              { content: "移动应用数据加密插件", src: "/Product/Encryption" } */
             ]
           }
         },
@@ -197,27 +200,15 @@ export default {
 </script>
 <style>
 .slide-fade-enter-active {
-  transition: all 0.3s ease;
+  /*  transition: all 0.3s ease; */
 }
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  /*  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1); */
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
-.pullDownSpecial {
-  padding: 20px;
-  width: 800px !important;
-  flex-flow: wrap !important;
-  flex-direction: row !important;
-  text-align: left;
-}
-.pullDownSpecial a {
-  display: inline-block;
-  width: 30% !important;
-  padding-right: 20px;
+.slide-fade-enter,
+.slide-fade-leave-to {
+  /*   transform: translateY(20px);
+  opacity: 0; */
 }
 .item_child_select {
   color: #6aa3ea !important;
@@ -240,6 +231,7 @@ export default {
   left: 0;
   background: transparent;
   transition: background 0.3s ease;
+  position: relative;
 }
 .minNavigation {
   background: #1a1c24;
@@ -251,7 +243,6 @@ export default {
   margin: 0px auto;
   display: flex;
   justify-content: space-between;
-/*   border:1px solid white; */
 }
 .navigationContentLeft {
   width: 130px;
@@ -268,12 +259,9 @@ export default {
   display: flex;
   height: 100%;
 }
-.navigationContentMiddle li {
-  position: relative;
-}
 .navigationContentMiddle li .pullDown {
-  position: absolute;
-  padding: 0 20px;
+  /* position: absolute;
+  padding: 0 20px;/*  */
   top: 86px;
   left: 0;
   z-index: 2;
@@ -282,6 +270,29 @@ export default {
   flex-direction: column;
   flex-wrap: nowrap;
   box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: url("../../assets/dropdown_bg.png") repeat;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.15s ease-out;
+}
+.pullDownSpecial {
+  padding: 20px;
+  flex-flow: wrap !important;
+  flex-direction: row !important;
+  text-align: left;
+  max-height: 500px;
+}
+.pullDownSpecial a {
+  display: inline-block;
+  width: 30% !important;
+  padding-right: 20px;
+}
+.navigationContentMiddle .pullDownContent {
+  width: 1200px;
+  margin: 0 auto;
 }
 .navigationContentMiddle li .pullDown .el-row {
   width: 100%;
@@ -323,7 +334,7 @@ export default {
   font-size: 18px;
   box-sizing: border-box;
   width: 100%;
-  position: relative;
+  /*   position: relative; */
   border-bottom: 2px solid transparent;
   font-family: "黑体";
   text-align: center;
@@ -340,7 +351,7 @@ export default {
   font-family: "黑体";
   background: transparent;
   transition: background 1.5s ease;
-  padding:0 10px;
+  padding: 0 10px;
 }
 .navigationContentRight .getUseSelect {
   background: #6aa3ea;
