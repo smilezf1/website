@@ -53,6 +53,9 @@ a {
 html,
 body {
   height: 100%;
+  min-width: 1900px;
+  /* overflow-x: auto;
+  overflow-y: auto; */
 }
 #app {
   height: 100%;

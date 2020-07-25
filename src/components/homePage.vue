@@ -64,32 +64,33 @@
       <div class="container">
         <ul>
           <el-row>
-            <img src="../assets/partner1.png" title="漏洞银行" />
+            <img src="../assets/partner7.png" title="完美世界游戏" />
             <img
               src="../assets/partner2.png"
               title="上海纽盾科技股份有限公司"
             />
             <img src="../assets/partner3.png" title="观安" />
-            <img
-              src="../assets/partner4.png"
-              title="上海市网络与信息安全应急管理事务中心"
-            />
+            <img src="../assets/partner9.png" title="盛趣游戏" />
             <img src="../assets/partner5.png" title="国家互联网应急中心" />
           </el-row>
           <el-row>
             <img src="../assets/partner6.png" title="山东省公安厅" />
-            <img src="../assets/partner7.png" title="完美世界游戏" />
+            <img src="../assets/partner1.png" title="漏洞银行" />
             <img
               src="../assets/partner8.png"
               title="上海市网络技术综合应用研究所"
             />
-            <img src="../assets/partner9.png" title="盛趣游戏" />
+            <img
+              src="../assets/partner4.png"
+              title="上海市网络与信息安全应急管理事务中心"
+            />
             <img src="../assets/partner10.png" title="信安在线" />
           </el-row>
         </ul>
       </div>
     </div>
     <!-- 宣传 -->
+
     <div class="publicity">
       <div class="publicityContent">
         <div class="publicityContentColumn">
@@ -106,6 +107,25 @@
         </div>
       </div>
     </div>
+    <!-- 侧边栏联系我们 -->
+    <div class="sidebar " v-show="showIcon">
+      <div class="sidebarContent">
+        <router-link
+          to="/"
+          v-for="(item, index) in sidebarData"
+          :key="item.id"
+          @mouseover.native="changeBg(index)"
+          @mouseout.native="recoverBg(index)"
+          @click.native="backTop(index)"
+          :class="{ select: selectIndex == index }"
+          ><img :src="item.imgSrc" />
+          <p class="contactTel" v-show="xx">
+            联系我们:021-57677921
+            <span class="triangle"></span>
+          </p>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -116,7 +136,7 @@ export default {
     return {
       securityProductList: [
         {
-          imgSrc: require("../assets/icon.png"),
+          imgSrc: require("../assets/y1.png"),
           subs: [
             { id: 0, name: "移动应用安全评测" },
             { id: 1, name: "移动应用漏洞评测" },
@@ -126,7 +146,7 @@ export default {
           ]
         },
         {
-          imgSrc: require("../assets/icon1.png"),
+          imgSrc: require("../assets/y2.png"),
           subs: [
             { id: 0, name: "移动应用安全防护" },
             { id: 1, name: "应用程序安全加固" },
@@ -145,7 +165,7 @@ export default {
           ]
         },
         {
-          imgSrc: require("../assets/icon2.png"),
+          imgSrc: require("../assets/y3.png"),
           subs: [
             { id: 0, name: "移动应用安全业务" },
             { id: 1, name: "通信数据保护" },
@@ -164,10 +184,18 @@ export default {
         "APP违法违规收集使用个人信息专项治理报告",
         "好酒沈醉酬佳节，十分酒，一分歌。",
         "伟大历程，初心不忘 | 热烈庆祝中国共产党建党99周年",
+        "315晚会曝光SDK窃密隐私,个人信息安全刻不容缓",
         "APP违法违规收集使用个人信息专项治理报告"
       ],
+      sidebarData: [
+        { id: 1, imgSrc: require("../assets/phone.png") },
+        { id: 2, imgSrc: require("../assets/stick.png") }
+      ],
       number: 0,
-      timer: null
+      timer: null,
+      selectIndex: -1,
+      showIcon: false,
+      xx: false
     };
   },
   computed: {
@@ -180,6 +208,11 @@ export default {
   },
   mounted() {
     this.startMove();
+    window.addEventListener("scroll", this.scrollBackTop); //监听滚动条
+  },
+  //移除滚动条监听
+  destroyed() {
+    window.removeEventListener("scroll", this.scrollBackTop);
   },
   methods: {
     zoom(e) {
@@ -219,6 +252,45 @@ export default {
       } else {
         this.number += 1;
       }
+    },
+    /* 侧边栏 */
+    changeBg(index) {
+      this.selectIndex = index;
+      if (index === 0) {
+        this.xx = true;
+      }
+    },
+    recoverBg() {
+      this.selectIndex = -1;
+      this.xx = false;
+    },
+    //返回顶部
+    backTop(index) {
+      if (index === 1) {
+        const that = this;
+        let timer = setInterval(() => {
+          let speed = Math.floor(-that.scrollTop / 5);
+          document.documentElement.scrollTop = document.body.scrollTop =
+            that.scrollTop + speed;
+          if (that.scrollTop === 0) {
+            clearInterval(timer);
+          }
+        }, 20);
+      }
+    },
+    //计算距离顶部的高度,当高度大于60显示顶部图标,小于60则隐藏
+    scrollBackTop() {
+      const that = this;
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      that.scrollTop = scrollTop;
+      if (that.scrollTop > 90) {
+        that.showIcon = true;
+      } else {
+        that.showIcon = false;
+      }
     }
   }
 };
@@ -227,7 +299,7 @@ export default {
 /* 安全产品 */
 .securiptProductTop {
   width: 100%;
-  background: #6aa3ea;
+  background: linear-gradient(180deg, #24c6dc, #514a9d);
   color: white;
   padding: 10px 0;
   box-sizing: border-box;
@@ -346,6 +418,10 @@ export default {
 .securiptProductContainer a {
   margin: 0 auto;
 }
+.securiptProductContainer .container img {
+  width: 150px;
+  height: 116px;
+}
 /* 解决方案 */
 .solution {
   margin-top: 40px;
@@ -385,6 +461,7 @@ export default {
 }
 .partner img {
   margin-right: 10px;
+  cursor: pointer;
 }
 .partner .container .el-row {
   margin: 40px 0;
@@ -393,9 +470,7 @@ export default {
 /* 宣传 */
 .publicity {
   height: 300px;
-  background-image: url("../assets/data_bg.svg");
-  background-size: cover;
-  background-position: bottom center;
+  background: linear-gradient(180deg, #24c6dc, #514a9d);
   display: flex;
   align-items: center;
   text-align: center;
@@ -413,8 +488,56 @@ export default {
   font-weight: 500;
 }
 .publicityContentColumn > p {
-  color: #00f0ff;
+  /*  color: #00f0ff; */
   font-size: 16px;
   margin-top: 10px;
+}
+/* 侧边栏联系我们 */
+.sidebar {
+  position: fixed;
+  right: 10px;
+  z-index: 99;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebarContent {
+  width: 80px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebarContent a {
+  background: #00000029;
+  margin-top: 10px;
+  transition: background 0.8s;
+}
+.sidebarContent .select {
+  background: skyblue;
+  transition: background 0.8s;
+}
+.contactTel {
+  width: 240px;
+  height: 80px;
+  position: absolute;
+  padding: 0 17px;
+  box-sizing: border-box;
+  right: 115%;
+  top: 10px;
+  background: skyblue;
+  color: white;
+  font-size: 18px;
+  line-height: 80px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.contactTel .triangle {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-left-color: skyblue;
 }
 </style>

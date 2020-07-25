@@ -31,17 +31,15 @@ export default {
   font-weight: normal;
 }
 .companyProfileContent {
-  width: 60%;
-  margin: 10px auto;
+  width: 1200px;
+  margin: 0px auto;
   padding: 20px;
   text-align: justify;
 }
 .companyProfileContent p {
   font-size: 18px;
-  line-height: 40px;
-}
-.enterpriseConcept {
-  margin: 30px 0;
+  line-height: 50px;
+  text-indent: 2em;
 }
 .enterpriseConceptContent {
   width: 80%;

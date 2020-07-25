@@ -6,7 +6,7 @@
         <div class="navigationContent">
           <!-- 导航左部分 -->
           <div class="navigationContentLeft">
-            <img src="../../assets/logo2.png" />
+            <img src="../../assets/logo3.png" />
           </div>
           <!-- 导航中间部分 -->
           <ul class="navigationContentMiddle">
@@ -200,21 +200,21 @@ export default {
 </script>
 <style>
 .slide-fade-enter-active {
-  /*  transition: all 0.3s ease; */
+  transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  /*  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1); */
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter,
 .slide-fade-leave-to {
-  /*   transform: translateY(20px);
-  opacity: 0; */
+  transform: translateY(20px);
+  opacity: 0;
 }
 .item_child_select {
   color: #6aa3ea !important;
 }
 .item_select {
-  color: #6aa3ea !important;
+  /*  color: #6aa3ea !important; */
   border-bottom: 2px solid white !important;
 }
 .headerspace {
@@ -222,19 +222,22 @@ export default {
   height: 84px;
   position: fixed;
   z-index: 2;
+  min-width: 1900px;
+  /* position: absolute; */
+  left: 0;
+  top: 0;
 }
 .navigation {
   height: 84px;
   line-height: 84px;
   width: 100%;
-  top: 0;
-  left: 0;
   background: transparent;
   transition: background 0.3s ease;
-  position: relative;
 }
 .minNavigation {
   background: #1a1c24;
+  /*  background: rgba(0, 0, 0, 0.7); */
+  /* background: #6aa3ea; */
   transition: background 0.3s ease;
 }
 .navigationContent {
@@ -260,23 +263,25 @@ export default {
   height: 100%;
 }
 .navigationContentMiddle li .pullDown {
-  /* position: absolute;
-  padding: 0 20px;/*  */
+  position: absolute;
+  padding: 0 20px;
   top: 86px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
-  background-color: #272b2e;
+  /* background-color: #272b2e; */
+  background: #fff;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   box-sizing: border-box;
   position: absolute;
-  width: 100%;
-  left: 0;
-  background: url("../../assets/dropdown_bg.png") repeat;
-  max-height: 0px;
+  width: 1200px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  /*  background: url("../../assets/dropdown_bg.png") repeat; */
+  /*  max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.15s ease-out;
+  transition: max-height 0.15s ease-out;  */
 }
 .pullDownSpecial {
   padding: 20px;
@@ -308,7 +313,7 @@ export default {
   font-size: 13px;
   margin-right: 5px;
   width: 100%;
-  color: white;
+  color: #383838;
   white-space: nowrap;
 }
 .navigationContentMiddle li .dropDownActive {
@@ -336,7 +341,6 @@ export default {
   width: 100%;
   /*   position: relative; */
   border-bottom: 2px solid transparent;
-  font-family: "黑体";
   text-align: center;
 }
 .navigationContentRight a {
@@ -348,10 +352,11 @@ export default {
   font-size: 16px;
   border: 1px solid white;
   border-radius: 5px;
-  font-family: "黑体";
+  /*  font-family: "黑体"; */
   background: transparent;
   transition: background 1.5s ease;
   padding: 0 10px;
+  box-sizing: border-box;
 }
 .navigationContentRight .getUseSelect {
   background: #6aa3ea;

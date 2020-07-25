@@ -25,9 +25,11 @@
       </div>
     </div>
     <div class="bottom">
-      <router-link to="/"
-        >上海蛮犀科技有限公司 版权所有 ©2019-2020 泸ICP</router-link
-      >
+      <p>
+        上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号<img
+          src="../../assets/icp.png"
+        />沪公网安备 31011702007362号
+      </p>
     </div>
   </div>
 </template>
@@ -133,6 +135,13 @@ export default {
 .footerSpace .container li {
   margin: 20px 0;
 }
+.rightContent {
+  font-size: 16px;
+  font-weight: 700;
+}
+.rightContent div:first-of-type {
+  text-align: center;
+}
 .footerSpace .container .left {
   border-right: 0.5px solid #666;
   padding-right: 30px;
@@ -148,13 +157,13 @@ export default {
 }
 .footerSpace .container .left a {
   color: #6d6e7e;
-  font-size: 14px;
+  font-size: 12px;
 }
 .footerSpace .container .left .select {
   color: white;
 }
 .footerSpace .right img {
-  width: 150px;
+  width: 170px;
   margin-top: 10px;
 }
 .footerSpace .bottom {
@@ -162,7 +171,10 @@ export default {
   font-size: 12px;
   margin-bottom: 10px;
 }
-.footerSpace .bottom a {
+.footerSpace .bottom p {
   color: #6d6e7e;
+}
+.footerSpace .bottom p:first-child {
+  margin-bottom: 10px;
 }
 </style>

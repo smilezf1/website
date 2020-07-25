@@ -2,38 +2,54 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/connect.png"/>
+      <img src="../assets/connect.png" />
+      <div class="bannerContent">
+        <h3>构建智慧安全生活</h3>
+      </div>
     </div>
-    <!-- 联系地址 -->
-    <div class="connectAddress">
-      <p class="title">公司地址</p>
-      <baidu-map
-        :center="center"
-        :zoom="25"
-        id="map"
-        ak="er1y12cHwwo0MvygGKGizpduaN4qjkhs"
-        @ready="handler"
-      >
-        <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
-        <bm-marker
-          :position="center"
-          :dragging="true"
-          animation="BMAP_ANIMATION_BOUNCE"
+    <div class="connectBody">
+      <!-- 客户服务热线 -->
+      <div class="serviceHotline">
+        <h1>客户服务热线</h1>
+        <p class="line"></p>
+        <div class="serviceHotlineContent">
+          <p class="phone">
+            <img src="../assets/phone1.png" />
+            <span>电话:021-57677921</span>
+          </p>
+        </div>
+      </div>
+      <!-- 联系地址 -->
+      <div class="connectAddress">
+        <!-- <p class="title">公司地址</p> -->
+        <baidu-map
+          :center="center"
+          :zoom="25"
+          id="map"
+          ak="er1y12cHwwo0MvygGKGizpduaN4qjkhs"
+          @ready="handler"
         >
-        </bm-marker>
-        <bm-overlay
-          pane="labelPane"
-          :class="{ sample: true, active }"
-          @draw="draw"
-        >
-          <div class="info">
-            <p class="address">
-              上海市松江区沈砖公路5555号韵博智谷8709-8711
-            </p>
-            <span class="triangle"></span>
-          </div>
-        </bm-overlay>
-      </baidu-map>
+          <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
+          <bm-marker
+            :position="center"
+            :dragging="true"
+            animation="BMAP_ANIMATION_BOUNCE"
+          >
+          </bm-marker>
+          <bm-overlay
+            pane="labelPane"
+            :class="{ sample: true, active }"
+            @draw="draw"
+          >
+            <div class="info">
+              <p class="address">
+                上海市松江区沈砖公路5555号韵博智谷8709-8711
+              </p>
+              <span class="triangle"></span>
+            </div>
+          </bm-overlay>
+        </baidu-map>
+      </div>
     </div>
     <!-- 底部 -->
     <footerSpace></footerSpace>
@@ -69,18 +85,53 @@ export default {
 };
 </script>
 <style>
+.banner {
+  position: relative;
+}
+.bannerContent {
+  width: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bannerContent h3 {
+  font-size: 52px;
+  color: white;
+}
 .banner img {
   width: 100%;
+  height: 500px;
 }
-/* test */
-.connectAddress {
-  height: 700px;
+.connectBody {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.serviceHotline h1 {
+  border-left: 6px solid #1296db;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+.serviceHotline .line {
+  height: 2px;
+  background: #dddddd57;
+  margin-top: 5px;
+}
+.serviceHotlineContent .phone {
+  display: flex;
+  align-items: center;
+}
+.serviceHotlineContent .phone img {
+  width: 65px;
+}
+.serviceHotlineContent .phone span {
+  font-size: 16px;
 }
 .connectAddress,
 .cooperation {
   font-weight: 400;
-  margin: 20px;
-  text-align: center;
 }
 .connectAddress > p {
   margin: 20px 0;

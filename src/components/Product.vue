@@ -24,7 +24,7 @@ export default {
 }
 .productBanner img {
   width: 100%;
-  height: 500px;
+ /*  height: 500px; */
 }
 .productBannerContent {
   width: 1200px;
@@ -41,8 +41,6 @@ export default {
 .productBannerContent h3 {
   font-size: 56px;
   font-weight: 700;
-  font-family: "-apple-system, system-ui, BlinkMacSystemFont, " Segoe UI
-    ", Roboto, " Helvetica Neue ", Arial, sans-serif;";
   margin-bottom: 20px;
 }
 .productBannerContent article {
@@ -118,6 +116,10 @@ export default {
 }
 .productTraitContentTop {
   text-align: center;
+}
+.productTraitContentTop img {
+  width: 150px;
+  height: 116px;
 }
 .productTraitContentContainer {
   text-align: justify;

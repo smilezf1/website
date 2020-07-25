@@ -1,7 +1,7 @@
 <template>
   <div class="index">
-    <!--  <headerSpace></headerSpace> -->
-    <xx></xx>
+     <headerSpace></headerSpace>
+   <!--  <xx></xx> -->
     <Banner></Banner>
     <homePage></homePage>
     <footerSpace></footerSpace>

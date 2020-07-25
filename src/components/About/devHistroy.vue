@@ -2,7 +2,10 @@
   <div class="devHistroy">
     <!-- banner -->
     <div class="devHistroyBanner">
-      <img src="../../assets/develop.jpg" style="width:100%;height:400px;" />
+      <img src="../../assets/develop.jpg" />
+      <div class="devHistoryBannerContent">
+        <h3>持续守卫移动互联网络空间生活</h3>
+      </div>
     </div>
     <!-- 主体内容 -->
     <div class="devHistroyContainer">
@@ -115,7 +118,7 @@ arrows"
 </template>
 <script>
 export default {
-  name: "devHistroy",
+  name: "devHistroy"
 };
 </script>
 <style>
@@ -123,7 +126,26 @@ export default {
   font-size: 34px;
   margin: 20px 0 40px 0;
   text-align: center;
-  font-weight:normal;
+  font-weight: normal;
+}
+.devHistroyBanner {
+  position: relative;
+}
+.devHistroyBanner img {
+  width: 100%;
+  height: 500px;
+}
+.devHistoryBannerContent {
+  width: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.devHistoryBannerContent h3 {
+  font-size: 56px;
 }
 .history {
   width: 16%;

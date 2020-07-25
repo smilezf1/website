@@ -4,7 +4,9 @@
       <swiper-slide class="bg1"
         ><img src="../assets/slideshow1.png"
       /></swiper-slide>
-      <swiper-slide class="bg2"><img src="../assets/slideshow4.png"/></swiper-slide>
+      <swiper-slide class="bg2"
+        ><img src="../assets/slideshow4.png"
+      /></swiper-slide>
       <swiper-slide class="bg3"
         ><img src="../assets/slideshow5.png"
       /></swiper-slide>
