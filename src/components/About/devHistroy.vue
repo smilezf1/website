@@ -2,7 +2,7 @@
   <div class="devHistroy">
     <!-- banner -->
     <div class="devHistroyBanner">
-      <img src="../../assets/develop.jpg" />
+      <img src="../../assets/x7.jpg" />
       <div class="devHistoryBannerContent">
         <h3>持续守卫移动互联网络空间生活</h3>
       </div>
@@ -133,7 +133,7 @@ export default {
 }
 .devHistroyBanner img {
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 .devHistoryBannerContent {
   width: 1200px;

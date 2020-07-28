@@ -220,10 +220,9 @@ export default {
 .headerspace {
   width: 100%;
   height: 84px;
-  position: fixed;
   z-index: 2;
   min-width: 1900px;
-  /* position: absolute; */
+  position: absolute;
   left: 0;
   top: 0;
 }

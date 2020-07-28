@@ -5,14 +5,16 @@
       <router-view />
     </div>
     <footerSpace></footerSpace>
+    <slideBar></slideBar>
   </div>
 </template>
 <script>
 import headerSpace from "@/components/common/Headerspace.vue";
 import footerSpace from "@/components/common/footerSpace";
+import slideBar from "@/components/common/slideBar";
 export default {
   name: "Procuct",
-  components: { headerSpace, footerSpace },
+  components: { headerSpace, footerSpace, slideBar },
   data() {
     return {};
   }
@@ -24,7 +26,7 @@ export default {
 }
 .productBanner img {
   width: 100%;
- /*  height: 500px; */
+  height: 700px;
 }
 .productBannerContent {
   width: 1200px;
@@ -70,18 +72,19 @@ export default {
   margin: 30px 0;
 }
 .produtctTrait {
-  margin-top: 20px;
-}
-.productBox {
-  margin: 0 20px;
+  background: url("../assets/x10.jpg") 100% / cover repeat-x;
+  padding: 20px 0;
 }
 .productIntroduce h3,
 .produtctTrait h3 {
   font-size: 34px;
   color: #333;
   text-align: center;
-  margin-bottom: 30px;
   font-weight: 700;
+  padding: 20px;
+}
+.produtctTrait h3 {
+  color: white;
 }
 .productIntroduce p {
   color: #2b2b2b;
@@ -103,6 +106,8 @@ export default {
 .productTraitContent li {
   margin: 0 30px;
   padding: 20px;
+  background: white;
+  border-radius: 10px;
 }
 .productTraitContent li p {
   font-size: 20px;

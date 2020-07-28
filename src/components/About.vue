@@ -2,16 +2,17 @@
   <div class="About">
     <HeaderSpace></HeaderSpace>
     <router-view />
-    <!-- 尾部内容 -->
     <FooterSpace></FooterSpace>
+    <slideBar></slideBar>
   </div>
 </template>
 <script>
 import HeaderSpace from "@/components/common/Headerspace.vue";
 import FooterSpace from "@/components/common/FooterSpace";
+import slideBar from "@/components/common/slideBar.vue";
 export default {
   name: "About",
-  components: { HeaderSpace, FooterSpace },
+  components: { HeaderSpace, FooterSpace, slideBar },
   data() {
     return {
       aboutList: [{ id: 1, title: "公司简介", imgSrc: "" }]

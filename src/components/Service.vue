@@ -3,14 +3,16 @@
     <headerSpace></headerSpace>
     <router-view />
     <FooterSpace></FooterSpace>
+    <slideBar></slideBar>
   </div>
 </template>
 <script>
 import headerSpace from "@/components/common/Headerspace.vue";
 import FooterSpace from "@/components/common/FooterSpace";
+import slideBar from "@/components/common/slideBar.vue";
 export default {
   name: "Service",
-  components: { headerSpace, FooterSpace }
+  components: { headerSpace, FooterSpace, slideBar }
 };
 </script>
 <style>
@@ -19,7 +21,7 @@ export default {
 }
 .percolationTestBanner img {
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 .percolationTestBannerContent {
   width: 1200px;
@@ -45,15 +47,20 @@ export default {
   margin: 30px 0;
 }
 .businessScope {
-  margin: 30px 0;
+  margin-top: 30px;
+  padding: 10px 0px 30px 0;
+  background: url("../assets/x10.jpg") 100% / cover repeat-x;
 }
 .serviceIntroduce h3,
 .businessScope h3 {
   font-size: 34px;
   color: #333;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 20px 0 40px 0;
   font-weight: 700;
+}
+.businessScope h3 {
+  color: white;
 }
 .serviceIntroduce p {
   color: #2b2b2b;
@@ -66,13 +73,15 @@ export default {
 }
 /* 业务范围 */
 .businessScopeContent {
+  width: 1200px;
+  margin: 0px auto;
   display: flex;
-  width: 65%;
-  margin: 0 auto;
 }
 .businessScopeContent li {
   margin: 0 30px;
   padding: 20px;
+  background: white;
+  border-radius: 10px;
 }
 .businessScopeContent li p {
   font-size: 20px;

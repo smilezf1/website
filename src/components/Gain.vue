@@ -2,8 +2,12 @@
   <div class="gain">
     <HeaderSpace></HeaderSpace>
     <!-- 图片 -->
-    <div class="banner">
-      <img src="../assets/develop.jpg" />
+    <div class="gainBanner">
+      <img src="../assets/x6.jpg" />
+      <div class="gainBannerContent">
+        <h3>蛮犀科技构建智慧安全生活</h3>
+        <article>移动应用人工渗透测试、移动应用漏洞专项分析</article>
+      </div>
     </div>
     <!-- 立即联系 -->
     <div class="immediately">
@@ -55,11 +59,13 @@
     </div>
     <!-- 底部 -->
     <FooterSpace></FooterSpace>
+    <slideBar></slideBar>
   </div>
 </template>
 <script>
 import HeaderSpace from "@/components/common/Headerspace.vue";
 import FooterSpace from "@/components/common/FooterSpace";
+import slideBar from "@/components/common/slideBar.vue";
 import {
   provinceAndCityData,
   regionData,
@@ -71,7 +77,7 @@ import {
 
 export default {
   name: "gain",
-  components: { HeaderSpace, FooterSpace },
+  components: { HeaderSpace, FooterSpace, slideBar },
   data() {
     return {
       ruleForm: {
@@ -135,8 +141,30 @@ export default {
 };
 </script>
 <style>
-.banner img {
+.gainBanner {
+  position: relative;
+}
+.gainBanner img {
   width: 100%;
+  height: 700px;
+}
+.gainBannerContent {
+  width: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.gainBannerContent h3 {
+  font-size: 56px;
+}
+.gainBannerContent article {
+  font-size: 18px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  line-height: 35px;
 }
 .menu {
   width: 80%;

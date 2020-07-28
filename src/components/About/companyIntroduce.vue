@@ -1,7 +1,7 @@
 <template>
   <div class="companyIntroduce">
     <div class="companyIntroduceBanner">
-      <img src="../../assets/develop.jpg" />
+      <img src="../../assets/x1.jpg" />
       <div class="companyIntroduceBannerContent">
         <h3>蛮犀科技构建智慧安全生活</h3>
         <article>建立APP数据全生命周期安全体系,为企业资产保驾护航</article>
@@ -88,7 +88,7 @@ export default {
 }
 .companyIntroduceBanner img {
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 .companyIntroduceBannerContent {
   width: 1200px;
@@ -112,7 +112,7 @@ export default {
   text-align: center;
 }
 .enterpriseConcept {
-  background: url("../../assets/section-bg.jpg") center;
+  background: url("../../assets/x10.jpg") 100% / cover repeat-x;
   padding: 70px 0;
 }
 .enterpriseConceptTtitle {

@@ -2,7 +2,7 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/connect.png" />
+      <img src="../assets/x7.jpg" />
       <div class="bannerContent">
         <h3>构建智慧安全生活</h3>
       </div>
@@ -53,14 +53,16 @@
     </div>
     <!-- 底部 -->
     <footerSpace></footerSpace>
+    <slideBar></slideBar>
   </div>
 </template>
 <script>
 import headerSpace from "@/components/common/Headerspace.vue";
 import footerSpace from "@/components/common/footerSpace.vue";
+import slideBar from "@/components/common/slideBar.vue";
 export default {
   name: "Connect",
-  components: { headerSpace, footerSpace },
+  components: { headerSpace, footerSpace, slideBar },
   data() {
     return {
       center: {
@@ -71,9 +73,7 @@ export default {
     };
   },
   methods: {
-    handler({ BMap, map }) {
-      console.log(map);
-    },
+    handler({ BMap, map }) {},
     draw({ el, BMap, map }) {
       const pixel = map.pointToOverlayPixel(
         new BMap.Point(121.258716, 31.097119)
@@ -102,7 +102,7 @@ export default {
 }
 .banner img {
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 .connectBody {
   width: 1200px;

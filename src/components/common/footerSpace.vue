@@ -19,7 +19,16 @@
         <div class="right">
           <div class="rightContent">
             <div>关注我们</div>
-            <div><img src="../../assets/code.jpg" /></div>
+            <div class="rightContentBox">
+              <div class="wx">
+                <img src="../../assets/code.jpg" />
+                <p><img src="../../assets/wx.png" />微信公众号</p>
+              </div>
+              <div class="wb">
+                <img src="../../assets/wbCode.png" />
+                <p><img src="../../assets/wb.png" />官方微博</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -139,8 +148,25 @@ export default {
   font-size: 16px;
   font-weight: 700;
 }
-.rightContent div:first-of-type {
-  text-align: center;
+.rightContentBox {
+  display: flex;
+  justify-content: space-between;
+}
+.rightContentBox p {
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.rightContentBox p img {
+  width: 25px;
+  margin-right: 10px;
+}
+.rightContentBox .wx,
+.rightContentBox .wb {
+  display: flex;
+  flex-direction: column;
 }
 .footerSpace .container .left {
   border-right: 0.5px solid #666;
@@ -162,9 +188,11 @@ export default {
 .footerSpace .container .left .select {
   color: white;
 }
-.footerSpace .right img {
-  width: 170px;
+.footerSpace .right .wx > img,
+.footerSpace .right .wb > img {
+  width: 120px;
   margin-top: 10px;
+  margin-right: 20px;
 }
 .footerSpace .bottom {
   text-align: center;

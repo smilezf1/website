@@ -11,7 +11,7 @@
         ><img src="../assets/slideshow5.png"
       /></swiper-slide>
       <swiper-slide class="bg4"
-        ><img src="../assets/banner5.png"
+        ><img src="../assets/banner6.png"
       /></swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -41,9 +41,6 @@ export default {
     swiper() {
       return this.$refs.mySwiper.$swiper;
     }
-  },
-  mounted() {
-    console.log(this.swiper);
   }
 };
 </script>

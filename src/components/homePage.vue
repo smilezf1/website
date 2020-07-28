@@ -34,7 +34,12 @@
       <div class="securiptProductContainer">
         <h3>安全产品</h3>
         <div class="container">
-          <ul v-for="(item, index) in securityProductList" :key="index">
+          <ul
+            v-for="(item, index) in securityProductList"
+            :key="index"
+            class="animate pulse"
+            @mouseover="move(index)"
+          >
             <img :src="item.imgSrc" class="decorate" />
             <li v-for="(item, index) in item.subs" :key="index">
               <span>{{ item.name }}</span>
@@ -107,25 +112,6 @@
         </div>
       </div>
     </div>
-    <!-- 侧边栏联系我们 -->
-    <div class="sidebar " v-show="showIcon">
-      <div class="sidebarContent">
-        <router-link
-          to="/"
-          v-for="(item, index) in sidebarData"
-          :key="item.id"
-          @mouseover.native="changeBg(index)"
-          @mouseout.native="recoverBg(index)"
-          @click.native="backTop(index)"
-          :class="{ select: selectIndex == index }"
-          ><img :src="item.imgSrc" />
-          <p class="contactTel" v-show="xx">
-            联系我们:021-57677921
-            <span class="triangle"></span>
-          </p>
-        </router-link>
-      </div>
-    </div>
   </div>
 </template>
 <script>
@@ -187,15 +173,10 @@ export default {
         "315晚会曝光SDK窃密隐私,个人信息安全刻不容缓",
         "APP违法违规收集使用个人信息专项治理报告"
       ],
-      sidebarData: [
-        { id: 1, imgSrc: require("../assets/phone.png") },
-        { id: 2, imgSrc: require("../assets/stick.png") }
-      ],
       number: 0,
       timer: null,
       selectIndex: -1,
-      showIcon: false,
-      xx: false
+      showIcon: false
     };
   },
   computed: {
@@ -208,11 +189,6 @@ export default {
   },
   mounted() {
     this.startMove();
-    window.addEventListener("scroll", this.scrollBackTop); //监听滚动条
-  },
-  //移除滚动条监听
-  destroyed() {
-    window.removeEventListener("scroll", this.scrollBackTop);
   },
   methods: {
     zoom(e) {
@@ -253,44 +229,8 @@ export default {
         this.number += 1;
       }
     },
-    /* 侧边栏 */
-    changeBg(index) {
-      this.selectIndex = index;
-      if (index === 0) {
-        this.xx = true;
-      }
-    },
-    recoverBg() {
-      this.selectIndex = -1;
-      this.xx = false;
-    },
-    //返回顶部
-    backTop(index) {
-      if (index === 1) {
-        const that = this;
-        let timer = setInterval(() => {
-          let speed = Math.floor(-that.scrollTop / 5);
-          document.documentElement.scrollTop = document.body.scrollTop =
-            that.scrollTop + speed;
-          if (that.scrollTop === 0) {
-            clearInterval(timer);
-          }
-        }, 20);
-      }
-    },
-    //计算距离顶部的高度,当高度大于60显示顶部图标,小于60则隐藏
-    scrollBackTop() {
-      const that = this;
-      let scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
-      that.scrollTop = scrollTop;
-      if (that.scrollTop > 90) {
-        that.showIcon = true;
-      } else {
-        that.showIcon = false;
-      }
+    move() {
+      console.log("移动");
     }
   }
 };
@@ -365,7 +305,7 @@ export default {
   font-weight: 700;
 }
 .securiptProductContainer {
-  background: url("../assets/section-bg.jpg") center;
+  background: url("../assets/x10.jpg") 100% / cover repeat-x;
   padding: 20px 0;
 }
 .securiptProductContainer h3 {
@@ -384,10 +324,10 @@ export default {
 .securiptProductContainer ul {
   width: 320px;
   padding: 20px;
-  /* box-shadow: 0px 0px 10px #00000030; */
   box-sizing: border-box;
   border-radius: 10px;
   background: white;
+  /* box-shadow: 0px 0px 10px #000; */
 }
 .securiptProductContainer ul .decorate {
   display: block;
@@ -404,7 +344,7 @@ export default {
   color: #2b2b2b;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   margin: 0 auto;
 }
 .securiptProductContainer ul li:not(:first-child) {
@@ -488,56 +428,7 @@ export default {
   font-weight: 500;
 }
 .publicityContentColumn > p {
-  /*  color: #00f0ff; */
   font-size: 16px;
   margin-top: 10px;
-}
-/* 侧边栏联系我们 */
-.sidebar {
-  position: fixed;
-  right: 10px;
-  z-index: 99;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.sidebarContent {
-  width: 80px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-}
-.sidebarContent a {
-  background: #00000029;
-  margin-top: 10px;
-  transition: background 0.8s;
-}
-.sidebarContent .select {
-  background: skyblue;
-  transition: background 0.8s;
-}
-.contactTel {
-  width: 240px;
-  height: 80px;
-  position: absolute;
-  padding: 0 17px;
-  box-sizing: border-box;
-  right: 115%;
-  top: 10px;
-  background: skyblue;
-  color: white;
-  font-size: 18px;
-  line-height: 80px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
-}
-.contactTel .triangle {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-left-color: skyblue;
 }
 </style>
