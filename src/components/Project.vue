@@ -12,7 +12,7 @@
         <h3 class="title">实现完善的功能</h3>
         <ul>
           <li v-for="item in functionNavItem" :key="item.id">
-            <img src="../assets/icon.png" />
+           <!--  <img src="../assets/icon.png" /> -->
             <p>{{ item.content }}</p>
           </li>
         </ul>
@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/Headerspace.vue";
+import headerSpace from "@/components/common/headerSpace.vue";
 import Footerspace from "@/components/common/Footerspace";
 export default {
   name: "Project",
@@ -56,7 +56,6 @@ export default {
 }
 .function {
   height: 100%;
-  background: url("../assets/section-bg.jpg") center;
   padding: 40px 0;
   margin: 20px 0;
 }

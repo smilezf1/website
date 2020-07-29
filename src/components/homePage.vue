@@ -21,13 +21,17 @@
               </transition>
             </div>
           </div>
-          <div class="securipTproductTopRight newsBtn">
-            <router-link to="/" @click.native="prev()"
+          <div class="securipTproductTopRight ">
+            <!--   <router-link to="/" @click.native="prev()"
               ><img src="../assets/newsPrev.png"
             /></router-link>
             <router-link to="/" @click.native="next()">
               <img src="../assets/newsNext.png"
-            /></router-link>
+            /></router-link> -->
+            <router-link to="/Article" class="more">
+              <span> More</span>
+              <img src="../assets/more.png" />
+            </router-link>
           </div>
         </div>
       </div>
@@ -161,11 +165,11 @@ export default {
           ]
         }
       ],
-      solutionList: [
+      /*  solutionList: [
         { id: 1, name: "金融", imgSrc: require("../assets/solution1.jpg") },
         { id: 2, name: "政府", imgSrc: require("../assets/solution2.jpg") },
         { id: 3, name: "企业", imgSrc: require("../assets/solution2.jpg") }
-      ],
+      ], */
       newsList: [
         "APP违法违规收集使用个人信息专项治理报告",
         "好酒沈醉酬佳节，十分酒，一分歌。",
@@ -213,7 +217,7 @@ export default {
     beginRoll() {
       this.startMove();
     },
-    prev() {
+    /*  prev() {
       clearTimeout(this.timer);
       if (this.number === 0) {
         this.number = 2;
@@ -228,7 +232,7 @@ export default {
       } else {
         this.number += 1;
       }
-    },
+    }, */
     move() {
       console.log("移动");
     }
@@ -241,7 +245,7 @@ export default {
   width: 100%;
   background: linear-gradient(180deg, #24c6dc, #514a9d);
   color: white;
-  padding: 10px 0;
+  padding: 15px 0;
   box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -257,13 +261,6 @@ export default {
   bottom: -4px;
   display: inline-block;
   box-sizing: border-box;
-}
-.newsBtn {
-  display: flex;
-  flex-direction: column;
-}
-.newsBtn a {
-  margin-bottom: 5px;
 }
 .newsItem a {
   color: white;
@@ -293,7 +290,12 @@ export default {
   justify-content: space-between;
 }
 .securipTproductTopRight .more {
-  color: inherit;
+  color: white;
+  display: flex;
+}
+.securipTproductTopRight .more img {
+  width: 18px;
+  margin-left: 5px;
 }
 .securiptProductContainer h3,
 .solution h3,

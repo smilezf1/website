@@ -2,26 +2,47 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/x7.jpg" />
+      <img src="../assets/y2.jpg" />
       <div class="bannerContent">
         <h3>构建智慧安全生活</h3>
       </div>
     </div>
     <div class="connectBody">
-      <!-- 客户服务热线 -->
-      <div class="serviceHotline">
-        <h1>客户服务热线</h1>
-        <p class="line"></p>
-        <div class="serviceHotlineContent">
-          <p class="phone">
-            <img src="../assets/phone1.png" />
-            <span>电话:021-57677921</span>
+      <!-- 联系方式 -->
+      <div class="contactWay">
+        <h1 class="contactWayTitle">
+          联系方式
+        </h1>
+      </div>
+      <div class="contactWayContent">
+        <div class="contactWayContentTitle">
+          <div><img src="../assets/bg.png" /></div>
+          <h5>【联系方式】</h5>
+        </div>
+        <div class="contactWayContentMainPart">
+          <p>
+            <img src="../assets/call.png" />
+            <span>电话</span>
+            <span>021-57677921</span>
+          </p>
+          <p>
+            <img src="../assets/postbox.png" />
+            <span>邮箱</span>
+            <span>service@manxi-safe.com</span>
+          </p>
+          <p>
+            <img src="../assets/address.png" />
+            <span>地址</span>
+            <span>上海市松江区沈砖公路5555号韵博智谷</span>
           </p>
         </div>
       </div>
       <!-- 联系地址 -->
       <div class="connectAddress">
-        <!-- <p class="title">公司地址</p> -->
+        <div class="connectAddressTitle">
+          <div><img src="../assets/bg.png" /></div>
+          <h5>【联系地址】</h5>
+        </div>
         <baidu-map
           :center="center"
           :zoom="25"
@@ -108,26 +129,58 @@ export default {
   width: 1200px;
   margin: 0 auto;
 }
-
-.serviceHotline h1 {
-  border-left: 6px solid #1296db;
-  margin-top: 10px;
-  padding-left: 10px;
-}
-.serviceHotline .line {
-  height: 2px;
-  background: #dddddd57;
+.contactWayTitle {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 550;
+  color: #333;
   margin-top: 5px;
 }
-.serviceHotlineContent .phone {
+.contactWayContentTitle,
+.connectAddressTitle {
+  position: relative;
+  margin-top: 20px;
+}
+.connectAddressTitle {
+  margin-top: 40px;
+}
+.contactWayContentTitle h5,
+.connectAddressTitle h5 {
+  font-size: 20px;
+  color: #333;
+  font-weight: normal;
+}
+.contactWayContentTitle > div,
+.connectAddressTitle > div {
+  position: absolute;
+  bottom: -2px;
+  width: 50%;
+}
+.contactWayContentTitle > div img,
+.connectAddressTitle > div img {
+  width: 100%;
+}
+.contactWayContentMainPart {
+  margin-top: 30px;
   display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.contactWayContentMainPart p {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.serviceHotlineContent .phone img {
-  width: 65px;
-}
-.serviceHotlineContent .phone span {
+.contactWayContentMainPart p span {
+  color: #00b7fa;
   font-size: 16px;
+  margin-top: 10px;
+}
+.contactWayContentMainPart img {
+  width: 100px;
+  padding: 20px;
+  border: 1px dashed #00b7fa;
+  border-radius: 50%;
 }
 .connectAddress,
 .cooperation {
@@ -167,7 +220,7 @@ export default {
 #map {
   width: 40%;
   height: 400px;
-  margin: 130px auto;
+  margin: 100px auto;
 }
 .sample {
   width: 320px;

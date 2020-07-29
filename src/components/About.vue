@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import HeaderSpace from "@/components/common/Headerspace.vue";
+import HeaderSpace from "@/components/common/headerSpace.vue";
 import FooterSpace from "@/components/common/FooterSpace";
 import slideBar from "@/components/common/slideBar.vue";
 export default {
@@ -39,7 +39,7 @@ export default {
 }
 .companyProfileContent p {
   font-size: 18px;
-  line-height: 50px;
+  line-height: 40px;
   text-indent: 2em;
 }
 .enterpriseConceptContent {

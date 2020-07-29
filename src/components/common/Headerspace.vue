@@ -211,7 +211,7 @@ export default {
   opacity: 0;
 }
 .item_child_select {
-  color: #6aa3ea !important;
+  color: #00b7fa !important;
 }
 .item_select {
   /*  color: #6aa3ea !important; */
@@ -268,7 +268,6 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  /* background-color: #272b2e; */
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -277,10 +276,6 @@ export default {
   position: absolute;
   width: 1200px;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-  /*  background: url("../../assets/dropdown_bg.png") repeat; */
-  /*  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 0.15s ease-out;  */
 }
 .pullDownSpecial {
   padding: 20px;
@@ -351,14 +346,13 @@ export default {
   font-size: 16px;
   border: 1px solid white;
   border-radius: 5px;
-  /*  font-family: "黑体"; */
   background: transparent;
   transition: background 1.5s ease;
   padding: 0 10px;
   box-sizing: border-box;
 }
 .navigationContentRight .getUseSelect {
-  background: #6aa3ea;
+  background: #00b7fa;
   border: none;
   transition: all 1.5s ease;
 }

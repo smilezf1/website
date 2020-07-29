@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/Headerspace.vue";
+import headerSpace from "@/components/common/headerSpace.vue";
 import footerSpace from "@/components/common/footerSpace";
 import slideBar from "@/components/common/slideBar";
 export default {
@@ -63,17 +63,18 @@ export default {
   transition: background 1.5s ease;
 }
 .productBannerContent .getUseSelect {
-  background: #6aa3ea;
-  border: none;
+  background: #00b7fa;
+  border: 1px solid transparent;
   transition: all 1.5s ease;
 }
 /* 产品介绍 */
 .productIntroduce {
-  margin: 30px 0;
+  width: 1200px;
+  margin: 30px auto;
 }
 .produtctTrait {
   background: url("../assets/x10.jpg") 100% / cover repeat-x;
-  padding: 20px 0;
+  padding: 10px 0px 40px 0px;
 }
 .productIntroduce h3,
 .produtctTrait h3 {
@@ -101,7 +102,7 @@ export default {
 }
 .productTraitContent {
   width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .productTraitContent li {
   margin: 0 30px;

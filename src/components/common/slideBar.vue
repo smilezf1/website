@@ -1,13 +1,13 @@
 <template>
   <div class="slideBar" v-show="showSlideBar">
     <div class="slideBarContent">
-      <router-link
-        to="/"
+      <div
+        class="bar"
         v-for="(item, index) in listItem"
         :key="item.id"
-        @mouseover.native="revealToolTip(index)"
-        @mouseout.native="hideToolTip(index)"
-        @click.native="backTop(index)"
+        @mouseover="revealToolTip(index)"
+        @mouseout="hideToolTip(index)"
+        @click="backTop(index)"
       >
         <img :src="item.imgSrc" />
         <span>{{ item.name }}</span>
@@ -19,7 +19,7 @@
             </p>
           </transition>
         </template>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -49,15 +49,11 @@ export default {
           imgSrc: require("../../assets/backtothetop.svg")
         }
       ],
-      showSlideBar: false,
       scrollTop: 0
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.scrollBackTop, true); //监听滚动条
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.scrollBackTop); //移除滚动条监听
+    window.addEventListener("scroll", this.getScrollTop, true);
   },
   methods: {
     backTop(index) {
@@ -67,7 +63,6 @@ export default {
           let speed = Math.floor(-that.scrollTop / 5);
           document.documentElement.scrollTop = document.body.scrollTop =
             that.scrollTop + speed;
-          console.log(document.documentElement.scrollTop);
           if (that.scrollTop === 0) {
             clearInterval(timer);
           }
@@ -75,25 +70,23 @@ export default {
       }
     },
     //计算距离顶部的高度
-    scrollBackTop() {
-      const that = this;
+    getScrollTop() {
       let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      that.scrollTop = scrollTop;
-      console.log(scrollTop);
-      if (scrollTop > 150) {
-        that.showSlideBar = true;
-      } else {
-        that.showSlideBar = false;
-      }
+      this.scrollTop = scrollTop;
     },
     revealToolTip(index) {
       this.listItem[index].showToolTip = true;
     },
     hideToolTip(index) {
       this.listItem[index].showToolTip = false;
+    }
+  },
+  computed: {
+    showSlideBar: function() {
+      return this.scrollTop > 150;
     }
   }
 };
@@ -111,7 +104,7 @@ export default {
   height: 100px;
   position: relative;
 }
-.slideBarContent a {
+.slideBarContent .bar {
   display: inline-block;
   width: 70px;
   height: 70px;
@@ -123,16 +116,17 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 5px;
+  cursor: pointer;
 }
-.slideBarContent a img {
+.slideBarContent .bar img {
   width: 25px;
 }
-.slideBarContent a span {
+.slideBarContent .bar span {
   font-size: 14px;
   margin-top: 5px;
   white-space: nowrap;
 }
-.slideBarContent a p {
+.slideBarContent .bar p {
   position: absolute;
   padding: 10px;
   right: 120%;
@@ -141,7 +135,7 @@ export default {
   z-index: 99;
   background: white;
 }
-.slideBarContent a p .triangle {
+.slideBarContent .bar p .triangle {
   position: absolute;
   left: 100%;
   width: 0;

@@ -9,53 +9,57 @@
         <article>移动应用人工渗透测试、移动应用漏洞专项分析</article>
       </div>
     </div>
-    <!-- 立即联系 -->
-    <div class="immediately">
-      <h2>联系我们</h2>
+    <div class="gainBody">
+      <h2 class="gainBodyTitle">联系我们</h2>
       <!-- 表单 -->
-      <el-form
-        :model="ruleForm"
-        :rules="rules"
-        ref="ruleForm"
-        label-width="100px"
-        class="menu"
-      >
-        <!-- 公司名称 联系人 联系邮箱 联系电话 所在地 所属行业 -->
-        <el-form-item
-          label="公司名称"
-          prop="name"
-          :label-position="labelPosition"
+      <div class="gainBodyContent">
+        <div class="gainBodyContentTitle">
+          <div><img src="../assets/bg.png" /></div>
+          <h5>【联系我们】</h5>
+        </div>
+        <el-form
+          :model="ruleForm"
+          :rules="rules"
+          ref="ruleForm"
+          label-width="100px"
+          class="menu"
         >
-          <el-input v-model="ruleForm.name"></el-input>
-        </el-form-item>
-        <el-form-item label="联系人" prop="contacts">
-          <el-input v-model="ruleForm.contacts"></el-input>
-        </el-form-item>
-        <el-form-item label="联系邮箱" prop="email">
-          <el-input v-model="ruleForm.email"></el-input>
-        </el-form-item>
-        <el-form-item label="联系电话" prop="phone">
-          <el-input v-model="ruleForm.phone"></el-input>
-        </el-form-item>
-        <el-form-item label="所在地" prop="selectedOptions">
-          <el-cascader
-            size="large"
-            :options="options"
-            v-model="ruleForm.selectedOptions"
-            @change="handleChange"
-            style="width:100%"
-            placeholder="请选择地址"
-          ></el-cascader>
-        </el-form-item>
-        <el-form-item label="所属行业" prop="industry">
-          <el-input v-model="ruleForm.industry"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="submitForm('ruleForm')"
-            >提交</el-button
+          <el-form-item
+            label="公司名称"
+            prop="name"
+            :label-position="labelPosition"
           >
-        </el-form-item>
-      </el-form>
+            <el-input v-model="ruleForm.name"></el-input>
+          </el-form-item>
+          <el-form-item label="联系人" prop="contacts">
+            <el-input v-model="ruleForm.contacts"></el-input>
+          </el-form-item>
+          <el-form-item label="联系邮箱" prop="email">
+            <el-input v-model="ruleForm.email"></el-input>
+          </el-form-item>
+          <el-form-item label="联系电话" prop="phone">
+            <el-input v-model="ruleForm.phone"></el-input>
+          </el-form-item>
+          <el-form-item label="所在地" prop="selectedOptions">
+            <el-cascader
+              size="large"
+              :options="options"
+              v-model="ruleForm.selectedOptions"
+              @change="handleChange"
+              style="width:100%"
+              placeholder="请选择地址"
+            ></el-cascader>
+          </el-form-item>
+          <el-form-item label="所属行业" prop="industry">
+            <el-input v-model="ruleForm.industry"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="submitForm('ruleForm')"
+              >提交</el-button
+            >
+          </el-form-item>
+        </el-form>
+      </div>
     </div>
     <!-- 底部 -->
     <FooterSpace></FooterSpace>
@@ -157,6 +161,27 @@ export default {
   transform: translate(-50%, -50%);
   color: white;
 }
+.gainBodyContent {
+  width: 1200px;
+  margin: 0 auto;
+}
+.gainBodyContentTitle {
+  position: relative;
+  margin-top: 20px;
+}
+.gainBodyContentTitle h5 {
+  font-size: 20px;
+  color: #333;
+  font-weight: normal;
+}
+.gainBodyContentTitle > div {
+  position: absolute;
+  bottom: -2px;
+  width: 50%;
+}
+.gainBodyContentTitle > div img {
+  width: 100%;
+}
 .gainBannerContent h3 {
   font-size: 56px;
 }
@@ -178,24 +203,25 @@ export default {
 .menu .submit {
   text-align: c;
 }
-.immediately {
+.gainBody {
   /* 高度测试 */
   height: 700px;
   margin: 10px 20px;
 }
-.immediately h2 {
+.gainBodyTitle {
   font-size: 36px;
   font-weight: 700;
   margin: 40px 10px;
   text-align: center;
+  color: #333;
 }
-.immediately .el-button--primary {
+.gainBody .el-button--primary {
   width: 100%;
-  background: #6aa3ea;
+  background: #00b7fa;
   font-size: 16px;
-  padding: 15px 0;
+  padding: 10px 0;
 }
-.immediately .el-select {
+.gainBody .el-select {
   width: 100%;
 }
 .el-form-item__label {

@@ -22,10 +22,12 @@
       <!-- 产品介绍 -->
       <div class="productBox">
         <div class="productIntroduce">
-          <h3>产品介绍</h3>
-          <p>
-            全面检测移动应用中存在的安全漏洞、不和规项,并将权限滥用、信息非法收集、信息泄露等严重问题,结合时下相关法律法规和监管要求,为监管机构、测评机构等有效地提供行政执法依据。
-          </p>
+          <h3 class="productIntroduceTitle">产品介绍</h3>
+          <div class="productIntroduceBody">
+            <p>
+              全面检测移动应用中存在的安全漏洞、不和规项,并将权限滥用、信息非法收集、信息泄露等严重问题,结合时下相关法律法规和监管要求,为监管机构、测评机构等有效地提供行政执法依据。
+            </p>
+          </div>
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">

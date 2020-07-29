@@ -12,6 +12,10 @@
       <div class="companyProfile">
         <h3 class="companyProfileTitle">公司简介</h3>
         <div class="companyProfileContent">
+          <div class="companyProfileContentTitle">
+            <div><img src="../../assets/bg.png" /></div>
+            <h5>【简介】</h5>
+          </div>
           <p v-for="item in briefItem" :key="item.id">
             {{ item.content }}
           </p>
@@ -90,6 +94,10 @@ export default {
   width: 100%;
   height: 700px;
 }
+.companyProfileContent .title {
+  font-size: 22px;
+  background: url("../../assets/bg.png") no-repeat 100%;
+}
 .companyIntroduceBannerContent {
   width: 1200px;
   margin: 0 auto;
@@ -101,6 +109,23 @@ export default {
 }
 .companyIntroduceBannerContent h3 {
   font-size: 56px;
+}
+.companyProfileContentTitle {
+  position: relative;
+  margin-bottom: 5px;
+}
+.companyProfileContentTitle h5 {
+  font-size: 20px;
+  color: #333;
+  font-weight: normal;
+}
+.companyProfileContentTitle > div {
+  position: absolute;
+  bottom: -2px;
+  width: 50%;
+}
+.companyProfileContentTitle > div img {
+  width: 100%;
 }
 .companyIntroduceBannerContent article {
   font-size: 18px;

@@ -35,9 +35,9 @@
     </div>
     <div class="bottom">
       <p>
-        上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号<img
-          src="../../assets/icp.png"
-        />沪公网安备 31011702007362号
+        上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号
+        &nbsp;&nbsp;<img src="../../assets/icp.png" />&nbsp;&nbsp;沪公网安备&nbsp;&nbsp;
+        31011702007362号
       </p>
     </div>
   </div>

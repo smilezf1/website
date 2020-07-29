@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/Headerspace.vue";
+import headerSpace from "@/components/common/headerSpace.vue";
 import FooterSpace from "@/components/common/FooterSpace";
 import slideBar from "@/components/common/slideBar.vue";
 export default {

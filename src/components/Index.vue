@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/Headerspace.vue";
+import headerSpace from "@/components/common/headerSpace.vue";
 import xx from "@/components/xx.vue";
 import Banner from "@/components/Banner.vue";
 import homePage from "@/components/homePage.vue";

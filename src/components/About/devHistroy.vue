@@ -13,6 +13,10 @@
       <div class="developmentHistory ">
         <h3 class="developmentHistoryTitle">发展历程</h3>
         <div class="developmentHistoryContent history">
+          <div class="developmentHistoryContentTitle">
+            <div><img src="../../assets/bg.png" /></div>
+            <h5>【历程】</h5>
+          </div>
           <!-- 发展历程头部 -->
           <h3 class="historyTitle">
             <img
@@ -147,8 +151,25 @@ export default {
 .devHistoryBannerContent h3 {
   font-size: 56px;
 }
+.developmentHistoryContentTitle {
+  position: relative;
+  margin-bottom: 5px;
+}
+.developmentHistoryContentTitle h5 {
+  font-size: 20px;
+  color: #333;
+  font-weight: normal;
+}
+.developmentHistoryContentTitle > div {
+  position: absolute;
+  bottom: -2px;
+  width: 50%;
+}
+.developmentHistoryContentTitle > div img {
+  width: 100%;
+}
 .history {
-  width: 16%;
+  width: 1200px;
   margin: 0 auto;
 }
 .historyTitle {
