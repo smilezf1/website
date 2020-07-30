@@ -2,9 +2,9 @@
   <div class="devHistroy">
     <!-- banner -->
     <div class="devHistroyBanner">
-      <img src="../../assets/x7.jpg" />
+      <img src="../../assets/y17.jpg" />
       <div class="devHistoryBannerContent">
-        <h3>持续守卫移动互联网络空间生活</h3>
+        <h3>发展历程</h3>
       </div>
     </div>
     <!-- 主体内容 -->
@@ -13,108 +13,58 @@
       <div class="developmentHistory ">
         <h3 class="developmentHistoryTitle">发展历程</h3>
         <div class="developmentHistoryContent history">
-          <div class="developmentHistoryContentTitle">
-            <div><img src="../../assets/bg.png" /></div>
-            <h5>【历程】</h5>
-          </div>
-          <!-- 发展历程头部 -->
-          <h3 class="historyTitle">
-            <img
-              class="
-arrows"
-              src="../../assets/history_bg_icon.png"
-            />
-            <span class="historyYear">2020年</span>
-            <img class="historyLine" src="../../assets/left_blue.png" />
-            <span class="historyBtn"></span>
-          </h3>
-          <!-- 发展历程主体部分 -->
-          <div class="historyBox">
-            <div class="year">
-              <div class="yearLeft">
-                <span class="historyTime">2020-06</span>
-              </div>
-              <div class="yearMiddle">
-                <img class="historyLine" src="../../assets/right_blue.png" />
-                <img
-                  class="historySBtn"
-                  src="../../assets/circle_gray_small.png"
-                />
-              </div>
-              <div class="yearRight">
-                <span class="historyContent">精彩待续</span>
-              </div>
+          <!-- 线条 -->
+          <div class="line"></div>
+          <ul class="item">
+            <div class="left">
+              <h3>2020年</h3>
+              <span class="dot"></span>
             </div>
-            <div class="year">
-              <div class="yearLeft">
-                <span class="historyTime">2020-04</span>
-              </div>
-              <div class="yearMiddle">
-                <img class="historyLine" src="../../assets/right_blue.png" />
-                <img
-                  class="historySBtn"
-                  src="../../assets/circle_gray_small.png"
-                />
-              </div>
-              <div class="yearRight">
-                <span class="historyContent">CRCC</span>
-              </div>
+            <div class="right">
+              <ul>
+                <li>
+                  <i></i>
+                  <span>8月</span>
+                  精彩待续...
+                </li>
+                <li>
+                  <i></i>
+                  <span>6月</span>
+                  CRCC
+                </li>
+                <li>
+                  <i></i>
+                  <span>4月</span>
+                  CRCC
+                </li>
+                <li>
+                  <i></i>
+                  <span>2月</span>
+                  CRCC
+                </li>
+              </ul>
             </div>
-            <div class="year">
-              <div class="yearLeft">
-                <span class="historyTime">2020-02</span>
-              </div>
-              <div class="yearMiddle">
-                <img class="historyLine" src="../../assets/right_blue.png" />
-                <img
-                  class="historySBtn"
-                  src="../../assets/circle_gray_small.png"
-                />
-              </div>
-              <div class="yearRight">
-                <span class="historyContent">CRCC</span>
-              </div>
+          </ul>
+          <ul class="item">
+            <div class="left">
+              <h3>2019年</h3>
+              <span class="dot"></span>
             </div>
-            <h3 class="historyTitle">
-              <span class="historyYear">2019年</span>
-              <img
-                class="historyLine"
-                src="../../assets/left_blue.png"
-                style="margin-left:0px"
-              />
-              <span class="historyBtn"></span>
-            </h3>
-            <div class="year">
-              <div class="yearLeft">
-                <span class="historyTime">2019-12</span>
-              </div>
-              <div class="yearMiddle">
-                <img class="historyLine" src="../../assets/right_blue.png" />
-                <img
-                  class="historySBtn"
-                  src="../../assets/circle_gray_small.png"
-                />
-              </div>
-              <div class="yearRight">
-                <span class="historyContent">CRCC</span>
-              </div>
+            <div class="right">
+              <ul>
+                <li>
+                  <i></i>
+                  <span>12月</span>
+                  CRCC
+                </li>
+                <li>
+                  <i></i>
+                  <span>10月</span>
+                  CRCC
+                </li>
+              </ul>
             </div>
-            <div class="year">
-              <div class="yearLeft">
-                <span class="historyTime">2019-10</span>
-              </div>
-              <div class="yearMiddle">
-                <img class="historyLine" src="../../assets/right_blue.png" />
-                <img
-                  class="historySBtn"
-                  src="../../assets/circle_gray_small.png"
-                />
-              </div>
-              <div class="yearRight">
-                <span class="historyContent">CRCC</span>
-              </div>
-            </div>
-          </div>
+          </ul>
         </div>
       </div>
     </div>
@@ -131,6 +81,7 @@ export default {
   margin: 20px 0 40px 0;
   text-align: center;
   font-weight: normal;
+  color: #3b3b3b;
 }
 .devHistroyBanner {
   position: relative;
@@ -149,16 +100,69 @@ export default {
   color: white;
 }
 .devHistoryBannerContent h3 {
-  font-size: 56px;
-}
-.developmentHistoryContentTitle {
-  position: relative;
-  margin-bottom: 5px;
-}
-.developmentHistoryContentTitle h5 {
-  font-size: 20px;
-  color: #333;
+  font-size: 50px;
   font-weight: normal;
+}
+.developmentHistoryContent {
+  margin: 20px 0;
+}
+.developmentHistoryContent .line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: rgba(220, 222, 224, 1);
+  left: 135px;
+}
+.developmentHistoryContent .item {
+  position: relative;
+  margin-bottom: 70px;
+}
+.developmentHistoryContent::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.developmentHistoryContent .left {
+  float: left;
+}
+.developmentHistoryContent .right {
+  margin-left: 140px;
+}
+.developmentHistoryContent .right > ul {
+  padding-left: 10px;
+}
+.developmentHistoryContent .right > ul > li {
+  color: rgba(51, 51, 51, 1);
+  font-size: 18px;
+  margin: 30px 0;
+}
+.developmentHistoryContent .right ul > li span {
+  color: #737373;
+  font-size: 18px;
+  margin: 0 20px;
+}
+.developmentHistoryContent .left h3 {
+  font-size: 32px;
+  color: rgba(51, 51, 51, 1);
+  font-family: "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
+}
+.developmentHistoryContent .left .dot {
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(220, 222, 224, 1);
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  background: #fff;
+  left: 130px;
+}
+.developmentHistoryContent .right > ul > li i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: rgba(150, 155, 163, 1);
+  border-radius: 50%;
+  margin: 3px;
 }
 .developmentHistoryContentTitle > div {
   position: absolute;
@@ -169,69 +173,14 @@ export default {
   width: 100%;
 }
 .history {
-  width: 1200px;
-  margin: 0 auto;
+  width: 400px;
+  margin: 30px auto;
+  position: relative;
 }
 .historyTitle {
   display: inline-block;
   position: relative;
   height: 73px;
   vertical-align: middle;
-}
-.historyTitle .arrows {
-  position: absolute;
-  top: -17px;
-  right: -2px;
-}
-.historyYear {
-  background: #2276da;
-  font-size: 24px;
-  color: #fff;
-  font-weight: normal;
-  padding: 0px 10px;
-  float: left;
-  margin: 20px 5px 0 0px;
-}
-.historyBtn {
-  width: 20px;
-  height: 20px;
-  display: block;
-  background: url("../../assets/circle_gray_big.png") center center;
-  position: absolute;
-  top: 50%;
-  right: -8px;
-  transform: translateY(-50%);
-}
-.historyContent {
-  font-size: 16px;
-  color: #262626;
-  font-weight: normal;
-  margin-left: 40px;
-}
-.historyTime {
-  color: #666;
-  font-size: 18px;
-  display: inline-block;
-  width: 102px;
-}
-.historyBox {
-  height: 600px;
-}
-.historyBox .year {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-}
-.historyBox .yearMiddle {
-  position: relative;
-}
-.historyBox .yearMiddle .historySBtn {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-}
-.historyBox .historyLine {
-  margin-left: 50px;
 }
 </style>

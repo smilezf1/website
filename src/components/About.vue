@@ -30,6 +30,7 @@ export default {
   font-size: 34px;
   margin-top: 10px;
   font-weight: normal;
+  color: #3b3b3b;
 }
 .companyProfileContent {
   width: 1200px;
@@ -41,6 +42,7 @@ export default {
   font-size: 18px;
   line-height: 40px;
   text-indent: 2em;
+  color: #666;
 }
 .enterpriseConceptContent {
   width: 80%;

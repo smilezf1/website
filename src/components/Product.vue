@@ -70,7 +70,7 @@ export default {
 /* 产品介绍 */
 .productIntroduce {
   width: 1200px;
-  margin: 30px auto;
+  margin: 0px auto;
 }
 .produtctTrait {
   background: url("../assets/x10.jpg") 100% / cover repeat-x;
@@ -79,9 +79,9 @@ export default {
 .productIntroduce h3,
 .produtctTrait h3 {
   font-size: 34px;
-  color: #333;
+  color: #3b3b3b;
   text-align: center;
-  font-weight: 700;
+  font-weight: normal;
   padding: 20px;
 }
 .produtctTrait h3 {

@@ -1,10 +1,10 @@
 <template>
   <div class="companyIntroduce">
     <div class="companyIntroduceBanner">
-      <img src="../../assets/x1.jpg" />
+      <img src="../../assets/y15.jpg" />
       <div class="companyIntroduceBannerContent">
-        <h3>蛮犀科技构建智慧安全生活</h3>
-        <article>建立APP数据全生命周期安全体系,为企业资产保驾护航</article>
+        <h3>公司简介</h3>
+        <!--  <article>建立APP数据全生命周期安全体系,为企业资产保驾护航</article> -->
       </div>
     </div>
     <div class="companyIntroduceContainer">
@@ -12,10 +12,6 @@
       <div class="companyProfile">
         <h3 class="companyProfileTitle">公司简介</h3>
         <div class="companyProfileContent">
-          <div class="companyProfileContentTitle">
-            <div><img src="../../assets/bg.png" /></div>
-            <h5>【简介】</h5>
-          </div>
           <p v-for="item in briefItem" :key="item.id">
             {{ item.content }}
           </p>
@@ -108,17 +104,10 @@ export default {
   color: white;
 }
 .companyIntroduceBannerContent h3 {
-  font-size: 56px;
-}
-.companyProfileContentTitle {
-  position: relative;
-  margin-bottom: 5px;
-}
-.companyProfileContentTitle h5 {
-  font-size: 20px;
-  color: #333;
+  font-size: 45px;
   font-weight: normal;
 }
+
 .companyProfileContentTitle > div {
   position: absolute;
   bottom: -2px;

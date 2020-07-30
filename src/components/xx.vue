@@ -6,7 +6,7 @@
         <div class="navigationContent">
           <!-- 导航左部分 -->
           <div class="navigationContentLeft">
-            <img src="../assets/logo2.png" />
+          <!--   <img src="../assets/logo2.png" /> -->
           </div>
           <!-- 导航中间部分 -->
           <ul class="navigationContentMiddle">

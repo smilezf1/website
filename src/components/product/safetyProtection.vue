@@ -2,7 +2,7 @@
   <div class="safetyProtection">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/develop.jpg" />
+       <!--  <img src="../../assets/develop.jpg" /> -->
         <div class="productBannerContent">
           <!-- 移动应用安全防护 -->
           <h3>蛮犀安全移动应用安全防护</h3>

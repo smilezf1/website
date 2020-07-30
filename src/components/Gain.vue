@@ -3,7 +3,7 @@
     <HeaderSpace></HeaderSpace>
     <!-- 图片 -->
     <div class="gainBanner">
-      <img src="../assets/x6.jpg" />
+      <img src="../assets/y12.jpg" />
       <div class="gainBannerContent">
         <h3>蛮犀科技构建智慧安全生活</h3>
         <article>移动应用人工渗透测试、移动应用漏洞专项分析</article>
@@ -14,8 +14,6 @@
       <!-- 表单 -->
       <div class="gainBodyContent">
         <div class="gainBodyContentTitle">
-          <div><img src="../assets/bg.png" /></div>
-          <h5>【联系我们】</h5>
         </div>
         <el-form
           :model="ruleForm"
@@ -163,7 +161,7 @@ export default {
 }
 .gainBodyContent {
   width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .gainBodyContentTitle {
   position: relative;
@@ -210,10 +208,10 @@ export default {
 }
 .gainBodyTitle {
   font-size: 36px;
-  font-weight: 700;
-  margin: 40px 10px;
   text-align: center;
-  color: #333;
+  color: #3b3b3b;
+  margin-top: 15px;
+  font-weight: 500;
 }
 .gainBody .el-button--primary {
   width: 100%;

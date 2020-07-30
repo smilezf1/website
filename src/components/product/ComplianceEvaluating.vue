@@ -3,7 +3,7 @@
   <div class="complianceEvaluating">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/develop.jpg" />
+        <img src="../../assets/y24.jpg" />
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用合规评测系统</h3>
           <article>

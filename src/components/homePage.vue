@@ -28,7 +28,7 @@
             <router-link to="/" @click.native="next()">
               <img src="../assets/newsNext.png"
             /></router-link> -->
-            <router-link to="/Article" class="more">
+            <router-link to="/article" class="more">
               <span> More</span>
               <img src="../assets/more.png" />
             </router-link>
@@ -301,10 +301,10 @@ export default {
 .solution h3,
 .partner h3 {
   font-size: 34px;
-  color: #2b2b2b;
+  color: #3b3b3b;
   text-align: center;
   margin: 20px 0;
-  font-weight: 700;
+  font-weight:normal;
 }
 .securiptProductContainer {
   background: url("../assets/x10.jpg") 100% / cover repeat-x;

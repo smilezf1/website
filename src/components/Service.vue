@@ -54,10 +54,10 @@ export default {
 .serviceIntroduce h3,
 .businessScope h3 {
   font-size: 34px;
-  color: #333;
+  color: #3b3b3b;
   text-align: center;
   margin: 20px 0 40px 0;
-  font-weight: 700;
+  font-weight: normal;
 }
 .businessScope h3 {
   color: white;

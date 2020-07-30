@@ -108,7 +108,7 @@ export default {
   display: inline-block;
   width: 70px;
   height: 70px;
-  background: #00b7fa;
+  background: #409efff5;
   position: relative;
   color: white;
   display: flex;

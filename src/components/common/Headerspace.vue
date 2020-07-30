@@ -2,11 +2,12 @@
   <div class="headerspace">
     <!-- 导航开始 -->
     <transition name="slide-fade">
-      <div class="navigation" :class="{ minNavigation: navigationBg == 1 }">
+      <!-- :class="{ minNavigation: navigationBg == 1 }" -->
+      <div class="navigation">
         <div class="navigationContent">
           <!-- 导航左部分 -->
           <div class="navigationContentLeft">
-            <img src="../../assets/logo3.png" />
+            <img src="../../assets/logo.png" />
           </div>
           <!-- 导航中间部分 -->
           <ul class="navigationContentMiddle">
@@ -30,22 +31,19 @@
                     v-show="item.child.show"
                     :class="{ pullDownSpecial: index == 1 }"
                   >
-                    <div class="pullDownContent">
-                      <router-link
-                        v-for="(item_child, item_child_index) in item.child
-                          .childContent"
-                        :key="item_child_index"
-                        :to="item_child.src"
-                        @mouseover.native="changeChildColor(item_child_index)"
-                        @mouseout.native="recoverChildColor()"
-                        :class="{
-                          item_child_select:
-                            item_child_SelectIndex == item_child_index
-                        }"
-                      >
-                        {{ item_child.content }}
-                      </router-link>
-                    </div>
+                    <router-link
+                      v-for="(item_child, item_child_index) in item.child
+                        .childContent"
+                      :key="item_child_index"
+                      :to="item_child.src"
+                      @mouseover.native="changeChildColor(item_child_index)"
+                      @mouseout.native="recoverChildColor()"
+                      :class="{
+                        item_child_select:
+                          item_child_SelectIndex == item_child_index
+                      }"
+                      >{{ item_child.content }}</router-link
+                    >
                   </div>
                 </transition>
               </router-link>
@@ -119,7 +117,7 @@ export default {
             ]
           }
         },
-        /*  { id: 3, name: "解决方案", link: "/Project", child: null }, */
+      /*   { id: 3, name: "解决方案", link: "/Project", child: null }, */
         {
           id: 4,
           name: "关于我们",
@@ -147,10 +145,6 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll, true); //监听滚轮事件
-    //解决Vue路由跳转到新页面时,默认不在最顶部
-    this.$router.afterEach((to, from, next) => {
-      window.scrollTo(0, 0);
-    });
   },
   methods: {
     handleScroll() {
@@ -207,91 +201,89 @@ export default {
 }
 .slide-fade-enter,
 .slide-fade-leave-to {
-  transform: translateY(20px);
+  transform: translateX(10px);
   opacity: 0;
 }
+.pullDownSpecial {
+  width: 600px !important;
+  flex-flow: wrap !important;
+  flex-direction: row !important;
+  text-align: left;
+}
+.pullDownSpecial a {
+  display: inline-block;
+  width: 30% !important;
+}
 .item_child_select {
-  color: #00b7fa !important;
+  color: #6aa3ea !important;
 }
 .item_select {
-  /*  color: #6aa3ea !important; */
+  color: #6aa3ea !important;
   border-bottom: 2px solid white !important;
 }
 .headerspace {
   width: 100%;
-  height: 84px;
-  z-index: 2;
-  min-width: 1900px;
+  height: 64px;
   position: absolute;
-  left: 0;
-  top: 0;
+  z-index: 2;
 }
 .navigation {
   height: 84px;
   line-height: 84px;
   width: 100%;
+  top: 0;
+  left: 0;
   background: transparent;
   transition: background 0.3s ease;
 }
 .minNavigation {
-  background: #1a1c24;
-  /*  background: rgba(0, 0, 0, 0.7); */
-  /* background: #6aa3ea; */
-  transition: background 0.3s ease;
+ /*  background:transparent; */
+ /*  background: #1a1c24;
+  transition: background 0.3s ease; */
 }
 .navigationContent {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0px auto;
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  padding: 0 20px;
+  justify-content: space-around;
 }
 .navigationContentLeft {
   width: 130px;
-  height: 84px;
+  height: 100%;
   position: relative;
 }
 .navigationContentLeft img {
   width: 130px;
   position: absolute;
-  top: -25px;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 .navigationContentMiddle,
 .navigationContentRight {
   display: flex;
   height: 100%;
+  align-items: center;
+}
+.navigationContentMiddle li {
+  position: relative;
 }
 .navigationContentMiddle li .pullDown {
+  width: 100%;
   position: absolute;
-  padding: 0 20px;
-  top: 86px;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 0 10px;
+  top: 66px;
+  left: 0;
   z-index: 2;
-  background: #fff;
+  background: white;
+  /* background-color: #272b2e; */
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  position: absolute;
-  width: 1200px;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
-}
-.pullDownSpecial {
-  padding: 20px;
-  flex-flow: wrap !important;
-  flex-direction: row !important;
-  text-align: left;
-  max-height: 500px;
-}
-.pullDownSpecial a {
-  display: inline-block;
-  width: 30% !important;
-  padding-right: 20px;
-}
-.navigationContentMiddle .pullDownContent {
-  width: 1200px;
-  margin: 0 auto;
+  text-align: center;
 }
 .navigationContentMiddle li .pullDown .el-row {
   width: 100%;
@@ -303,12 +295,10 @@ export default {
   flex-direction: column;
 }
 .navigationContentMiddle li .pullDown a {
-  line-height: 64px;
   font-size: 13px;
   margin-right: 5px;
   width: 100%;
-  color: #383838;
-  white-space: nowrap;
+  color: #333;
 }
 .navigationContentMiddle li .dropDownActive {
   max-height: 456px;
@@ -316,10 +306,10 @@ export default {
 }
 .navigationContentMiddle > li {
   color: #fff;
-  margin: 0px 40px;
+  margin-right: 20px;
 }
 .navigationContentMiddle > li > a {
-  margin: 0 20px;
+  padding: 0 30px;
   display: inline-block;
   height: 100%;
   box-sizing: border-box;
@@ -330,29 +320,24 @@ export default {
 }
 .navigationContentMiddle li > a {
   color: inherit;
-  font-size: 18px;
+  font-size: 16px;
   box-sizing: border-box;
   width: 100%;
-  /*   position: relative; */
+  position: relative;
   border-bottom: 2px solid transparent;
-  text-align: center;
 }
 .navigationContentRight a {
-  display: inline-block;
-  line-height: 40px;
-  width: 95px;
-  text-align: center;
   color: white;
   font-size: 16px;
+  padding: 10px 15px;
   border: 1px solid white;
   border-radius: 5px;
+  font-family: "黑体";
   background: transparent;
   transition: background 1.5s ease;
-  padding: 0 10px;
-  box-sizing: border-box;
 }
 .navigationContentRight .getUseSelect {
-  background: #00b7fa;
+  background: #6aa3ea;
   border: none;
   transition: all 1.5s ease;
 }

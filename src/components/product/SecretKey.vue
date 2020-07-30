@@ -2,7 +2,7 @@
   <div class="secretKey">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/develop.jpg" />
+        <img src="../../assets/y18.jpg" />
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用密钥白盒插件</h3>
           <article>

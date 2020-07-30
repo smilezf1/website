@@ -2,9 +2,9 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../assets/y2.jpg" />
+      <img src="../assets/y22.jpg" />
       <div class="bannerContent">
-        <h3>构建智慧安全生活</h3>
+        <h3>联系我们</h3>
       </div>
     </div>
     <div class="connectBody">
@@ -16,32 +16,36 @@
       </div>
       <div class="contactWayContent">
         <div class="contactWayContentTitle">
-          <div><img src="../assets/bg.png" /></div>
-          <h5>【联系方式】</h5>
+          <h3>商务合作</h3>
         </div>
         <div class="contactWayContentMainPart">
-          <p>
+          <div class="box">
             <img src="../assets/call.png" />
-            <span>电话</span>
-            <span>021-57677921</span>
-          </p>
-          <p>
+            <div class="txt">
+              <h3>电话</h3>
+              <p>021-57677921</p>
+            </div>
+          </div>
+          <div class="box">
             <img src="../assets/postbox.png" />
-            <span>邮箱</span>
-            <span>service@manxi-safe.com</span>
-          </p>
-          <p>
-            <img src="../assets/address.png" />
-            <span>地址</span>
-            <span>上海市松江区沈砖公路5555号韵博智谷</span>
-          </p>
+            <div class="txt">
+              <h3>邮箱</h3>
+              <p>service@manxi-safe.com</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="../assets/contact2.png" />
+            <div class="txt">
+              <h3>地址</h3>
+              <p>上海市松江区沈砖公路5555号韵博智谷8709-8711</p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 联系地址 -->
       <div class="connectAddress">
         <div class="connectAddressTitle">
-          <div><img src="../assets/bg.png" /></div>
-          <h5>【联系地址】</h5>
+          <h3>联系地址</h3>
         </div>
         <baidu-map
           :center="center"
@@ -118,8 +122,9 @@ export default {
   transform: translate(-50%, -50%);
 }
 .bannerContent h3 {
-  font-size: 52px;
+  font-size: 50px;
   color: white;
+  font-weight: normal;
 }
 .banner img {
   width: 100%;
@@ -130,11 +135,11 @@ export default {
   margin: 0 auto;
 }
 .contactWayTitle {
-  font-size: 40px;
+  font-size: 36px;
   text-align: center;
-  font-weight: 550;
-  color: #333;
-  margin-top: 5px;
+  color: #3b3b3b;
+  margin-top: 15px;
+  font-weight: 500;
 }
 .contactWayContentTitle,
 .connectAddressTitle {
@@ -144,20 +149,23 @@ export default {
 .connectAddressTitle {
   margin-top: 40px;
 }
-.contactWayContentTitle h5,
-.connectAddressTitle h5 {
-  font-size: 20px;
-  color: #333;
+.contactWayContentTitle h3,
+.connectAddressTitle h3 {
+  color: #121212;
+  font-size: 30px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  margin-top: 20px;
   font-weight: normal;
 }
-.contactWayContentTitle > div,
-.connectAddressTitle > div {
+.contactWayContentTitle .box,
+.connectAddressTitle .box {
   position: absolute;
   bottom: -2px;
   width: 50%;
 }
-.contactWayContentTitle > div img,
-.connectAddressTitle > div img {
+.contactWayContentTitle .box img,
+.connectAddressTitle .box img {
   width: 100%;
 }
 .contactWayContentMainPart {
@@ -166,21 +174,27 @@ export default {
   justify-content: space-between;
   padding: 30px;
 }
-.contactWayContentMainPart p {
+.contactWayContentMainPart .box {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
-.contactWayContentMainPart p span {
-  color: #00b7fa;
+.contactWayContentMainPart .box h3 {
+  color: #3b3b3b;
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.contactWayContentMainPart .box span {
   font-size: 16px;
   margin-top: 10px;
 }
+.contactWayContentMainPart .txt p {
+  font-size: 16px;
+  color: #666;
+}
 .contactWayContentMainPart img {
-  width: 100px;
+  width: 70px;
   padding: 20px;
-  border: 1px dashed #00b7fa;
-  border-radius: 50%;
 }
 .connectAddress,
 .cooperation {
@@ -206,19 +220,19 @@ export default {
   font-size: 11px;
   margin-bottom: 10px;
 }
-.info {
+.Connect .info {
   padding: 0 10px;
 }
-.info .address {
+.Connect .info .address {
   margin-bottom: 10px;
 }
-.info .address,
-.info .companyName,
-.info .phone {
+.Connect .info .address,
+.Connect.info .companyName,
+.Connect.info .phone {
   font-size: 13px;
 }
 #map {
-  width: 40%;
+  width: 100%;
   height: 400px;
   margin: 100px auto;
 }
@@ -232,9 +246,8 @@ export default {
   position: absolute;
   box-sizing: border-box;
 }
-.info {
+.conn.info {
   position: relative;
-  /* border: 1px solid #ababab; */
   box-shadow: 0 0 10px #0000003b;
 }
 .info .address {

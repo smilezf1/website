@@ -2,7 +2,7 @@
   <div class="code">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/develop.jpg" />
+        <img src="../../assets/y9.jpg" />
         <div class="productBannerContent">
           <!-- 移动应用源码加固编译器 -->
           <h3>蛮犀安全移动应用源码加固编译器</h3>

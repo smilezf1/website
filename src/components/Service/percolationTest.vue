@@ -2,7 +2,7 @@
   <div class="percolationTest">
     <!-- banner -->
     <div class="percolationTestBanner">
-      <img src="../../assets/x3.jpg" />
+      <img src="../../assets/y31.jpg" />
       <div class="percolationTestBannerContent">
         <h3>蛮犀安全渗透测试服务</h3>
         <article>移动应用人工渗透测试、移动应用漏洞专项分析</article>

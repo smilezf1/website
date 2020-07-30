@@ -2,7 +2,7 @@
   <div class="virtual">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/develop.jpg" />
+        <img src="../../assets/y12.jpg" />
         <div class="productBannerContent">
           <!-- 移动应用源码虚拟化编译器 -->
           <h3>蛮犀安全移动应用源码虚拟化编译器</h3>

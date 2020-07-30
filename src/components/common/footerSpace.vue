@@ -35,9 +35,9 @@
     </div>
     <div class="bottom">
       <p>
-        上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号
-        &nbsp;&nbsp;<img src="../../assets/icp.png" />&nbsp;&nbsp;沪公网安备&nbsp;&nbsp;
-        31011702007362号
+        上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号<img
+          src="../../assets/icp.png"
+        />沪公网安备 31011702007362号
       </p>
     </div>
   </div>
@@ -93,9 +93,9 @@ export default {
           id: 3,
           title: "联系我们",
           child: [
-            { name: "联系电话:021-57677921", src: "/" },
-            { name: "联系邮箱:service@manxi-safe.com", src: "/" },
-            { name: "市场合作:marketing@manxi-safe.com", src: "/" }
+            { name: "联系电话:021-57677921", src: "/Connect" },
+            { name: "联系邮箱:service@manxi-safe.com", src: "/Connect" },
+            { name: "市场合作:marketing@manxi-safe.com", src: "/Connect" }
           ]
         }
       ],

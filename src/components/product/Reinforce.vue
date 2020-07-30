@@ -3,7 +3,7 @@
     <div class="productContent">
       <div class="productBanner">
         <!-- 移动应用加固系统 -->
-        <img src="../../assets/develop.jpg" />
+        <img src="../../assets/y7.jpg" />
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用加固系统</h3>
           <article>
