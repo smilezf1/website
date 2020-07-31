@@ -3,7 +3,6 @@
     <headerSpace></headerSpace>
     <!--banner  -->
     <div class="projectBanner">
-      <!-- <img src="../assets/develop.jpg" /> -->
     </div>
     <!-- 主体内容 -->
     <div class="ProjectContent">

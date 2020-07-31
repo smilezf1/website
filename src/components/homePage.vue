@@ -10,24 +10,25 @@
             </p>
             <div class="newsItem">
               <transition class="newsItemContent" name="slide" mode="out-in">
-                <p :key="text.id">
+                <p :key="text.number">
                   <router-link
-                    to="/Article"
+                    :to="{
+                      path: 'Article' + text.id,
+                      query: {
+                        time: text.time,
+                        title: text.title,
+                        content: text.content
+                      }
+                    }"
                     @mouseover.native="stopRoll()"
                     @mouseout.native="beginRoll()"
-                    >{{ text.val }}</router-link
+                    >{{ text.title }}</router-link
                   >
                 </p>
               </transition>
             </div>
           </div>
           <div class="securipTproductTopRight ">
-            <!--   <router-link to="/" @click.native="prev()"
-              ><img src="../assets/newsPrev.png"
-            /></router-link>
-            <router-link to="/" @click.native="next()">
-              <img src="../assets/newsNext.png"
-            /></router-link> -->
             <router-link to="/article" class="more">
               <span> More</span>
               <img src="../assets/more.png" />
@@ -38,12 +39,7 @@
       <div class="securiptProductContainer">
         <h3>安全产品</h3>
         <div class="container">
-          <ul
-            v-for="(item, index) in securityProductList"
-            :key="index"
-            class="animate pulse"
-            @mouseover="move(index)"
-          >
+          <ul v-for="(item, index) in securityProductList" :key="index">
             <img :src="item.imgSrc" class="decorate" />
             <li v-for="(item, index) in item.subs" :key="index">
               <span>{{ item.name }}</span>
@@ -165,31 +161,28 @@ export default {
           ]
         }
       ],
-      /*  solutionList: [
-        { id: 1, name: "金融", imgSrc: require("../assets/solution1.jpg") },
-        { id: 2, name: "政府", imgSrc: require("../assets/solution2.jpg") },
-        { id: 3, name: "企业", imgSrc: require("../assets/solution2.jpg") }
-      ], */
-      newsList: [
-        "APP违法违规收集使用个人信息专项治理报告",
-        "好酒沈醉酬佳节，十分酒，一分歌。",
-        "伟大历程，初心不忘 | 热烈庆祝中国共产党建党99周年",
-        "315晚会曝光SDK窃密隐私,个人信息安全刻不容缓",
-        "APP违法违规收集使用个人信息专项治理报告"
-      ],
+      newsList: [],
       number: 0,
       timer: null,
       selectIndex: -1,
+      selectSecuriptProductIndex: -1,
       showIcon: false
     };
   },
+  inject: ["articleListItem"],
   computed: {
     text() {
       return {
-        id: this.number,
-        val: this.newsList[this.number]
+        number: this.number,
+        id: this.newsList[this.number].id,
+        title: this.newsList[this.number].title,
+        time: this.newsList[this.number].time,
+        content: this.newsList[this.number].content
       };
     }
+  },
+  created() {
+    this.newsList = this.articleListItem;
   },
   mounted() {
     this.startMove();
@@ -216,25 +209,6 @@ export default {
     },
     beginRoll() {
       this.startMove();
-    },
-    /*  prev() {
-      clearTimeout(this.timer);
-      if (this.number === 0) {
-        this.number = 2;
-      } else {
-        this.number -= 1;
-      }
-    },
-    next() {
-      clearTimeout(this.timer);
-      if (this.number === 3) {
-        this.number = 0;
-      } else {
-        this.number += 1;
-      }
-    }, */
-    move() {
-      console.log("移动");
     }
   }
 };
@@ -254,7 +228,7 @@ export default {
   font-size: 18px;
 }
 .newsItem {
-  width: 350px;
+  width: 400px;
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -304,7 +278,7 @@ export default {
   color: #3b3b3b;
   text-align: center;
   margin: 20px 0;
-  font-weight:normal;
+  font-weight: normal;
 }
 .securiptProductContainer {
   background: url("../assets/x10.jpg") 100% / cover repeat-x;

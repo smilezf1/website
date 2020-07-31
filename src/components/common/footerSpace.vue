@@ -1,44 +1,46 @@
 <template>
   <div class="footerSpace">
-    <div class="container">
-      <div class="containerBox">
-        <div class="left">
-          <ul class="row1" v-for="(item, index) in menuList" :key="item.id">
-            <h3>{{ item.title }}</h3>
-            <li v-for="(subItem, subIndex) in item.child" :key="subItem.id">
-              <router-link
-                :to="subItem.src"
-                :class="{ select: subIndex == subActive && index == active }"
-                @mouseover.native="changeColor(subIndex, index)"
-                @mouseout.native="recoverColor(subIndex, index)"
-                >{{ subItem.name }}</router-link
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="right">
-          <div class="rightContent">
-            <div>关注我们</div>
-            <div class="rightContentBox">
-              <div class="wx">
-                <img src="../../assets/code.jpg" />
-                <p><img src="../../assets/wx.png" />微信公众号</p>
-              </div>
-              <div class="wb">
-                <img src="../../assets/wbCode.png" />
-                <p><img src="../../assets/wb.png" />官方微博</p>
+    <div class="footerSpaceContent">
+      <div class="container">
+        <div class="containerBox">
+          <div class="left">
+            <ul class="row1" v-for="(item, index) in menuList" :key="item.id">
+              <h3>{{ item.title }}</h3>
+              <li v-for="(subItem, subIndex) in item.child" :key="subItem.id">
+                <router-link
+                  :to="subItem.src"
+                  :class="{ select: subIndex == subActive && index == active }"
+                  @mouseover.native="changeColor(subIndex, index)"
+                  @mouseout.native="recoverColor(subIndex, index)"
+                  >{{ subItem.name }}</router-link
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="right">
+            <div class="rightContent">
+              <div>关注我们</div>
+              <div class="rightContentBox">
+                <div class="wx">
+                  <img src="../../assets/code.jpg" />
+                  <p><img src="../../assets/wx.png" />微信公众号</p>
+                </div>
+                <div class="wb">
+                  <img src="../../assets/wbCode.png" />
+                  <p><img src="../../assets/wb.png" />官方微博</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="bottom">
-      <p>
-        上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号<img
-          src="../../assets/icp.png"
-        />沪公网安备 31011702007362号
-      </p>
+      <div class="bottom">
+        <p>
+          上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号<img
+            src="../../assets/icp.png"
+          />沪公网安备 31011702007362号
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -52,17 +54,16 @@ export default {
           id: 0,
           title: "安全产品",
           child: [
-            {
-              name: "移动应用安全评测",
-              src: "/Product/safetyEvaluation"
-            },
             { name: "移动应用评测系统", src: "/Product/Evaluating" },
-            {
-              name: "移动应用安全防护",
-              src: "/Product/safetyProtection"
-            },
             { name: "移动应用加固系统", src: "/Product/Reinforce" },
-            { name: "移动应用安全业务", src: "/Product/Insurance" }
+            { name: "移动应用秘钥白盒插件", src: "/Product/SecretKey" },
+            {
+              name: "移动应用合规评测系统",
+              src: "/Product/ComplianceEvaluating"
+            },
+
+            { name: "移动应用源码加固编译器", src: "/Product/Code" },
+            { name: "移动应用源码虚拟化编译器", src: "/Product/Virtual" }
           ]
         },
         {
@@ -123,16 +124,18 @@ export default {
 </script>
 <style>
 .footerSpace {
+  width:100%;
   background: #2d2c2e;
   color: white;
   padding: 20px 0;
 }
-.footerSpace .container {
+.footerSpaceContent {
   width: 1200px;
   margin: 0 auto;
   font-size: 15px;
   font-weight: 400;
   padding: 20px 0;
+  background: #2d2c2e;
 }
 .footerSpace .containerBox {
   display: flex;

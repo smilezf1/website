@@ -6,7 +6,7 @@ import Product from '@/components/Product.vue'
 import Service from '@/components/Service.vue'
 import Project from '@/components/Project.vue'
 import About from '@/components/About.vue'
-import Connect from '@/components/Connect.vue'
+import Connect from '@/components/Connect/Connect.vue'
 //product文件下的组件
 import Evaluating from '@/components/product/Evaluating.vue'
 import ComplianceEvaluating from '@/components/product/ComplianceEvaluating.vue'
@@ -27,12 +27,9 @@ import devHistroy from '@/components/About/devHistroy.vue';
 import percolationTest from '@/components/Service/percolationTest.vue';
 import securityConsulting from '@/components/Service/securityConsulting.vue';
 //文章页面
-import Article from '@/components/Article.vue'
+import Article from '@/components/Article/Article.vue'
 //文章详细页面
-import articleDetail from '@/components/articleDetail.vue'
-
-//测试
-import xx from '@/components/xx.vue';
+import articleDetail from '@/components/Article/articleDetail.vue'
 Vue.use(Router)
 export default new Router({
   routes: [{
@@ -46,7 +43,7 @@ export default new Router({
     component: Article
   },
   {
-    path: "/articleDetail",
+    path: "/Article:id",
     name: 'articleDetail',
     component: articleDetail
   },

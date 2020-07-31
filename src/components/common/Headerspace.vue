@@ -117,7 +117,7 @@ export default {
             ]
           }
         },
-      /*   { id: 3, name: "解决方案", link: "/Project", child: null }, */
+        /*   { id: 3, name: "解决方案", link: "/Project", child: null }, */
         {
           id: 4,
           name: "关于我们",
@@ -223,9 +223,10 @@ export default {
 }
 .headerspace {
   width: 100%;
-  height: 64px;
+  height: 84px;
   position: absolute;
   z-index: 2;
+  top: 0;
 }
 .navigation {
   height: 84px;
@@ -236,18 +237,13 @@ export default {
   background: transparent;
   transition: background 0.3s ease;
 }
-.minNavigation {
- /*  background:transparent; */
- /*  background: #1a1c24;
-  transition: background 0.3s ease; */
-}
 .navigationContent {
-  width: 60%;
+  width: 1200px;
   height: 100%;
   margin: 0 auto;
   display: flex;
   padding: 0 20px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .navigationContentLeft {
   width: 130px;
@@ -274,11 +270,12 @@ export default {
   width: 100%;
   position: absolute;
   padding: 0 10px;
-  top: 66px;
+  top: 84px;
   left: 0;
   z-index: 2;
   background: white;
-  /* background-color: #272b2e; */
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1),
+    0 0 12px rgba(215, 215, 215, 0.7);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -330,7 +327,6 @@ export default {
   color: white;
   font-size: 16px;
   padding: 10px 15px;
-  border: 1px solid white;
   border-radius: 5px;
   font-family: "黑体";
   background: transparent;

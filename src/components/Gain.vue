@@ -13,8 +13,7 @@
       <h2 class="gainBodyTitle">联系我们</h2>
       <!-- 表单 -->
       <div class="gainBodyContent">
-        <div class="gainBodyContentTitle">
-        </div>
+        <div class="gainBodyContentTitle"></div>
         <el-form
           :model="ruleForm"
           :rules="rules"
@@ -80,6 +79,7 @@ import {
 export default {
   name: "gain",
   components: { HeaderSpace, FooterSpace, slideBar },
+  inject: ["reload"],
   data() {
     return {
       ruleForm: {
@@ -98,7 +98,7 @@ export default {
         email: [
           { required: true, message: "请输入邮箱地址", trigger: "blur" },
           {
-            type: "email",
+            pattern: /^[A-Za-z0-9]+([_\.][A-Za-z0-9]+)*@([A-Za-z0-9\-]+\.)+[A-Za-z]{2,6}$/,
             message: "请输入正确的邮箱地址",
             trigger: ["blur", "change"]
           }
@@ -215,9 +215,10 @@ export default {
 }
 .gainBody .el-button--primary {
   width: 100%;
-  background: #00b7fa;
+  background: #6aa3ea;
   font-size: 16px;
   padding: 10px 0;
+  border: none;
 }
 .gainBody .el-select {
   width: 100%;
