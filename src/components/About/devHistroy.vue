@@ -2,10 +2,10 @@
   <div class="devHistroy">
     <!-- banner -->
     <div class="devHistroyBanner">
-      <img src="../../assets/img17.jpg" />
-      <div class="devHistoryBannerContent">
+      <img src="../../assets/banner4.jpg" />
+     <!--  <div class="devHistoryBannerContent">
         <h3>发展历程</h3>
-      </div>
+      </div> -->
     </div>
     <!-- 主体内容 -->
     <div class="devHistroyContainer">
@@ -25,22 +25,43 @@
                 <li>
                   <i></i>
                   <span>8月</span>
-                  精彩待续...
+                  精彩待续......
+                </li>
+                <li>
+                  <i></i>
+                  <span>7月</span>
+                  成功签约完美世界，助力游戏应用安全
                 </li>
                 <li>
                   <i></i>
                   <span>6月</span>
-                  CRCC
+                  协助浙江省通管局App侵害用户权益专项整治工作
+                </li>
+                <li>
+                  <i></i>
+                  <span>5月</span>
+                  携手山东网信办App侵害用户权益专项治理工作
+                </li>
+                <li>
+                <li>
+                  <i></i>
+                  <span>5月</span>
+                  支撑济南网安App个人信息安全检查工作
                 </li>
                 <li>
                   <i></i>
                   <span>4月</span>
-                  CRCC
+                  成为工业互联网联盟、网络空间安全、信息安全等协会核心会员单位
+                </li>
+                <li>
+                  <i></i>
+                  <span>3月</span>
+                  发布具备四道“防火墙”保护的移动应用安全加固平台 V5.0.0
                 </li>
                 <li>
                   <i></i>
                   <span>2月</span>
-                  CRCC
+                  蛮犀安全移动应用评测系统落地山东网安
                 </li>
               </ul>
             </div>
@@ -55,12 +76,17 @@
                 <li>
                   <i></i>
                   <span>12月</span>
-                  CRCC
+                  发布首个具备暴力测试的安全评测系统 V5.0.0
+                </li>
+                <li>
+                  <i></i>
+                  <span>11月</span>
+                  获得近千万种子轮投资
                 </li>
                 <li>
                   <i></i>
                   <span>10月</span>
-                  CRCC
+                  蛮犀科技成立
                 </li>
               </ul>
             </div>
@@ -173,7 +199,7 @@ export default {
   width: 100%;
 }
 .history {
-  width: 400px;
+  width: 800px;
   margin: 30px auto;
   position: relative;
 }

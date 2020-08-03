@@ -44,7 +44,8 @@ export default {
 }
 /* 服务介绍 */
 .serviceIntroduce {
-  margin: 30px 0;
+  width: 1200px;
+  margin: 0 auto;
 }
 .businessScope {
   margin-top: 30px;
@@ -82,6 +83,7 @@ export default {
   padding: 20px;
   background: white;
   border-radius: 10px;
+  width: 30%;
 }
 .businessScopeContent li p {
   font-size: 20px;

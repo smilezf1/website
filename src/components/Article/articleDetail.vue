@@ -33,9 +33,7 @@
             <p>{{ title }}</p>
             <span>【蛮犀资讯】{{ time }}</span>
           </div>
-          <div class="newsContentBody">
-            {{ content }}
-          </div>
+          <div class="newsContentBody" v-html="content"></div>
         </div>
       </div>
     </div>

@@ -93,7 +93,7 @@ export default {
               { content: "移动应用源码加固编译器", src: "/Product/Code" },
               { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" },
               /*  { content: "移动应用安全业务", src: "/Product/Insurance" }, */
-              { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" }
+              { content: "移动应用密钥白盒插件", src: "/Product/SecretKey" }
               /*   {
                 content: "移动应用环境自查插件",
                 src: "/Product/SelfInspection"
@@ -225,7 +225,7 @@ export default {
   width: 100%;
   height: 84px;
   position: absolute;
-  z-index: 2;
+  z-index: 99;
   top: 0;
 }
 .navigation {

@@ -35,10 +35,18 @@
         </div>
       </div>
       <div class="bottom">
-        <p>
-          上海蛮犀科技有限公司 版权所有 ©2019-2020沪ICP备19047152号<img
+        <!--   <p>
+          <span>上海蛮犀科技有限公司 版权所有 ©2019-2020</span>
+          <router-link to="">沪ICP备19047152号</router-link><img
             src="../../assets/icp.png"
-          />沪公网安备 31011702007362号
+          />
+        </p> -->
+        <p>
+          <span> Copyright © 2020 上海蛮犀科技有限公司 版权所有</span>
+          <span traget="_blank" @click="link()" class="link"
+            >沪ICP备19047152号-2</span
+          >
+          <img src="../../assets/icp.png" />
         </p>
       </div>
     </div>
@@ -56,7 +64,7 @@ export default {
           child: [
             { name: "移动应用评测系统", src: "/Product/Evaluating" },
             { name: "移动应用加固系统", src: "/Product/Reinforce" },
-            { name: "移动应用秘钥白盒插件", src: "/Product/SecretKey" },
+            { name: "移动应用密钥白盒插件", src: "/Product/SecretKey" },
             {
               name: "移动应用合规评测系统",
               src: "/Product/ComplianceEvaluating"
@@ -95,8 +103,8 @@ export default {
           title: "联系我们",
           child: [
             { name: "联系电话:021-57677921", src: "/Connect" },
-            { name: "联系邮箱:service@manxi-safe.com", src: "/Connect" },
-            { name: "市场合作:marketing@manxi-safe.com", src: "/Connect" }
+            { name: "联系邮箱:service@manxi-inc.com", src: "/Connect" },
+            { name: "市场合作:mkt@manxi-inc.com", src: "/Connect" }
           ]
         }
       ],
@@ -112,6 +120,9 @@ export default {
     recoverColor(subIndex, index) {
       this.subActive = -1;
       this.active = -1;
+    },
+    link() {
+      window.open("http://www.beian.miit.gov.cn/", "_blank");
     }
   },
   mounted() {
@@ -124,7 +135,7 @@ export default {
 </script>
 <style>
 .footerSpace {
-  width:100%;
+  width: 100%;
   background: #2d2c2e;
   color: white;
   padding: 20px 0;
@@ -207,5 +218,11 @@ export default {
 }
 .footerSpace .bottom p:first-child {
   margin-bottom: 10px;
+}
+.footerSpace .bottom a {
+  color: #6d6e7e;
+}
+.footerSpace .bottom .link {
+  cursor: pointer;
 }
 </style>

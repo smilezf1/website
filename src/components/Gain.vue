@@ -6,7 +6,7 @@
       <img src="../assets/img12.jpg" />
       <div class="gainBannerContent">
         <h3>蛮犀科技构建智慧安全生活</h3>
-        <article>移动应用人工渗透测试、移动应用漏洞专项分析</article>
+        <article></article>
       </div>
     </div>
     <div class="gainBody">

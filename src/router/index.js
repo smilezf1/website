@@ -35,74 +35,94 @@ export default new Router({
   routes: [{
     path: "/",
     name: "Index",
+    meta: {
+      title: "蛮犀科技-首页"
+    },
     component: Index
   },
   {
     path: "/Article",
     name: "Article",
+    meta: { title: "蛮犀资讯" },
     component: Article
   },
   {
     path: "/Article:id",
     name: 'articleDetail',
+    meta: { title: "蛮犀资讯" },
     component: articleDetail
   },
   {
     path: "/Product",
     name: "Product",
     component: Product,
+    meta: {
+      title: "蛮犀科技-安全产品"
+    },
     redirect: "/Product/Evaluating",
     children: [{
       path: "Evaluating",
-      component: Evaluating
+      component: Evaluating,
+      meta: { title: "蛮犀科技-移动应用评测系统" }
     },
     {
       path: "ComplianceEvaluating",
-      component: ComplianceEvaluating
+      component: ComplianceEvaluating,
+      meta: { title: "蛮犀科技-移动应用合规评测系统" }
     },
     {
       path: "Reinforce",
-      component: Reinforce
+      component: Reinforce,
+      meta: { title: "蛮犀科技-移动应用加固系统" }
     },
     {
       path: "Code",
-      component: Code
+      component: Code,
+      meta: { title: "蛮犀科技-移动应用源码加固编译器" }
     },
     {
       path: "Virtual",
-      component: Virtual
+      component: Virtual,
+      meta: { title: "蛮犀科技-移动应用源码虚拟化编译器" }
     },
     {
       path: "SecretKey",
-      component: SecretKey
+      component: SecretKey,
+      meta: { title: "蛮犀科技-移动应用密钥白盒插件" }
     },
     {
       path: "SelfInspection",
-      component: SelfInspection
+      component: SelfInspection,
+      meta: { title: "蛮犀科技-移动应用加固系统" }
     },
     {
       path: "Encryption",
-      component: Encryption
+      component: Encryption,
+      meta: { title: "蛮犀科技-移动应用加固系统" }
     },
     {
       path: "safetyEvaluation",
-      component: safetyEvaluation
+      component: safetyEvaluation,
+      meta: { title: "蛮犀科技-移动应用加固系统" }
     },
-    { path: "safetyProtection", component: safetyProtection },
-    { path: "Insurance", component: Insurance }
+    { path: "safetyProtection", component: safetyProtection, meta: { title: "蛮犀科技-移动应用加固系统" } },
+    { path: "Insurance", component: Insurance, meta: { title: "蛮犀科技-移动应用加固系统" } }
     ]
   },
   {
     path: "/Service",
     name: "Service",
+    meta: { title: "安全服务" },
     component: Service,
     redirect: "/Service/percolationTest",
     children: [{
       path: "percolationTest",
-      component: percolationTest
+      component: percolationTest,
+      meta: { title: "蛮犀科技-移动应用安全渗透" }
     }, {
       path: "securityConsulting",
-      component: securityConsulting
+      component: securityConsulting,
+      meta: { title: "蛮犀科技-移动应用安全咨询" }
     }
     ]
   },
@@ -115,25 +135,30 @@ export default new Router({
     path: "/About",
     name: "About",
     component: About,
+    meta: { title: "蛮犀科技-关于我们" },
     redirect: "/About/companyIntroduce",
     children: [{
       path: "companyIntroduce",
-      component: companyIntroduce
+      component: companyIntroduce,
+      meta: { title: "蛮犀科技-公司简介" },
     },
     {
       path: "devHistroy",
-      component: devHistroy
+      component: devHistroy,
+      meta: { title: "蛮犀科技-发展历程" },
     }]
   },
   {
     path: "/Connect",
     name: "Connect",
-    component: Connect
+    component: Connect,
+    meta: { title: "蛮犀科技-联系我们" }
   },
   {
     path: "/Gain",
     name: "Gain",
-    component: Gain
+    component: Gain,
+    meta: { title: "蛮犀科技-获取使用" }
   },
   {
     path: "/devHistroy",

@@ -100,14 +100,14 @@
       <div class="publicityContent">
         <div class="publicityContentColumn">
           <h3 class="publicityContentColumnNumber">100%</h3>
-          <p>覆盖企业移动化生命周期</p>
+          <p>事前预警，事中防护，事后追溯</p>
         </div>
         <div class="publicityContentColumn">
           <h3 class="publicityContentColumnNumber">10万+</h3>
-          <p>管理移动设备</p>
+          <p>移动应用评测与整改</p>
         </div>
         <div class="publicityContentColumn">
-          <h3 class="publicityContentColumnNumber">2000+</h3>
+          <h3 class="publicityContentColumnNumber">1000+</h3>
           <p>服务的客户</p>
         </div>
       </div>
@@ -281,7 +281,8 @@ export default {
   font-weight: normal;
 }
 .securiptProductContainer {
-  background: url("../assets/x10.jpg") 100% / cover repeat-x;
+ /*  background: url("../assets/x10.jpg") 100% / cover repeat-x; */
+
   padding: 20px 0;
 }
 .securiptProductContainer h3 {

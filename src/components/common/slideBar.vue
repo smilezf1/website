@@ -40,7 +40,7 @@ export default {
           id: 2,
           name: "邮箱",
           imgSrc: require("../../assets/email.png"),
-          data: "service@manxi-safe.com",
+          data: "service@manxi-inc.com",
           showToolTip: false
         },
         {
@@ -108,7 +108,7 @@ export default {
   display: inline-block;
   width: 70px;
   height: 70px;
-  background: #6aa3ea;
+  background: #00c2d8;
   position: relative;
   color: white;
   display: flex;
