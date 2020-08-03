@@ -2,7 +2,7 @@
   <div class="devHistroy">
     <!-- banner -->
     <div class="devHistroyBanner">
-      <img src="../../assets/y17.jpg" />
+      <img src="../../assets/img17.jpg" />
       <div class="devHistoryBannerContent">
         <h3>发展历程</h3>
       </div>

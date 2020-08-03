@@ -2,7 +2,7 @@
   <div class="Connect">
     <headerSpace></headerSpace>
     <div class="banner">
-      <img src="../../assets/y22.jpg" />
+      <img src="../../assets/img22.jpg" />
       <div class="bannerContent">
         <h3>联系我们</h3>
       </div>

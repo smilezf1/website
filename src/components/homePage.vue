@@ -122,7 +122,7 @@ export default {
     return {
       securityProductList: [
         {
-          imgSrc: require("../assets/y1.png"),
+          imgSrc: require("../assets/img1.png"),
           subs: [
             { id: 0, name: "移动应用安全评测" },
             { id: 1, name: "移动应用漏洞评测" },
@@ -132,7 +132,7 @@ export default {
           ]
         },
         {
-          imgSrc: require("../assets/y2.png"),
+          imgSrc: require("../assets/img2.png"),
           subs: [
             { id: 0, name: "移动应用安全防护" },
             { id: 1, name: "应用程序安全加固" },
@@ -151,7 +151,7 @@ export default {
           ]
         },
         {
-          imgSrc: require("../assets/y3.png"),
+          imgSrc: require("../assets/img3.png"),
           subs: [
             { id: 0, name: "移动应用安全业务" },
             { id: 1, name: "通信数据保护" },

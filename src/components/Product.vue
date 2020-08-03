@@ -109,6 +109,7 @@ export default {
   padding: 20px;
   background: white;
   border-radius: 10px;
+  width: 30%;
 }
 .productTraitContent li p {
   font-size: 20px;

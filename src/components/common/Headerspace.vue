@@ -83,17 +83,17 @@ export default {
             show: false,
             childContent: [
               /*  { content: "移动应用安全评测", src: "/Product/safetyEvaluation" }, */
-              { content: "移动应用评测系统", src: "/Product/Evaluating" }, //1
+              { content: "移动应用评测系统", src: "/Product/Evaluating" },
               {
                 content: "移动应用合规评测系统",
                 src: "/Product/ComplianceEvaluating"
-              }, //1
+              },
               /*   { content: "移动应用安全防护", src: "/Product/safetyProtection" }, */
-              { content: "移动应用加固系统", src: "/Product/Reinforce" }, //1
-              { content: "移动应用源码加固编译器", src: "/Product/Code" }, //1
-              { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" }, //1
+              { content: "移动应用加固系统", src: "/Product/Reinforce" },
+              { content: "移动应用源码加固编译器", src: "/Product/Code" },
+              { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" },
               /*  { content: "移动应用安全业务", src: "/Product/Insurance" }, */
-              { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" } //1
+              { content: "移动应用秘钥白盒插件", src: "/Product/SecretKey" }
               /*   {
                 content: "移动应用环境自查插件",
                 src: "/Product/SelfInspection"

@@ -1,7 +1,7 @@
 <template>
   <div class="companyIntroduce">
     <div class="companyIntroduceBanner">
-      <img src="../../assets/y15.jpg" />
+      <img src="../../assets/img15.jpg" />
       <div class="companyIntroduceBannerContent">
         <h3>公司简介</h3>
         <!--  <article>建立APP数据全生命周期安全体系,为企业资产保驾护航</article> -->

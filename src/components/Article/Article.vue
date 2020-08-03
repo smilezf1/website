@@ -2,7 +2,7 @@
   <div class="Article">
     <Header></Header>
     <div class="ArticleBanner">
-      <img src="../../assets/y5.jpg" />
+      <img src="../../assets/img28.jpg" />
       <div class="ArticleBannerContent">
         <h3>蛮犀资讯</h3>
         <article>建立APP数据生命周期安全体系,为企业核心资产保驾护航</article>
