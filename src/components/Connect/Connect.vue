@@ -3,9 +3,9 @@
     <headerSpace></headerSpace>
     <div class="banner">
       <img src="../../assets/img22.jpg" />
-  <!--     <div class="bannerContent">
+      <div class="bannerContent">
         <h3>联系我们</h3>
-      </div> -->
+      </div>
     </div>
     <div class="connectBody">
       <!-- 联系方式 -->

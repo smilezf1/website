@@ -2,6 +2,9 @@
   <div class="companyIntroduce">
     <div class="companyIntroduceBanner">
       <img src="../../assets/banner11.jpg" />
+      <div class="companyIntroduceBannerContent">
+        <h3>蛮犀科技,创建智慧安全生活</h3>
+      </div>
     </div>
     <div class="companyIntroduceContainer">
       <!-- 公司简介 -->
@@ -122,7 +125,7 @@ export default {
   text-align: center;
 }
 .enterpriseConcept {
-  background: url("../../assets/x10.jpg") 100% / cover repeat-x;
+  background: url("../../assets/banner2.jpg") 100% / cover repeat-x;
   padding: 70px 0;
 }
 .enterpriseConceptTtitle {

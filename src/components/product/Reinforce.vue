@@ -3,7 +3,7 @@
     <div class="productContent">
       <div class="productBanner">
         <!-- 移动应用加固系统 -->
-        <img src="../../assets/img6.jpg" />
+        <img src="../../assets/banner13.jpeg" />
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用加固系统</h3>
           <article>
@@ -24,7 +24,7 @@
         <div class="productIntroduce">
           <h3>产品介绍</h3>
           <p>
-          蛮犀安全移动应用加固系统主要由Web可视化前端、加固后台两部分构成，蛮犀安全移动应用加固系统根据实际环境配置部署完成后，能够根据用户上传的移动应用进行安全加固，并自动生成加固包供用户下载。
+            蛮犀安全移动应用加固系统主要由Web可视化前端、加固后台两部分构成，蛮犀安全移动应用加固系统根据实际环境配置部署完成后，能够根据用户上传的移动应用进行安全加固，并自动生成加固包供用户下载。
           </p>
         </div>
         <!-- 产品特点 -->

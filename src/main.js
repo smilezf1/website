@@ -4,13 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'; //引用elementUi
+import api from './api'
 import 'element-ui/lib/theme-chalk/index.css' //引用elementUI中的样式
 Vue.config.productionTip = false
 import 'lib-flexible/flexible'
 import $ from 'jquery'
 import BaiduMap from 'vue-baidu-map' //引用百度地图组件
 import animate from 'animate.css'
+import guid from './guid'
 /* eslint-disable no-new */
+Vue.prototype.api = api;
+Vue.prototype.guid = guid;
 Vue.use(router);
 Vue.use(ElementUI);
 Vue.use(animate);
@@ -26,6 +30,5 @@ new Vue({
   template: '<App/>'
 })
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
   next()
 })

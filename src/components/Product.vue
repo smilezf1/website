@@ -63,7 +63,7 @@ export default {
   transition: background 1.5s ease;
 }
 .productBannerContent .getUseSelect {
-  background: #00b7fa;
+  background: #6aa3ea;
   border: 1px solid transparent;
   transition: all 1.5s ease;
 }
@@ -73,7 +73,7 @@ export default {
   margin: 0px auto;
 }
 .produtctTrait {
-  background: url("../assets/x10.jpg") 100% / cover repeat-x;
+  background: url("../assets/banner2.jpg") 100% / cover repeat-x;
   padding: 10px 0px 40px 0px;
 }
 .productIntroduce h3,
@@ -105,7 +105,7 @@ export default {
   margin: 20px auto;
 }
 .productTraitContent li {
-  margin: 0 30px;
+  margin: 0 15px;
   padding: 20px;
   background: white;
   border-radius: 10px;

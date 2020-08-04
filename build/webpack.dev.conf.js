@@ -38,7 +38,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ? { warnings: false, errors: true }
       : false,
     publicPath: config.dev.assetsPublicPath,
-    proxy: config.dev.proxyTable,
+    /*   proxy: config.dev.proxyTable, */
+    proxy: {
+      "/manxi-website": {
+        target: "http://192.168.3.58:8080"
+      }
+    },
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,

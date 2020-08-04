@@ -36,10 +36,10 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../manxi-website-web/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../manxi-website-web'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
 

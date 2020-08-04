@@ -42,7 +42,7 @@ export default {
   font-size: 18px;
   line-height: 40px;
   text-indent: 2em;
-  color: #666;
+  color: #333;
 }
 .enterpriseConceptContent {
   width: 80%;

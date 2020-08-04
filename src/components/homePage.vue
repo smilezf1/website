@@ -281,8 +281,7 @@ export default {
   font-weight: normal;
 }
 .securiptProductContainer {
- /*  background: url("../assets/x10.jpg") 100% / cover repeat-x; */
-
+  background: url("../assets/banner2.jpg") 100% / cover repeat-x;
   padding: 20px 0;
 }
 .securiptProductContainer h3 {

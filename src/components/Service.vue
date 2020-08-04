@@ -50,7 +50,7 @@ export default {
 .businessScope {
   margin-top: 30px;
   padding: 10px 0px 30px 0;
-  background: url("../assets/x10.jpg") 100% / cover repeat-x;
+  background: url("../assets/banner2.jpg") 100% / cover repeat-x;
 }
 .serviceIntroduce h3,
 .businessScope h3 {
@@ -70,7 +70,6 @@ export default {
   margin-top: 10px;
   text-indent: 2em;
   line-height: 28px;
-  text-align: center;
 }
 /* 业务范围 */
 .businessScopeContent {
@@ -79,7 +78,7 @@ export default {
   display: flex;
 }
 .businessScopeContent li {
-  margin: 0 30px;
+  margin: 0 15px;
   padding: 20px;
   background: white;
   border-radius: 10px;

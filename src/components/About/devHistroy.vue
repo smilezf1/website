@@ -3,15 +3,15 @@
     <!-- banner -->
     <div class="devHistroyBanner">
       <img src="../../assets/banner4.jpg" />
-     <!--  <div class="devHistoryBannerContent">
+      <div class="devHistoryBannerContent">
         <h3>发展历程</h3>
-      </div> -->
+      </div>
     </div>
     <!-- 主体内容 -->
     <div class="devHistroyContainer">
       <!-- 发展历程 -->
       <div class="developmentHistory ">
-        <h3 class="developmentHistoryTitle">发展历程</h3>
+        <!-- <h3 class="developmentHistoryTitle">发展历程</h3> -->
         <div class="developmentHistoryContent history">
           <!-- 线条 -->
           <div class="line"></div>
@@ -42,7 +42,7 @@
                   <span>5月</span>
                   携手山东网信办App侵害用户权益专项治理工作
                 </li>
-                <li>
+                <li></li>
                 <li>
                   <i></i>
                   <span>5月</span>
@@ -200,7 +200,7 @@ export default {
 }
 .history {
   width: 800px;
-  margin: 30px auto;
+  margin: 40px auto;
   position: relative;
 }
 .historyTitle {

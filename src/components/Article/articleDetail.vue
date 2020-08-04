@@ -103,8 +103,8 @@ export default {
   font-size: 16px;
   line-height: 32px;
   color: #3d464d;
-  text-indent: 2em;
   text-align: justify;
   min-height: 500px;
+  white-space: pre-line;
 }
 </style>

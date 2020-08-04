@@ -2,7 +2,7 @@
   <div class="code">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/banner18.jpg" />
+        <img src="../../assets/banner24.jpg" />
         <div class="productBannerContent">
           <!-- 移动应用源码加固编译器 -->
           <h3>蛮犀安全移动应用源码加固编译器</h3>
@@ -77,8 +77,7 @@ export default {
           id: 4,
           imgSrc: require("../../assets/img4.png"),
           title: "加固影响小",
-          content:
-            "对原程序混淆增量少，对原程序执行性能影响很小。"
+          content: "对原程序混淆增量少，对原程序执行性能影响很小。"
         }
       ],
       getUseIndex: 0
