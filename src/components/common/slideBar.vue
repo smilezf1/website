@@ -120,15 +120,17 @@ export default {
 }
 .slideBarContent .bar img {
   width: 25px;
+  margin-bottom: 5px;
 }
 .slideBarContent .bar span {
   font-size: 14px;
-  margin-top: 5px;
   white-space: nowrap;
 }
 .slideBarContent .bar p {
   position: absolute;
   padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 120%;
   box-shadow: 0 0 10px #00000045;
   color: #333;
@@ -142,6 +144,8 @@ export default {
   height: 0;
   border: 5px solid transparent;
   border-left-color: white;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .slide-fade-enter-active {
   transition: all 0.3s ease;

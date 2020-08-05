@@ -68,7 +68,6 @@ export default {
   font-size: 18px;
   letter-spacing: 1px;
   margin-top: 10px;
-  text-indent: 2em;
   line-height: 28px;
 }
 /* 业务范围 */

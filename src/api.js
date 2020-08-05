@@ -1,5 +1,5 @@
-// http://192.168.3.58:8080/manxi-website
-const baseUrl = "http://localhost:8080/manxi-website/api";
+
+const baseUrl = "http://47.103.154.212/manxi-website";
 export default {
     baseUrl
 }

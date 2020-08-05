@@ -10,9 +10,9 @@
     <div class="connectBody">
       <!-- 联系方式 -->
       <div class="contactWay">
-        <h1 class="contactWayTitle">
+       <!--  <h1 class="contactWayTitle">
           联系方式
-        </h1>
+        </h1> -->
       </div>
       <div class="contactWayContent">
         <div class="contactWayContentTitle">
@@ -193,7 +193,7 @@ export default {
   color: #666;
 }
 .contactWayContentMainPart img {
-  width: 70px;
+  width: 50px;
   padding: 20px;
 }
 .connectAddress,

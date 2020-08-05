@@ -164,5 +164,11 @@ export default new Router({
     path: "/devHistroy",
     component: devHistroy
   }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })

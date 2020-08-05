@@ -266,6 +266,8 @@ export default {
 .securipTproductTopRight .more {
   color: white;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .securipTproductTopRight .more img {
   width: 18px;

@@ -10,7 +10,6 @@
     </div>
     <div class="gainBody">
       <!--  <h2 class="gainBodyTitle">联系我们</h2> -->
-      <!-- 表单 -->
       <div class="gainBodyContent">
         <div class="gainBodyContentTitle">
           建立APP数据全生命周期安全体系,为企业核心资产保驾护航<br />
@@ -62,8 +61,13 @@
               <el-col :span="6">
                 <!-- 验证码 -->
                 <img
+                  v-if="Guid"
+                  :src="
+                    this.api.baseUrl +
+                      '/common/verifyCode/generateImage?key=' +
+                      Guid
+                  "
                   style="margin-left:16px;"
-                  src="http://192.168.3.100:8080/manxi-reinforce/captcha/getCaptchaCode?guid=7d0ba39e-abc3-d902-92a2-8f3e7ef742b1"
                   @click="getVerifyCode()"
                   ref="captcha"
                   class="captcha"
@@ -168,7 +172,7 @@ export default {
       selectedOptions: [],
       labelPosition: "left",
       address: "",
-      Guid: this.guid.getGuid()
+      Guid: null
     };
   },
   methods: {
@@ -176,11 +180,8 @@ export default {
       const _this = this;
       this.$refs[formName].validate(valid => {
         if (valid) {
-          _this.$message({ message: "提交成功!", type: "success" });
           /*   _this.$refs[formName].resetFields();
           _this.selectedOptions = ""; */
-          window.scrollTo(0, 0);
-          _this.reload();
           let corporateName = _this.ruleForm.name,
             contacts = _this.ruleForm.contacts,
             contactEmail = _this.ruleForm.email,
@@ -189,32 +190,34 @@ export default {
             verifyCode = _this.ruleForm.verifyCode,
             location = _this.address,
             baseUrl = _this.api.baseUrl;
-          console.log(
-            corporateName,
-            contacts,
-            contactEmail,
-            contactPhone,
-            industry,
-            verifyCode,
-            location
-          );
-          /*  http
-            .fetchPost(baseUrl + "/mail/info/sendMailPersonalInfo", {
+          http
+            .fetchPost(baseUrl + "/api/mail/info/sendMailPersonalInfo", {
               corporateName,
               contacts,
               contactEmail,
               contactPhone,
               industry,
-              location: location.join("/")
+              location: location.join("/"),
+              _t: _this.Guid,
+              _validCode: verifyCode
             })
             .then(res => {
-              if (res.status == "200") {
-                this.$message({ message: "提交成功!", type: "success" });
+              if (res.data.status == "200") {
+                _this.$message({
+                  message: "感谢您的填写,我们会及时与您取得联系",
+                  type: "success"
+                });
+                window.scrollTo(0, 0);
+                _this.reload();
               }
-              console.log(res);
-            }); */
+              if (res.data.status == "500") {
+                _this.$message.error("验证码错误");
+                _this.ruleForm.verifyCode = "";
+                _this.getKey();
+              }
+            });
         } else {
-          /*  _this.$message.error("必填项不能为空哦"); */
+          _this.getKey();
           return false;
         }
       });
@@ -223,28 +226,20 @@ export default {
       this.address = this.$refs["cascader"].getCheckedNodes()[0].pathLabels;
     },
     getVerifyCode() {
-      this.$refs.captcha.src =
-        "http://192.168.3.100:8080/manxi-reinforce/captcha/getCaptchaCode?guid=" +
-        this.guid.getGuid();
+      this.getKey();
+    },
+    getKey() {
+      let baseUrl = this.api.baseUrl,
+        _this = this;
+      http.fetchGet(baseUrl + "/common/verifyCode/generateKey").then(res => {
+        if (res.status == "200") {
+          _this.Guid = res.data;
+        }
+      });
     }
   },
-  mounted() {
-    console.log(this.Guid);
-    /*  http
-      .fetchPost(
-        baseUrl + "/mail/info/sendMailPersonalInfo",
-        {
-          corporateName: "哈哈",
-          contacts: "嘻嘻",
-          contactEmail: "smilezf@outlook.com",
-          contactPhone: 13753492406,
-          location: "北京",
-          industry: "金融"
-        }
-      )
-      .then(res => {
-        console.log(res, "哈哈");
-      }); */
+  created() {
+    this.getKey();
   }
 };
 </script>

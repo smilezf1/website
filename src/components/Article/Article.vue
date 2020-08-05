@@ -32,8 +32,11 @@
                 <span
                   @click="more(item.id, item.time, item.title, item.content)"
                 >
-                  {{ item.content }}</span
-                >
+                  {{ item.content }}
+                  <span class=" ellipsis" v-if="item.content != '...'"
+                    >...</span
+                  >
+                </span>
               </p>
               <p class="bottom">
                 <span class="time">
@@ -152,14 +155,19 @@ export default {
   text-decoration: underline;
 }
 .ArticleContent .txt .info {
-  line-height: 25px;
   cursor: pointer;
   color: #707070;
+  line-height: 25px;
+  /* 多行文本显示省略号兼容IE */
+  position: relative;
+  height: 70px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  padding-right: 12px;
+}
+.ArticleContent ul .txt .info .ellipsis {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .ArticleContent .txt .bottom {
   color: #a3a3a3;
