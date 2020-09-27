@@ -52,13 +52,22 @@
           <!-- 导航右边 -->
           <ul class="navigationContentRight">
             <li>
-              <router-link
+              <!--  <router-link
                 to="/Gain"
                 :class="{ getUseSelect: getUseIndex == 1 }"
                 @mouseover.native="getUse()"
                 @mouseout.native="recovergetUse()"
                 >获取使用</router-link
-              >
+              > -->
+              <!--      class="securityManagePlat" -->
+              <!-- <router-link
+                to="/"
+                :class="{ getUseSelect: getUseIndex == 1 }"
+                class="securityManagePlat"
+                @mouseover.native="getUse()"
+                @mouseout.native="recovergetUse()"
+                >移动应用安全管理平台</router-link
+              > -->
             </li>
           </ul>
         </div>
@@ -130,7 +139,8 @@ export default {
             ]
           }
         },
-        { id: 5, name: "联系我们", link: "/Connect", child: null }
+        { id: 5, name: "联系我们", link: "/Connect", child: null },
+        { id: 6, name: "获取使用", link: "/Gain", child: null }
       ],
 
       currentIndex: 0,
@@ -328,13 +338,15 @@ export default {
   font-size: 16px;
   padding: 10px 15px;
   border-radius: 5px;
-  font-family: "黑体";
   background: transparent;
   transition: background 1.5s ease;
 }
+.navigationContentRight .securityManagePlat {
+  border: 1px solid white;
+}
 .navigationContentRight .getUseSelect {
   background: #6aa3ea;
-  border: none;
+  border: 1px solid transparent;
   transition: all 1.5s ease;
 }
 .navigationContentRight {

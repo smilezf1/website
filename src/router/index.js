@@ -1,35 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-/* import HelloWorld from '@/components/HelloWorld' */
-import Index from '@/components/Index.vue'
-import Product from '@/components/Product.vue'
-import Service from '@/components/Service.vue'
-import Project from '@/components/Project.vue'
-import About from '@/components/About.vue'
-import Connect from '@/components/Connect/Connect.vue'
-//product文件下的组件
-import Evaluating from '@/components/product/Evaluating.vue'
-import ComplianceEvaluating from '@/components/product/ComplianceEvaluating.vue'
-import Reinforce from '@/components/product/Reinforce.vue'
-import Code from '@/components/product/Code.vue'
-import Virtual from '@/components/product/Virtual.vue'
-import SecretKey from '@/components/product/SecretKey.vue'
-import Encryption from '@/components/product/Encryption.vue'
-import SelfInspection from '@/components/product/SelfInspection.vue'
-import Gain from '@/components/Gain.vue'
-import safetyEvaluation from '@/components/product/safetyEvaluation.vue'
-import safetyProtection from '@/components/product/safetyProtection.vue'
-import Insurance from '@/components/product/Insurance.vue'
-//About文件下的组件
-import companyIntroduce from '@/components/About/companyIntroduce.vue';
-import devHistroy from '@/components/About/devHistroy.vue';
-//Service文件夹下的组件
-import percolationTest from '@/components/Service/percolationTest.vue';
-import securityConsulting from '@/components/Service/securityConsulting.vue';
-//文章页面
-import Article from '@/components/Article/Article.vue'
-//文章详细页面
-import articleDetail from '@/components/Article/articleDetail.vue'
 Vue.use(Router)
 export default new Router({
   routes: [{
@@ -38,90 +8,90 @@ export default new Router({
     meta: {
       title: "蛮犀科技-首页"
     },
-    component: Index
+    component: () => import("../components/page/Index.vue")
   },
   {
     path: "/Article",
     name: "Article",
     meta: { title: "蛮犀资讯" },
-    component: Article
+    component: () => import("../components/Article/Article.vue")
   },
   {
     path: "/Article:id",
     name: 'articleDetail',
     meta: { title: "蛮犀资讯" },
-    component: articleDetail
+    component: () => import("../components/Article/articleDetail.vue")
   },
   {
     path: "/Product",
     name: "Product",
-    component: Product,
+    component: () => import("../components/product/list.vue"),
     meta: {
       title: "蛮犀科技-安全产品"
     },
     redirect: "/Product/Evaluating",
     children: [{
       path: "Evaluating",
-      component: Evaluating,
+      component: () => import("../components/product/Evaluating.vue"),
       meta: { title: "蛮犀科技-移动应用评测系统" }
     },
     {
       path: "ComplianceEvaluating",
-      component: ComplianceEvaluating,
+      component: () => import("../components/product/ComplianceEvaluating.vue"),
       meta: { title: "蛮犀科技-移动应用合规评测系统" }
     },
     {
       path: "Reinforce",
-      component: Reinforce,
+      component: () => import("../components/product/Reinforce.vue"),
       meta: { title: "蛮犀科技-移动应用加固系统" }
     },
     {
       path: "Code",
-      component: Code,
+      component: () => import("../components/product/Code.vue"),
       meta: { title: "蛮犀科技-移动应用源码加固编译器" }
     },
     {
       path: "Virtual",
-      component: Virtual,
+      component: () => import("../components/product/Virtual.vue"),
       meta: { title: "蛮犀科技-移动应用源码虚拟化编译器" }
     },
     {
       path: "SecretKey",
-      component: SecretKey,
+      component: () => import("../components/product/SecretKey.vue"),
       meta: { title: "蛮犀科技-移动应用密钥白盒插件" }
     },
     {
       path: "SelfInspection",
-      component: SelfInspection,
+      component: () => import("../components/product/SelfInspection.vue"),
       meta: { title: "蛮犀科技-移动应用加固系统" }
     },
     {
       path: "Encryption",
-      component: Encryption,
+      component: () => import('../components/product/Encryption.vue'),
       meta: { title: "蛮犀科技-移动应用加固系统" }
     },
     {
       path: "safetyEvaluation",
-      component: safetyEvaluation,
+      component: () => import("../components/product/safetyEvaluation.vue"),
       meta: { title: "蛮犀科技-移动应用加固系统" }
     },
-    { path: "safetyProtection", component: safetyProtection, meta: { title: "蛮犀科技-移动应用加固系统" } },
-    { path: "Insurance", component: Insurance, meta: { title: "蛮犀科技-移动应用加固系统" } }
+    { path: "safetyProtection", component: () => import("../components/product/safetyProtection.vue"), meta: { title: "蛮犀科技-移动应用加固系统" } },
+    { path: "Insurance", component: () => import("../components/product/Insurance.vue"), meta: { title: "蛮犀科技-移动应用加固系统" } }
     ]
   },
   {
     path: "/Service",
     name: "Service",
     meta: { title: "安全服务" },
-    component: Service,
+    component: () => import("../components/Service/list.vue"),
     redirect: "/Service/percolationTest",
     children: [{
       path: "percolationTest",
-      component: percolationTest,
+      component: () => import("../components/Service/percolationTest.vue"),
       meta: { title: "蛮犀科技-移动应用安全渗透" }
     }, {
       path: "securityConsulting",
-      component: securityConsulting,
+      component: () => import("../components/Service/securityConsulting.vue"),
       meta: { title: "蛮犀科技-移动应用安全咨询" }
     }
     ]
@@ -129,40 +99,40 @@ export default new Router({
   {
     path: "/Project",
     name: "Project",
-    component: Project
+    component: () => import("../components/Project.vue")
   },
   {
     path: "/About",
     name: "About",
-    component: About,
+    component: () => import("../components/About/list.vue"),
     meta: { title: "蛮犀科技-关于我们" },
     redirect: "/About/companyIntroduce",
     children: [{
       path: "companyIntroduce",
-      component: companyIntroduce,
+      component: () => import("../components/About/companyIntroduce.vue"),
       meta: { title: "蛮犀科技-公司简介" },
     },
     {
       path: "devHistroy",
-      component: devHistroy,
+      component: () => import('../components/About/devHistroy.vue'),
       meta: { title: "蛮犀科技-发展历程" },
     }]
   },
   {
     path: "/Connect",
     name: "Connect",
-    component: Connect,
+    component: () => import("../components/Connect/Connect.vue"),
     meta: { title: "蛮犀科技-联系我们" }
   },
   {
     path: "/Gain",
     name: "Gain",
-    component: Gain,
+    component: () => import("../components/page/Gain.vue"),
     meta: { title: "蛮犀科技-获取使用" }
   },
   {
     path: "/devHistroy",
-    component: devHistroy
+    component: () => import("../components/About/devHistroy.vue")
   }
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -10,7 +10,7 @@
     <div class="connectBody">
       <!-- 联系方式 -->
       <div class="contactWay">
-       <!--  <h1 class="contactWayTitle">
+        <!--  <h1 class="contactWayTitle">
           联系方式
         </h1> -->
       </div>
@@ -122,9 +122,10 @@ export default {
   transform: translate(-50%, -50%);
 }
 .bannerContent h3 {
-  font-size: 50px;
+  font-size: 56px;
   color: white;
-  font-weight: normal;
+  font-weight: 700;
+  font-family: URW Chancery L, cursive;
 }
 .banner img {
   width: 100%;
@@ -157,6 +158,7 @@ export default {
   padding-bottom: 20px;
   margin-top: 20px;
   font-weight: normal;
+  font-family: URW Chancery L, cursive;
 }
 .contactWayContentTitle .box,
 .connectAddressTitle .box {

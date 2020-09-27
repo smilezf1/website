@@ -2,7 +2,7 @@
   <div class="Evaluating">
     <div class="productContent">
       <div class="productBanner">
-        <img src="../../assets/x14.jpeg" />
+        <img src="../../assets/img16.jpg" />
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用评测系统</h3>
           <article>

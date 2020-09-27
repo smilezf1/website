@@ -31,11 +31,8 @@
               <p class="info">
                 <span
                   @click="more(item.id, item.time, item.title, item.content)"
+                  v-html="item.content"
                 >
-                  {{ item.content }}
-                  <span class=" ellipsis" v-if="item.content != '...'"
-                    >...</span
-                  >
                 </span>
               </p>
               <p class="bottom">
@@ -126,12 +123,14 @@ export default {
 }
 .ArticleBannerContent h3 {
   font-size: 56px;
+  font-family: URW Chancery L, cursive;
 }
 .ArticleBannerContent article {
   font-size: 18px;
-  margin-top: 10px;
   letter-spacing: 1px;
   line-height: 35px;
+  margin: 10px 0 0 10px;
+  font-family: URW Chancery L, cursive;
 }
 .ArticleContent ul li {
   display: flex;
@@ -140,7 +139,7 @@ export default {
   padding: 20px 0;
 }
 .ArticleContent ul .txt {
-  width: 100%;
+  width: 70%;
   padding: 10px 20px;
   text-align: justify;
 }
@@ -158,11 +157,13 @@ export default {
   cursor: pointer;
   color: #707070;
   line-height: 25px;
-  /* 多行文本显示省略号兼容IE */
-  position: relative;
+  padding-right: 12px;
   height: 70px;
   overflow: hidden;
-  padding-right: 12px;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .ArticleContent ul .txt .info .ellipsis {
   position: absolute;

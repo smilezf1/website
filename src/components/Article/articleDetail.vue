@@ -3,32 +3,7 @@
     <headerSpace></headerSpace>
     <div class="articleDetailBody">
       <div class="articleDetailBodyBox">
-        <div class="newsContent" v-if="id == 1">
-          <div class="newsContentTitle">
-            <p>{{ title }}</p>
-            <span>【蛮犀资讯】{{ time }}</span>
-          </div>
-          <div class="newsContentBody">{{ content }}</div>
-        </div>
-        <div class="newsContent" v-if="id == 2">
-          <div class="newsContentTitle">
-            <p>{{ title }}</p>
-            <span>【蛮犀资讯】{{ time }}</span>
-          </div>
-          <div class="newsContentBody">
-            <img src="../../assets/article4.jpg" style="width:600px" />
-          </div>
-        </div>
-        <div class="newsContent" v-if="id == 3">
-          <div class="newsContentTitle">
-            <p>{{ title }}</p>
-            <span>【蛮犀资讯】{{ time }}</span>
-          </div>
-          <div class="newsContentBody">
-            <img src="../../assets/article5.jpg" style="width:600px" />
-          </div>
-        </div>
-        <div class="newsContent" v-if="id == 4">
+        <div class="newsContent">
           <div class="newsContentTitle">
             <p>{{ title }}</p>
             <span>【蛮犀资讯】{{ time }}</span>
@@ -93,9 +68,10 @@ export default {
   margin-top: 30px;
   font-size: 14px;
 }
-.articleDetailBodyBox .newsContent p {
+.newsContentTitle p {
   font-size: 24px;
   color: #000;
+  /* display: block !important; */
 }
 .newsContentBody {
   padding-bottom: 20px;
@@ -104,7 +80,26 @@ export default {
   line-height: 32px;
   color: #3d464d;
   text-align: justify;
-  min-height: 500px;
+  min-height: 700px;
   white-space: pre-line;
+}
+.newsContentBody h3 {
+  display: block !important;
+}
+.newsContentBody p {
+  display: block !important;
+}
+.newsContentBody img {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+.newsContentBody > p {
+  color: #0070c0;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.newsContentBody img {
+  margin-top: 5px;
 }
 </style>

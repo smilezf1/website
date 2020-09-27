@@ -126,8 +126,9 @@ export default {
   color: white;
 }
 .devHistoryBannerContent h3 {
-  font-size: 50px;
-  font-weight: normal;
+  font-size: 56px;
+  font-weight:700;
+  font-family: URW Chancery L, cursive;
 }
 .developmentHistoryContent {
   margin: 20px 0;

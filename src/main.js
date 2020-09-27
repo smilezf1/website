@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'; //引用elementUi
-import api from './api'
+import api from './components/request/api'
 import 'element-ui/lib/theme-chalk/index.css' //引用elementUI中的样式
 Vue.config.productionTip = false
 import 'lib-flexible/flexible'

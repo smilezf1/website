@@ -35,18 +35,13 @@
         </div>
       </div>
       <div class="bottom">
-        <!--   <p>
-          <span>上海蛮犀科技有限公司 版权所有 ©2019-2020</span>
-          <router-link to="">沪ICP备19047152号</router-link><img
-            src="../../assets/icp.png"
-          />
-        </p> -->
         <p>
           <span> Copyright © 2020 上海蛮犀科技有限公司 版权所有</span>
           <span traget="_blank" @click="link()" class="link"
             >沪ICP备19047152号-2</span
           >
           <img src="../../assets/icp.png" />
+          <span>沪公网安备 31011702007672号</span>
         </p>
       </div>
     </div>
@@ -145,7 +140,7 @@ export default {
   margin: 0 auto;
   font-size: 15px;
   font-weight: 400;
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
   background: #2d2c2e;
 }
 .footerSpace .containerBox {
@@ -211,13 +206,10 @@ export default {
 .footerSpace .bottom {
   text-align: center;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-top: 50px;
 }
 .footerSpace .bottom p {
   color: #6d6e7e;
-}
-.footerSpace .bottom p:first-child {
-  margin-bottom: 10px;
 }
 .footerSpace .bottom a {
   color: #6d6e7e;
