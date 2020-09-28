@@ -9,7 +9,7 @@
             蛮犀安全移动应用密钥白盒可在不可信环境中，实现安全的加解密数据，保障信息机密性。
           </article>
           <router-link
-            to="/Gains"
+            to="/Gain"
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
             @mouseover.native="getUse()"
