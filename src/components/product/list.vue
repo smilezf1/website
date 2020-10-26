@@ -14,10 +14,7 @@ import footerSpace from "@/components/common/footerSpace";
 import slideBar from "@/components/common/slideBar";
 export default {
   name: "Procuct",
-  components: { headerSpace, footerSpace, slideBar },
-  data() {
-    return {};
-  }
+  components: { headerSpace, footerSpace, slideBar }
 };
 </script>
 <style>

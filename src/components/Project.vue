@@ -11,7 +11,6 @@
         <h3 class="title">实现完善的功能</h3>
         <ul>
           <li v-for="item in functionNavItem" :key="item.id">
-           <!--  <img src="../assets/icon.png" /> -->
             <p>{{ item.content }}</p>
           </li>
         </ul>

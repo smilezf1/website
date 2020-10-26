@@ -9,7 +9,6 @@
       </div>
     </div>
     <div class="gainBody">
-      <!--  <h2 class="gainBodyTitle">联系我们</h2> -->
       <div class="gainBodyContent">
         <div class="gainBodyContentTitle">
           建立APP数据全生命周期安全体系,为企业核心资产保驾护航<br />
@@ -200,7 +199,6 @@ export default {
               _validCode: verifyCode
             })
             .then(res => {
-              console.log(res);
               if (res.status == "200") {
                 _this.$message({
                   message: "感谢您的填写,我们会及时与您取得联系",

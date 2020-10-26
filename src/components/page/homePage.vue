@@ -13,8 +13,9 @@
                 <p :key="text.number">
                   <router-link
                     :to="{
-                      path: 'Article' + text.id,
+                      path: 'Article',
                       query: {
+                        id: text.id,
                         time: text.time,
                         title: text.title,
                         content: text.content
@@ -39,7 +40,11 @@
       <div class="securiptProductContainer">
         <h3>安全产品</h3>
         <div class="container">
-          <ul v-for="(item, index) in securityProductList" :key="index">
+          <ul
+            v-for="(item, index) in securityProductList"
+            :key="index"
+            class="securityProductList"
+          >
             <img :src="item.imgSrc" class="decorate" />
             <li v-for="(item, index) in item.subs" :key="index">
               <span>{{ item.name }}</span>
@@ -48,27 +53,12 @@
         </div>
       </div>
     </div>
-    <!-- 解决方案 -->
-    <!--  <div class="solution">
-      <h3>解决方案</h3>
-      <div class="container">
-        <ul>
-          <li v-for="(item, index) in solutionList" :key="index">
-            <img
-              :src="item.imgSrc"
-              @mouseover="zoom($event)"
-              @mouseout="recover($event)"
-            /><span>{{ item.name }}</span>
-          </li
-        </ul>
-      </div>
-    </div> -->
     <!-- 荣誉资质 -->
     <div class="partner">
       <h3>合作伙伴</h3>
       <div class="container">
         <ul>
-          <el-row>
+          <!--  <el-row>
             <img src="../../assets/partner7.png" title="完美世界游戏" />
             <img
               src="../../assets/partner2.png"
@@ -90,7 +80,12 @@
               title="上海市网络与信息安全应急管理事务中心"
             />
             <img src="../../assets/partner10.png" title="信安在线" />
-          </el-row>
+          </el-row> -->
+          <el-carousel :autoplay="false">
+            <el-carousel-item v-for="(item, index) in partnerList" :key="index">
+              <img :src="item.imgSrc" />
+            </el-carousel-item>
+          </el-carousel>
         </ul>
       </div>
     </div>
@@ -160,7 +155,6 @@
   </div>
 </template>
 <script>
-import $ from "jquery";
 export default {
   name: "homePage",
   data() {
@@ -216,7 +210,19 @@ export default {
       timer: null,
       selectIndex: -1,
       selectSecuriptProductIndex: -1,
-      showIcon: false
+      showIcon: false,
+      partnerList: [
+        { imgSrc: require("../../assets/partner7.png") },
+        { imgSrc: require("../../assets/partner2.png") },
+        { imgSrc: require("../../assets/partner3.png") },
+        { imgSrc: require("../../assets/partner9.png") },
+        { imgSrc: require("../../assets/partner5.png") },
+        { imgSrc: require("../../assets/partner6.png") },
+        { imgSrc: require("../../assets/partner1.png") },
+        { imgSrc: require("../../assets/partner8.png") },
+        { imgSrc: require("../../assets/partner4.png") },
+        { imgSrc: require("../../assets/partner10.png") }
+      ]
     };
   },
   inject: ["articleListItem"],
@@ -238,12 +244,6 @@ export default {
     this.startMove();
   },
   methods: {
-    zoom(e) {
-      $(e.target).css({ width: "500px", transition: "width 0.5s" });
-    },
-    recover(e) {
-      $(e.target).css({ width: "" });
-    },
     startMove() {
       this.timer = setTimeout(() => {
         if (this.number === 3) {
@@ -345,7 +345,6 @@ export default {
 
 .securiptProductContainer .container {
   width: 1200px;
-  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -354,13 +353,26 @@ export default {
   font-size: 18px;
 }
 .securiptProductContainer ul {
-  width: 320px;
-  padding: 20px;
+  width: 280px;
+  padding: 20px 10px;
   box-sizing: border-box;
   border-radius: 10px;
   background: white;
-  /* box-shadow: 0px 0px 10px #000; */
 }
+.securityProductList {
+  cursor: pointer;
+  transition: all 0.5s;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+.securityProductList:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 10px #00000055;
+}
+
 .securiptProductContainer ul .decorate {
   display: block;
   margin: 0 auto;

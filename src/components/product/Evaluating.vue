@@ -48,7 +48,6 @@
   </div>
 </template>
 <script>
-import $ from "jQuery";
 export default {
   name: "Evaluating",
   data() {
@@ -96,4 +95,3 @@ export default {
   }
 };
 </script>
-<style></style>

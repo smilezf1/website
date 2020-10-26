@@ -23,9 +23,9 @@ export default {
       BannerList: [
         {
           id: 1,
-          imgSrc: require("../../assets/banner1.jpg")
-          /*  title: "蛮犀科技,创建智慧安全生活",
-          text: "建立APP数据全生命周期安全体系,为企业核心资产保驾护航" */
+          imgSrc: require("../../assets/banner10.jpg"),
+          title: "蛮犀科技,创建智慧安全生活",
+          text: "建立APP数据全生命周期安全体系,为企业核心资产保驾护航"
         },
         {
           id: 2,

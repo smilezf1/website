@@ -87,8 +87,8 @@ export default {
     },
     more(id, time, title, content) {
       this.$router.push({
-        path: "/Article" + id,
-        query: { time, title, content }
+        path: "/Article/detail",
+        query: { id, time, title, content }
       });
     }
   }

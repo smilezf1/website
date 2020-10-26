@@ -3,7 +3,6 @@
     <!--  移动应用安全业务 -->
     <div class="productContent">
       <div class="productBanner">
-        <!-- <img src="../../assets/develop.jpg" /> -->
         <div class="productBannerContent">
           <h3>蛮犀安全移动应用安全业务</h3>
           <article>

@@ -17,7 +17,7 @@ export default new Router({
     component: () => import("../components/Article/Article.vue")
   },
   {
-    path: "/Article:id",
+    path: "/Article/detail",
     name: 'articleDetail',
     meta: { title: "蛮犀资讯" },
     component: () => import("../components/Article/articleDetail.vue")

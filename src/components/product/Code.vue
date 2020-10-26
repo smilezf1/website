@@ -90,9 +90,6 @@ export default {
     recovergetUse() {
       this.getUseIndex = 0;
     }
-  },
-  mounted() {
-    /* console.log(this.xx()) */
   }
 };
 </script>

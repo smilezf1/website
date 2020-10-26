@@ -32,7 +32,7 @@ export default {
     };
   },
   mounted() {
-    this.id = this.$route.params.id;
+    this.id = this.$route.query.id;
     this.time = this.$route.query.time;
     this.title = this.$route.query.title;
     this.content = this.$route.query.content;
