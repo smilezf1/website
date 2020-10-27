@@ -157,7 +157,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      let scrollTop =
+      const scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
@@ -169,13 +169,13 @@ export default {
       }
     },
     showDropDown(index) {
-      let child = this.navData[index].child;
+      const child = this.navData[index].child;
       if (child) {
         child.show = true;
       }
     },
     hiddenDropDown(index) {
-      let child = this.navData[index].child;
+      const child = this.navData[index].child;
       if (child) {
         child.show = false;
       }

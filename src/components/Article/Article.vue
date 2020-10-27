@@ -156,7 +156,9 @@ export default {
 .ArticleContent .txt .info {
   cursor: pointer;
   color: #707070;
+  font-size: 12px;
   line-height: 25px;
+  font-weight: normal;
   padding-right: 12px;
   height: 70px;
   overflow: hidden;

@@ -32,10 +32,9 @@ export default {
     };
   },
   mounted() {
-    this.id = this.$route.query.id;
-    this.time = this.$route.query.time;
-    this.title = this.$route.query.title;
-    this.content = this.$route.query.content;
+    const { time, title, content } = this.$route.query;
+    this.time = time;
+    (this.title = title), (this.content = content);
   }
 };
 </script>

@@ -24,13 +24,28 @@
               <ul>
                 <li>
                   <i></i>
-                  <span>8月</span>
+                  <span>11月</span>
                   精彩待续......
                 </li>
                 <li>
                   <i></i>
+                  <span>10月</span>
+                  协助上海松江,静安,普陀等地区APP违规检查
+                </li>
+                <li>
+                  <i></i>
+                  <span>9月</span>
+                  支撑宁波市APP违法违规收集个人信息评估
+                </li>
+                <li>
+                  <i></i>
+                  <span>8月</span>
+                  评测产品落地安信,信科共创,安正检测等机构
+                </li>
+                <li>
+                  <i></i>
                   <span>7月</span>
-                  成功签约完美世界，助力游戏应用安全
+                  成功签约完美世界,助力游戏应用安全
                 </li>
                 <li>
                   <i></i>
@@ -127,7 +142,7 @@ export default {
 }
 .devHistoryBannerContent h3 {
   font-size: 56px;
-  font-weight:700;
+  font-weight: 700;
   font-family: URW Chancery L, cursive;
 }
 .developmentHistoryContent {

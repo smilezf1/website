@@ -58,20 +58,20 @@ export default {
   methods: {
     backTop(index) {
       if (index === 2) {
-        const that = this;
-        let timer = setInterval(() => {
-          let speed = Math.floor(-that.scrollTop / 5);
-          document.documentElement.scrollTop = document.body.scrollTop =
-            that.scrollTop + speed;
-          if (that.scrollTop === 0) {
-            clearInterval(timer);
-          }
-        }, 20);
+        const that = this,
+          timer = setInterval(() => {
+            const speed = Math.floor(-that.scrollTop / 5);
+            document.documentElement.scrollTop = document.body.scrollTop =
+              that.scrollTop + speed;
+            if (that.scrollTop === 0) {
+              clearInterval(timer);
+            }
+          }, 20);
       }
     },
     //计算距离顶部的高度
     getScrollTop() {
-      let scrollTop =
+      const scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;

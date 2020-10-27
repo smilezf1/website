@@ -58,7 +58,7 @@
       <h3>合作伙伴</h3>
       <div class="container">
         <ul>
-          <!--  <el-row>
+          <el-row>
             <img src="../../assets/partner7.png" title="完美世界游戏" />
             <img
               src="../../assets/partner2.png"
@@ -80,12 +80,7 @@
               title="上海市网络与信息安全应急管理事务中心"
             />
             <img src="../../assets/partner10.png" title="信安在线" />
-          </el-row> -->
-          <el-carousel :autoplay="false">
-            <el-carousel-item v-for="(item, index) in partnerList" :key="index">
-              <img :src="item.imgSrc" />
-            </el-carousel-item>
-          </el-carousel>
+          </el-row>
         </ul>
       </div>
     </div>
@@ -210,19 +205,7 @@ export default {
       timer: null,
       selectIndex: -1,
       selectSecuriptProductIndex: -1,
-      showIcon: false,
-      partnerList: [
-        { imgSrc: require("../../assets/partner7.png") },
-        { imgSrc: require("../../assets/partner2.png") },
-        { imgSrc: require("../../assets/partner3.png") },
-        { imgSrc: require("../../assets/partner9.png") },
-        { imgSrc: require("../../assets/partner5.png") },
-        { imgSrc: require("../../assets/partner6.png") },
-        { imgSrc: require("../../assets/partner1.png") },
-        { imgSrc: require("../../assets/partner8.png") },
-        { imgSrc: require("../../assets/partner4.png") },
-        { imgSrc: require("../../assets/partner10.png") }
-      ]
+      showIcon: false
     };
   },
   inject: ["articleListItem"],
@@ -360,17 +343,12 @@ export default {
   background: white;
 }
 .securityProductList {
-  cursor: pointer;
-  transition: all 0.5s;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+  /* cursor: pointer;
+  transition: transform 0.3s; */
 }
 .securityProductList:hover {
-  transform: scale(1.015);
-  box-shadow: 0px 0px 10px #00000055;
+  /* transform: scale(1.02);
+  box-shadow: 0px 0px 10px #00000055; */
 }
 
 .securiptProductContainer ul .decorate {
@@ -386,8 +364,6 @@ export default {
 }
 .securiptProductContainer ul li > span {
   color: #2b2b2b;
-  /*  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif; */
   font-size: 18px;
   margin: 0 auto;
 }

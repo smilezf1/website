@@ -179,21 +179,22 @@ export default {
       const _this = this;
       this.$refs[formName].validate(valid => {
         if (valid) {
-          let corporateName = _this.ruleForm.name,
-            contacts = _this.ruleForm.contacts,
-            contactEmail = _this.ruleForm.email,
-            contactPhone = _this.ruleForm.phone,
-            industry = _this.ruleForm.industry,
-            verifyCode = _this.ruleForm.verifyCode,
-            location = _this.address,
-            baseUrl = _this.api.baseUrl;
+          const {
+            name,
+            contacts,
+            email,
+            phone,
+            industry,
+            verifyCode
+          } = _this.ruleForm;
+          const location = _this.address;
           api.userInfoService
             .sendMailPersonalInfo({
-              corporateName,
-              contacts,
-              contactEmail,
-              contactPhone,
-              industry,
+              corporateName: name,
+              contacts: contacts,
+              contactEmail: email,
+              contactPhone: phone,
+              industry: industry,
               location: location.join("/"),
               _t: _this.Guid,
               _validCode: verifyCode
@@ -226,8 +227,7 @@ export default {
       this.getKey();
     },
     getKey() {
-      let baseUrl = this.api.baseUrl,
-        _this = this;
+      const _this = this;
       api.guidService.getGuid().then(res => {
         _this.Guid = res;
       });
