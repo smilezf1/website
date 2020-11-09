@@ -88,53 +88,7 @@
     <div class="publicity">
       <div class="publicityContent">
         <!-- 漩涡效果 -->
-        <svg
-          width="813"
-          height="144"
-          xmlns="http://www.w3.org/2000/svg"
-          class="vortex animate-scale"
-        >
-          <g stroke="#fff" stroke-width="1.5" opacity=".2" fill="none">
-            <path
-              d="M401.427 172.105c55.94 0 101.288-45.348 101.288-101.288S457.367-30.471 401.427-30.471 300.139 14.877 300.139 70.817s45.348 101.288 101.288 101.288z"
-              opacity=".8"
-            />
-            <path
-              d="M400.524 134.246c34.533 0 62.527-27.994 62.527-62.527S435.057 9.192 400.524 9.192s-62.527 27.994-62.527 62.527 27.994 62.527 62.527 62.527z"
-              opacity=".9"
-            />
-            <path
-              d="M400.399 97.015c13.902 0 25.171-11.27 25.171-25.171 0-13.902-11.27-25.171-25.171-25.171-13.902 0-25.171 11.27-25.171 25.171 0 13.902 11.27 25.171 25.171 25.171z"
-            />
-            <path
-              d="M402.012 214.26c78.898 0 142.857-63.959 142.857-142.857S480.91-71.454 402.012-71.454 259.155-7.495 259.155 71.403 323.114 214.26 402.012 214.26z"
-              opacity=".7"
-            />
-            <path
-              d="M402.611 300.004c126.261 0 228.615-102.355 228.615-228.615 0-126.261-102.355-228.615-228.615-228.615-126.261 0-228.615 102.355-228.615 228.615 0 126.261 102.355 228.615 228.615 228.615z"
-              opacity=".5"
-            />
-            <path
-              d="M403.664 341.898c149.98 0 271.562-121.583 271.562-271.562 0-149.98-121.583-271.563-271.562-271.563-149.98 0-271.562 121.583-271.562 271.563s121.583 271.562 271.562 271.562z"
-              opacity=".4"
-            />
-            <path
-              d="M404.816 385.914c174.925 0 316.73-141.805 316.73-316.73s-141.805-316.73-316.73-316.73-316.73 141.805-316.73 316.73 141.805 316.73 316.73 316.73z"
-              opacity=".3"
-            />
-            <path
-              d="M406.426 428.519c199.345 0 360.945-161.601 360.945-360.945 0-199.345-161.601-360.945-360.945-360.945-199.345 0-360.945 161.601-360.945 360.945 0 199.345 161.601 360.945 360.945 360.945z"
-            />
-            <path
-              d="M406.943 472.293c223.806 0 405.236-181.43 405.236-405.236 0-223.806-181.43-405.236-405.236-405.236-223.806 0-405.236 181.43-405.236 405.236 0 223.806 181.43 405.236 405.236 405.236z"
-              opacity=".1"
-            />
-            <path
-              d="M402.598 257c102.503 0 185.598-83.095 185.598-185.598 0-102.503-83.095-185.598-185.598-185.598C300.095-114.196 217-31.101 217 71.402 217 173.905 300.095 257 402.598 257z"
-              opacity=".6"
-            />
-          </g>
-        </svg>
+        <whirlpools></whirlpools>
         <div
           class="publicityContentColumn"
           v-for="(item, index) in publicityList"
@@ -150,8 +104,10 @@
   </div>
 </template>
 <script>
+import whirlpools from "../../components/utils/whirlpools";
 export default {
   name: "homePage",
+  components: { whirlpools },
   data() {
     return {
       securityProductList: [
@@ -343,11 +299,11 @@ export default {
   background: white;
 }
 .securityProductList {
-  /* cursor: pointer;
-  transition: transform 0.3s; */
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 .securityProductList:hover {
-  /* transform: scale(1.02);
+  /*  transform: scale(1.02);
   box-shadow: 0px 0px 10px #00000055; */
 }
 
@@ -429,6 +385,8 @@ export default {
 }
 /* 宣传 */
 .publicity {
+  width: 100%;
+  overflow: hidden;
   height: 300px;
   background: linear-gradient(270deg, #4940ac 0%, #00a38e 100%);
   display: flex;
@@ -460,25 +418,5 @@ export default {
   position: absolute;
   top: -40px;
   left: 25%;
-  visibility: hidden;
-}
-@keyframes animation-scale {
-  0% {
-    transform-origin: center center;
-    transform: scale(1);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    transform-origin: center center;
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-.publicityContent .animate-scale {
-  animation: animation-scale 3s 0.2s linear both infinite;
-  visibility: visible;
 }
 </style>

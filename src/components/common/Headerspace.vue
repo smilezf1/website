@@ -60,14 +60,14 @@
                 >获取使用</router-link
               > -->
               <!--      class="securityManagePlat" -->
-              <!-- <router-link
+              <router-link
                 to="/"
                 :class="{ getUseSelect: getUseIndex == 1 }"
                 class="securityManagePlat"
                 @mouseover.native="getUse()"
                 @mouseout.native="recovergetUse()"
                 >移动应用安全管理平台</router-link
-              > -->
+              >
             </li>
           </ul>
         </div>
