@@ -1,6 +1,6 @@
 <template>
   <div class="articleDetail">
-    <headerSpace></headerSpace>
+     <headerSpace></headerSpace>
     <div class="articleDetailBody">
       <div class="articleDetailBodyBox">
         <div class="newsContent">
@@ -12,17 +12,13 @@
         </div>
       </div>
     </div>
-    <slideBar></slideBar>
-    <footerSpace></footerSpace>
   </div>
 </template>
 <script>
 import headerSpace from "@/components/common/headerSpace.vue";
-import footerSpace from "@/components/common/footerSpace.vue";
-import slideBar from "@/components/common/slideBar.vue";
 export default {
   name: "articleDetail",
-  components: { headerSpace, footerSpace, slideBar },
+  components: { headerSpace},
   data() {
     return {
       id: 0,
@@ -70,7 +66,6 @@ export default {
 .newsContentTitle p {
   font-size: 24px;
   color: #000;
-  /* display: block !important; */
 }
 .newsContentBody {
   padding-bottom: 20px;

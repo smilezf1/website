@@ -1,18 +1,11 @@
 <template>
   <div class="About">
-    <HeaderSpace></HeaderSpace>
     <router-view />
-    <FooterSpace></FooterSpace>
-    <slideBar></slideBar>
   </div>
 </template>
 <script>
-import HeaderSpace from "@/components/common/headerSpace.vue";
-import FooterSpace from "@/components/common/FooterSpace";
-import slideBar from "@/components/common/slideBar.vue";
 export default {
   name: "About",
-  components: { HeaderSpace, FooterSpace, slideBar },
   data() {
     return {
       aboutList: [{ id: 1, title: "公司简介", imgSrc: "" }]

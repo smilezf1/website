@@ -1,18 +1,11 @@
 <template>
   <div class="Service">
-    <headerSpace></headerSpace>
     <router-view />
-    <FooterSpace></FooterSpace>
-    <slideBar></slideBar>
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/headerSpace.vue";
-import FooterSpace from "@/components/common/FooterSpace";
-import slideBar from "@/components/common/slideBar.vue";
 export default {
-  name: "Service",
-  components: { headerSpace, FooterSpace, slideBar }
+  name: "Service"
 };
 </script>
 <style>
@@ -32,7 +25,7 @@ export default {
   position: absolute;
   color: white;
 }
-.percolationTestBannerContent h3 {
+.percolationTestBannerContent h1 {
   font-size: 56px;
   font-weight: 700;
   font-family: URW Chancery L, cursive;
@@ -53,8 +46,8 @@ export default {
   padding: 10px 0px 30px 0;
   background: url("../../assets/banner2.jpg") 100% / cover repeat-x;
 }
-.serviceIntroduce h3,
-.businessScope h3 {
+.serviceIntroduce h1,
+.businessScope h1 {
   font-size: 34px;
   color: #3b3b3b;
   text-align: center;
@@ -62,7 +55,7 @@ export default {
   font-weight: normal;
   font-family: URW Chancery L, cursive;
 }
-.businessScope h3 {
+.businessScope h1 {
   color: white;
 }
 .serviceIntroduce p {

@@ -1,10 +1,9 @@
 <template>
   <div class="Article">
-    <Header></Header>
     <div class="ArticleBanner">
       <img src="../../assets/img28.jpg" />
       <div class="ArticleBannerContent">
-        <h3>蛮犀资讯</h3>
+        <h1>蛮犀资讯</h1>
         <article>建立APP数据生命周期安全体系,为企业核心资产保驾护航</article>
       </div>
     </div>
@@ -16,7 +15,7 @@
               <img :src="item.imgSrc" />
             </div>
             <div class="txt">
-              <h3
+              <h1
                 class="title"
                 @mouseover="changeColor(index)"
                 @mouseout="recoverColor(index)"
@@ -27,7 +26,7 @@
                 >
                   {{ item.title }}</span
                 >
-              </h3>
+              </h1>
               <p class="info">
                 <span
                   @click="more(item.id, item.time, item.title, item.content)"
@@ -53,20 +52,14 @@
         </ul>
       </div>
     </div>
-    <slideBar></slideBar>
-    <Footer></Footer>
   </div>
 </template>
 <script>
 import Header from "@/components/common/headerSpace.vue";
-import slideBar from "@/components/common/slideBar.vue";
-import Footer from "@/components/common/footerSpace.vue";
 export default {
   name: "Article",
   components: {
-    Header,
-    slideBar,
-    Footer
+    Header
   },
   inject: ["articleListItem"],
   data() {
@@ -87,7 +80,7 @@ export default {
     },
     more(id, time, title, content) {
       this.$router.push({
-        path: "/Article/detail",
+        path: "article/detail",
         query: { id, time, title, content }
       });
     }
@@ -121,7 +114,7 @@ export default {
   transform: translate(-50%, -50%);
   color: white;
 }
-.ArticleBannerContent h3 {
+.ArticleBannerContent h1 {
   font-size: 56px;
   font-family: URW Chancery L, cursive;
 }

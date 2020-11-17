@@ -3,33 +3,33 @@
     <div class="productContent">
       <div class="productBanner">
         <!-- 移动应用加固系统 -->
-        <img src="../../assets/banner13.jpeg" />
+        <img src="../../assets/banner13.png" />
         <div class="productBannerContent">
-          <h3>蛮犀安全移动应用加固系统</h3>
+          <h1>蛮犀安全移动应用加固系统</h1>
           <article>
             蛮犀移动应用安全加固，是蛮犀科技吸取同行产品相关优势并结合市场监管需求，采用代码加固技术、运行时数据保护技术、运行时风险监控技术，依据网络安全等级保护要求、中国金融移动支付客户端技术规范、移动互联网应用软件安全评估大纲等评估办法，全面针对移动应用的代码、数据进行安全保护的APP加固解决方案。
           </article>
-          <router-link
-            to="/Gain"
+          <span
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
-            @mouseover.native="getUse()"
-            @mouseout.native="recovergetUse()"
-            >立即获取使用</router-link
+            @mouseover="getUse()"
+            @mouseout="recovergetUse()"
+            @click="jumpSecurityManagePlat"
+            >立即获取使用</span
           >
         </div>
       </div>
       <!-- 产品介绍 -->
       <div class="productBox">
         <div class="productIntroduce">
-          <h3>产品介绍</h3>
+          <h1>产品介绍</h1>
           <p>
             蛮犀安全移动应用加固系统主要由Web可视化前端、加固后台两部分构成，蛮犀安全移动应用加固系统根据实际环境配置部署完成后，能够根据用户上传的移动应用进行安全加固，并自动生成加固包供用户下载。
           </p>
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">
-          <h3>产品特点</h3>
+          <h1>产品特点</h1>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
               <div class="productTraitContentTop">
@@ -90,6 +90,9 @@ export default {
     },
     recovergetUse() {
       this.getUseIndex = 0;
+    },
+    jumpSecurityManagePlat() {
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };

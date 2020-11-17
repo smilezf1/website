@@ -2,7 +2,6 @@
   <div class="headerspace">
     <!-- 导航开始 -->
     <transition name="slide-fade">
-      <!-- :class="{ minNavigation: navigationBg == 1 }" -->
       <div class="navigation">
         <div class="navigationContent">
           <!-- 导航左部分 -->
@@ -22,6 +21,7 @@
                 @mouseover.native="changeColor(index)"
                 @mouseout.native="recoverColor()"
                 :class="{ item_select: item_SelectIndex == index }"
+                @click="jumpSecurityManagePlat(item.name)"
               >
                 {{ item.name }}
                 <transition name="slide-fade">
@@ -52,21 +52,13 @@
           <!-- 导航右边 -->
           <ul class="navigationContentRight">
             <li>
-              <!--  <router-link
-                to="/Gain"
-                :class="{ getUseSelect: getUseIndex == 1 }"
-                @mouseover.native="getUse()"
-                @mouseout.native="recovergetUse()"
-                >获取使用</router-link
-              > -->
-              <!--      class="securityManagePlat" -->
-              <router-link
-                to="/"
+              <span
                 :class="{ getUseSelect: getUseIndex == 1 }"
                 class="securityManagePlat"
-                @mouseover.native="getUse()"
-                @mouseout.native="recovergetUse()"
-                >移动应用安全管理平台</router-link
+                @mouseover="getUse()"
+                @mouseout="recovergetUse()"
+                @click="jumpSecurityManagePlat"
+                >移动应用安全管理平台</span
               >
             </li>
           </ul>
@@ -82,7 +74,7 @@ export default {
   data() {
     return {
       navData: [
-        { id: 0, name: "首页", link: "/", child: null },
+        { id: 0, name: "首页", link: "/index", child: null },
         {
           id: 1,
           name: "安全产品",
@@ -90,42 +82,33 @@ export default {
           child: {
             show: false,
             childContent: [
-              /*  { content: "移动应用安全评测", src: "/Product/safetyEvaluation" }, */
-              { content: "移动应用评测系统", src: "/Product/Evaluating" },
+              { content: "移动应用评测系统", src: "/product/evaluating" },
               {
                 content: "移动应用合规评测系统",
                 src: "/Product/ComplianceEvaluating"
               },
-              /*   { content: "移动应用安全防护", src: "/Product/safetyProtection" }, */
-              { content: "移动应用加固系统", src: "/Product/Reinforce" },
-              { content: "移动应用源码加固编译器", src: "/Product/Code" },
-              { content: "移动应用源码虚拟化编译器", src: "/Product/Virtual" },
-              /*  { content: "移动应用安全业务", src: "/Product/Insurance" }, */
-              { content: "移动应用密钥白盒插件", src: "/Product/SecretKey" }
-              /*   {
-                content: "移动应用环境自查插件",
-                src: "/Product/SelfInspection"
-              },
-              { content: "移动应用数据加密插件", src: "/Product/Encryption" } */
+              { content: "移动应用加固系统", src: "/product/reinforce" },
+              { content: "移动应用源码加固编译器", src: "/product/code" },
+              { content: "移动应用源码虚拟化编译器", src: "/product/virtual" },
+              { content: "移动应用密钥白盒插件", src: "/product/secretKey" }
             ]
           }
         },
         {
           id: 2,
           name: "安全服务",
-          link: "/Service",
+          link: "/service",
           child: {
             show: false,
             childContent: [
               {
                 content: "移动应用安全咨询",
-                src: "/Service/securityConsulting"
+                src: "/service/securityConsulting"
               },
-              { content: "移动应用安全渗透", src: "/Service/percolationTest" }
+              { content: "移动应用安全渗透", src: "/service/percolationTest" }
             ]
           }
         },
-        /*   { id: 3, name: "解决方案", link: "/Project", child: null }, */
         {
           id: 4,
           name: "关于我们",
@@ -133,13 +116,12 @@ export default {
           child: {
             show: false,
             childContent: [
-              { content: "公司简介", src: "/About/companyIntroduce" },
-              { content: "发展历程", src: "/About/devHistroy" }
+              { content: "公司简介", src: "/about/companyIntroduce" },
+              { content: "发展历程", src: "/about/devHistroy" }
             ]
           }
         },
-        { id: 5, name: "联系我们", link: "/Connect", child: null },
-        { id: 6, name: "获取使用", link: "/Gain", child: null }
+        { id: 5, name: "联系我们", link: "/connect", child: null }
       ],
 
       currentIndex: 0,
@@ -197,6 +179,9 @@ export default {
     },
     recovergetUse() {
       this.getUseIndex = 0;
+    },
+    jumpSecurityManagePlat() {
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };
@@ -232,17 +217,14 @@ export default {
 }
 .headerspace {
   width: 100%;
-  height: 84px;
-  position: absolute;
-  z-index: 99;
-  top: 0;
+  position: relative;
 }
 .navigation {
+  position: absolute;
+  z-index: 99;
   height: 84px;
   line-height: 84px;
   width: 100%;
-  top: 0;
-  left: 0;
   background: transparent;
   transition: background 0.3s ease;
 }
@@ -332,13 +314,14 @@ export default {
   position: relative;
   border-bottom: 2px solid transparent;
 }
-.navigationContentRight a {
+.navigationContentRight span {
   color: white;
   font-size: 16px;
   padding: 10px 15px;
   border-radius: 5px;
   background: transparent;
   transition: background 1.5s ease;
+  cursor: pointer;
 }
 .navigationContentRight .securityManagePlat {
   border: 1px solid white;
@@ -347,8 +330,5 @@ export default {
   background: #6aa3ea;
   border: 1px solid transparent;
   transition: all 1.5s ease;
-}
-.navigationContentRight {
-  margin-left: 20px;
 }
 </style>

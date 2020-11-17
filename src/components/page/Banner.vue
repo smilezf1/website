@@ -8,7 +8,7 @@
         style="background-size:100% 700px"
       >
         <div class="BannerText">
-          <h3>{{ item.title }}</h3>
+          <h1>{{ item.title }}</h1>
           <p>{{ item.text }}</p>
         </div>
       </el-carousel-item>
@@ -29,7 +29,7 @@ export default {
         },
         {
           id: 2,
-          imgSrc: require("../../assets/banner12.jpg"),
+          imgSrc: require("../../assets/banner12.png"),
           title: "蛮犀科技,构建智慧安全生活",
           text: "建立APP数据全生命周期安全体系,为企业核心资产保驾护航"
         },
@@ -55,7 +55,7 @@ export default {
   color: white;
   font-family: URW Chancery L, cursive;
 }
-.el-carousel__item h3 {
+.el-carousel__item h1 {
   font-size: 56px;
   font-weight: 700;
   font-family: URW Chancery L, cursive;

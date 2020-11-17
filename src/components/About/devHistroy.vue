@@ -2,22 +2,21 @@
   <div class="devHistroy">
     <!-- banner -->
     <div class="devHistroyBanner">
-      <img src="../../assets/banner4.jpg" />
+      <img src="../../assets/banner4.png" />
       <div class="devHistoryBannerContent">
-        <h3>发展历程</h3>
+        <h1>发展历程</h1>
       </div>
     </div>
     <!-- 主体内容 -->
     <div class="devHistroyContainer">
       <!-- 发展历程 -->
       <div class="developmentHistory ">
-        <!-- <h3 class="developmentHistoryTitle">发展历程</h3> -->
         <div class="developmentHistoryContent history">
           <!-- 线条 -->
           <div class="line"></div>
           <ul class="item">
             <div class="left">
-              <h3>2020年</h3>
+              <h1>2020年</h1>
               <span class="dot"></span>
             </div>
             <div class="right">
@@ -83,7 +82,7 @@
           </ul>
           <ul class="item">
             <div class="left">
-              <h3>2019年</h3>
+              <h1>2019年</h1>
               <span class="dot"></span>
             </div>
             <div class="right">
@@ -140,7 +139,7 @@ export default {
   transform: translate(-50%, -50%);
   color: white;
 }
-.devHistoryBannerContent h3 {
+.devHistoryBannerContent h1 {
   font-size: 56px;
   font-weight: 700;
   font-family: URW Chancery L, cursive;
@@ -183,7 +182,7 @@ export default {
   font-size: 18px;
   margin: 0 20px;
 }
-.developmentHistoryContent .left h3 {
+.developmentHistoryContent .left h1 {
   font-size: 32px;
   color: rgba(51, 51, 51, 1);
   font-family: "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";

@@ -5,31 +5,32 @@
       <div class="productBanner">
         <img src="../../assets/img13.jpg" />
         <div class="productBannerContent">
-          <h3>蛮犀安全移动应用合规评测系统</h3>
+          <h1>蛮犀安全移动应用合规评测系统</h1>
           <article>
             帮助用户、企业对APP隐私、过度收集、滥用等行为进行检测，帮企业高效、低成本地做APP合规自查，满足监管要求。
           </article>
-          <router-link
-            to="/Gain"
+          <span
+            to="/gain"
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
-            @mouseover.native="getUse()"
-            @mouseout.native="recovergetUse()"
-            >立即获取使用</router-link
+            @mouseover="getUse()"
+            @mouseout="recovergetUse()"
+            @click="jumpSecurityManagePlat"
+            >立即获取使用</span
           >
         </div>
       </div>
       <!-- 产品介绍 -->
       <div class="productBox">
         <div class="productIntroduce">
-          <h3>产品介绍</h3>
+          <h1>产品介绍</h1>
           <p>
             全面检测移动应用中存在的不合规项，包含APP收集使用个人信息行为、个人信息存储方式、第三方SDK行为分析、境外数据传输分析、APP运营者对用户权益保障、应用脆弱性等其他违规违法进行评测。
           </p>
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">
-          <h3>产品特点</h3>
+          <h1>产品特点</h1>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
               <div class="productTraitContentTop">
@@ -90,6 +91,9 @@ export default {
     },
     recovergetUse() {
       this.getUseIndex = 0;
+    },
+    jumpSecurityManagePlat() {
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };

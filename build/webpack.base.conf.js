@@ -6,9 +6,6 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
-
-
-
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -18,8 +15,8 @@ module.exports = {
     path: config.build.assetsRoot,
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
-      ? './' + config.build.assetsPublicPath
-      : './' + config.dev.assetsPublicPath
+      ? config.build.assetsPublicPath //将./去掉
+      : config.dev.assetsPublicPath //将./去掉
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],

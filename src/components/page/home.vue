@@ -1,25 +1,23 @@
 <template>
-  <div class="index">
+  <div class="home">
     <headerSpace></headerSpace>
-    <Banner></Banner>
-    <homePage></homePage>
+    <router-view></router-view>
     <footerSpace></footerSpace>
     <slideBar></slideBar>
   </div>
 </template>
 <script>
 import headerSpace from "@/components/common/headerSpace.vue";
-import Banner from "@/components/page/Banner.vue";
 import homePage from "@/components/page/homePage.vue";
 import footerSpace from "@/components/common/Footerspace.vue";
 import slideBar from "@/components/common/slideBar.vue";
 export default {
-  name: "Index",
-  components: { headerSpace, Banner, homePage, footerSpace, slideBar }
+  name: "home",
+  components: { headerSpace, homePage, footerSpace, slideBar },
 };
 </script>
 <style>
-.index {
+.home {
   width: 100%;
 }
 </style>

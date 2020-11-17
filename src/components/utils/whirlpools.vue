@@ -74,7 +74,7 @@ export default {
   }
   to {
     transform-origin: center center;
-    transform: scale(2);
+    transform: scale(1.5);
     opacity: 0;
   }
 }

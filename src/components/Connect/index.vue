@@ -1,6 +1,5 @@
 <template>
   <div class="Connect">
-    <headerSpace></headerSpace>
     <div class="banner">
       <img src="../../assets/img22.jpg" />
       <div class="bannerContent">
@@ -10,9 +9,6 @@
     <div class="connectBody">
       <!-- 联系方式 -->
       <div class="contactWay">
-        <!--  <h1 class="contactWayTitle">
-          联系方式
-        </h1> -->
       </div>
       <div class="contactWayContent">
         <div class="contactWayContentTitle">
@@ -76,18 +72,11 @@
         </baidu-map>
       </div>
     </div>
-    <!-- 底部 -->
-    <footerSpace></footerSpace>
-    <slideBar></slideBar>
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/Headerspace.vue";
-import footerSpace from "@/components/common/footerSpace.vue";
-import slideBar from "@/components/common/slideBar.vue";
 export default {
   name: "Connect",
-  components: { headerSpace, footerSpace, slideBar },
   data() {
     return {
       center: {

@@ -5,7 +5,7 @@
         <div class="containerBox">
           <div class="left">
             <ul class="row1" v-for="(item, index) in menuList" :key="item.id">
-              <h3>{{ item.title }}</h3>
+              <h1>{{ item.title }}</h1>
               <li v-for="(subItem, subIndex) in item.child" :key="subItem.id">
                 <router-link
                   :to="subItem.src"
@@ -118,6 +118,9 @@ export default {
     },
     link() {
       window.open("http://www.beian.miit.gov.cn/", "_blank");
+    },
+    getScrollTop() {
+      console.log("执行了吗", document.documentElement.scrollTop);
     }
   },
   mounted() {
@@ -125,6 +128,7 @@ export default {
     this.$router.afterEach((to, from, next) => {
       window.scrollTo(0, 0);
     });
+    window.addEventListener("scroll", this.getScrollTop, true);
   }
 };
 </script>
@@ -187,7 +191,7 @@ export default {
   text-align: left;
   margin-right: 40px;
 }
-.footerSpace .container .left h3 {
+.footerSpace .container .left h1 {
   font-size: 16px;
 }
 .footerSpace .container .left a {

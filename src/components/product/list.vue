@@ -1,20 +1,13 @@
 <template>
   <div class="Product">
-    <headerSpace></headerSpace>
     <div class="container">
       <router-view />
     </div>
-    <footerSpace></footerSpace>
-    <slideBar></slideBar>
   </div>
 </template>
 <script>
-import headerSpace from "@/components/common/headerSpace.vue";
-import footerSpace from "@/components/common/footerSpace";
-import slideBar from "@/components/common/slideBar";
 export default {
-  name: "Procuct",
-  components: { headerSpace, footerSpace, slideBar }
+  name: "Procuct"
 };
 </script>
 <style>
@@ -37,7 +30,7 @@ export default {
 .productTraitContent span {
   line-height: 40px;
 }
-.productBannerContent h3 {
+.productBannerContent h1 {
   font-size: 56px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -75,8 +68,8 @@ export default {
   background: url("../../assets/banner2.jpg") 100% / cover repeat-x;
   padding: 10px 0px 40px 0px;
 }
-.productIntroduce h3,
-.produtctTrait h3 {
+.productIntroduce h1,
+.produtctTrait h1 {
   font-size: 34px;
   color: #3b3b3b;
   text-align: center;
@@ -84,7 +77,7 @@ export default {
   padding: 20px;
   font-family: URW Chancery L, cursive;
 }
-.produtctTrait h3 {
+.produtctTrait h1 {
   color: white;
 }
 .productIntroduce p {
@@ -131,5 +124,8 @@ export default {
 .productTraitContentContainer {
   text-align: justify;
   text-indent: 2em;
+}
+.productBannerUse {
+  cursor: pointer;
 }
 </style>

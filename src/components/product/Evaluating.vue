@@ -4,24 +4,24 @@
       <div class="productBanner">
         <img src="../../assets/img16.jpg" />
         <div class="productBannerContent">
-          <h3>蛮犀安全移动应用评测系统</h3>
+          <h1>蛮犀安全移动应用评测系统</h1>
           <article>
             蛮犀安全移动应用评测系统，是蛮犀科技吸取同行产品相关优势并结合市场监管需求，采用静态代码、资源、数据扫描检测，运行时数据挖掘，运行时内容检测等技术，依据网络安全等级保护要求、中国金融移动支付客户端技术规范、移动互联网应用软件安全评估大纲等评估要求，全面检测移动应用中存在的安全漏洞、不合规项，并将权限滥用、信息非法收集、信息泄露等严重问题，结合时下相关法律法规和监管要求，为监管机构、测评机构等提供有效的行政执法依据。
           </article>
-          <router-link
-            to="/Gain"
+          <span
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
-            @mouseover.native="getUse()"
-            @mouseout.native="recovergetUse()"
-            >立即获取使用</router-link
+            @mouseover="getUse()"
+            @mouseout="recovergetUse()"
+            @click="jumpSecurityManagePlat"
+            >立即获取使用</span
           >
         </div>
       </div>
       <!-- 产品介绍 -->
       <div class="productBox">
         <div class="productIntroduce">
-          <h3 class="productIntroduceTitle">产品介绍</h3>
+          <h1 class="productIntroduceTitle">产品介绍</h1>
           <div class="productIntroduceBody">
             <p>
               全面检测移动应用中存在的安全漏洞、不合规项，并将权限滥用、信息非法收集、信息泄露等严重问题，结合时下相关法律法规和监管要求，为监管机构、测评机构等提供有效的行政执法依据。
@@ -30,7 +30,7 @@
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">
-          <h3>产品特点</h3>
+          <h1>产品特点</h1>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
               <div class="productTraitContentTop">
@@ -91,6 +91,9 @@ export default {
     },
     recovergetUse() {
       this.getUseIndex = 0;
+    },
+    jumpSecurityManagePlat() {
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };

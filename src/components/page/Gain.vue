@@ -1,6 +1,5 @@
 <template>
   <div class="gain">
-    <HeaderSpace></HeaderSpace>
     <!-- 图片 -->
     <div class="gainBanner">
       <img src="../../assets/img12.jpg" />
@@ -102,15 +101,10 @@
         </el-form>
       </div>
     </div>
-    <!-- 底部 -->
-    <FooterSpace></FooterSpace>
-    <slideBar></slideBar>
   </div>
 </template>
 <script>
-import HeaderSpace from "@/components/common/Headerspace.vue";
-import FooterSpace from "@/components/common/FooterSpace";
-import slideBar from "@/components/common/slideBar.vue";
+
 import api from "../../components/request/api";
 import {
   provinceAndCityData,
@@ -123,7 +117,6 @@ import {
 
 export default {
   name: "gain",
-  components: { HeaderSpace, FooterSpace, slideBar },
   inject: ["reload"],
   data() {
     return {

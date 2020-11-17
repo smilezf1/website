@@ -2,14 +2,15 @@
   <div class="companyIntroduce">
     <div class="companyIntroduceBanner">
       <img src="../../assets/banner11.jpg" />
+      <!-- <img src="../../assets/img22.jpg" /> -->
       <div class="companyIntroduceBannerContent">
-        <h3>蛮犀科技,创建智慧安全生活</h3>
+        <h1>蛮犀科技,创建智慧安全生活</h1>
       </div>
     </div>
     <div class="companyIntroduceContainer">
       <!-- 公司简介 -->
       <div class="companyProfile">
-        <h3 class="companyProfileTitle">公司简介</h3>
+        <h1 class="companyProfileTitle">公司简介</h1>
         <div class="companyProfileContent">
           <p v-for="item in briefItem" :key="item.id">
             {{ item.content }}
@@ -18,7 +19,7 @@
       </div>
       <!-- 企业观念 -->
       <div class="enterpriseConcept">
-        <h3 class="enterpriseConceptTtitle">企业观念</h3>
+        <h1 class="enterpriseConceptTtitle">企业观念</h1>
         <ul class="enterpriseConceptContent">
           <li v-for="item in navItem" :key="item.id">
             <div class="enterpriseConceptContentTop">
@@ -102,9 +103,9 @@ export default {
   transform: translate(-50%, -50%);
   color: white;
 }
-.companyIntroduceBannerContent h3 {
+.companyIntroduceBannerContent h1 {
   font-size: 56px;
-  font-weight:700;
+  font-weight: 700;
   font-family: URW Chancery L, cursive;
 }
 

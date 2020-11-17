@@ -5,31 +5,31 @@
         <img src="../../assets/banner24.jpg" />
         <div class="productBannerContent">
           <!-- 移动应用源码加固编译器 -->
-          <h3>蛮犀安全移动应用源码加固编译器</h3>
+          <h1>蛮犀安全移动应用源码加固编译器</h1>
           <article>
             蛮犀安全源码加固编译器通过对代码混淆、完整性保护和防调试等技术手段保护源代码安全，特别在反调试，反盗版和反恶意代码上效果显著，保护企业源码安全。
           </article>
-          <router-link
-            to="/Gain"
+          <span
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
-            @mouseover.native="getUse()"
-            @mouseout.native="recovergetUse()"
-            >立即获取使用</router-link
+            @mouseover="getUse()"
+            @mouseout="recovergetUse()"
+            @click="jumpSecurityManagePlat"
+            >立即获取使用</span
           >
         </div>
       </div>
       <!-- 产品介绍 -->
       <div class="productBox">
         <div class="productIntroduce">
-          <h3>产品介绍</h3>
+          <h1>产品介绍</h1>
           <p>
             蛮犀安全源码加固编译器是一款源代码高级混淆的工具，采用LLVM编译器技术实现，将C/C++等源代码编译成二进制代码过程中对源码进行高强度的保护，对C/C++源码，与普通编译器相似，可将C/C++源代码编译成二进制代码，不同之处在于，蛮犀安全源代码加固编译器在编译的时候，能够对代码进行七项安全处理：控制流平坦、不透明谓词混淆、等价指令替换、控制流间接化、基本快调度、字符串加密、基本快调度、分裂基本快，从而保护C/C++代码的数据流和逻辑的保护。
           </p>
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">
-          <h3>产品特点</h3>
+          <h1>产品特点</h1>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
               <div class="productTraitContentTop">
@@ -89,6 +89,9 @@ export default {
     },
     recovergetUse() {
       this.getUseIndex = 0;
+    },
+    jumpSecurityManagePlat() {
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };

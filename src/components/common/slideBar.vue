@@ -1,5 +1,6 @@
 <template>
-  <div class="slideBar" v-show="showSlideBar">
+  <!-- v-show="showSlideBar" -->
+  <div class="slideBar">
     <div class="slideBarContent">
       <div
         class="bar"
@@ -53,7 +54,7 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.getScrollTop, true);
+    window.addEventListener("scroll", this.getScrollTop);
   },
   methods: {
     backTop(index) {
@@ -100,7 +101,6 @@ export default {
   z-index: 99;
 }
 .slideBarContent {
-  width: 40px;
   height: 100px;
   position: relative;
 }

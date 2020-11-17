@@ -4,12 +4,12 @@
       <div class="productBanner">
         <img src="../../assets/banner3.jpg" />
         <div class="productBannerContent">
-          <h3>蛮犀安全移动应用密钥白盒</h3>
+          <h1>蛮犀安全移动应用密钥白盒</h1>
           <article>
             蛮犀安全移动应用密钥白盒可在不可信环境中，实现安全的加解密数据，保障信息机密性。
           </article>
           <router-link
-            to="/Gain"
+            to="/gain"
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
             @mouseover.native="getUse()"
@@ -22,14 +22,14 @@
       <div class="productBox">
         <div class="productIntroduce">
           <!-- 移动应用密钥白盒插件 -->
-          <h3>产品介绍</h3>
+          <h1>产品介绍</h1>
           <p>
             蛮犀安全移动应用密钥白盒，是一套适用于用户敏感数据、通信数据进行加解密安全保护，通过强力的算法以及算法本身的自我防护，来保护敏感、重要数据的安全。
           </p>
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">
-          <h3>产品特点</h3>
+          <h1>产品特点</h1>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
               <div class="productTraitContentTop">

@@ -1,5 +1,6 @@
 <template>
   <div class="homePage">
+    <Banner></Banner>
     <!-- 安全产品 -->
     <div class="securityProduct">
       <div class="securiptProductTop">
@@ -38,7 +39,7 @@
         </div>
       </div>
       <div class="securiptProductContainer">
-        <h3>安全产品</h3>
+        <h1>安全产品</h1>
         <div class="container">
           <ul
             v-for="(item, index) in securityProductList"
@@ -55,7 +56,7 @@
     </div>
     <!-- 荣誉资质 -->
     <div class="partner">
-      <h3>合作伙伴</h3>
+      <h1>合作伙伴</h1>
       <div class="container">
         <ul>
           <el-row>
@@ -89,15 +90,17 @@
       <div class="publicityContent">
         <!-- 漩涡效果 -->
         <whirlpools></whirlpools>
-        <div
-          class="publicityContentColumn"
-          v-for="(item, index) in publicityList"
-          :key="index"
-        >
-          <h3 class="publicityContentColumnNumber">
-            {{ item.num }}
-          </h3>
-          <p>{{ item.text }}</p>
+        <div class="publicityItem">
+          <div
+            class="publicityContentColumn"
+            v-for="(item, index) in publicityList"
+            :key="index"
+          >
+            <h1 class="publicityContentColumnNumber">
+              {{ item.num }}
+            </h1>
+            <p>{{ item.text }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -105,9 +108,10 @@
 </template>
 <script>
 import whirlpools from "../../components/utils/whirlpools";
+import Banner from "@/components/page/Banner.vue";
 export default {
   name: "homePage",
-  components: { whirlpools },
+  components: { whirlpools, Banner},
   data() {
     return {
       securityProductList: [
@@ -263,9 +267,9 @@ export default {
   width: 18px;
   margin-left: 5px;
 }
-.securiptProductContainer h3,
-.solution h3,
-.partner h3 {
+.securiptProductContainer h1,
+.solution h1,
+.partner h1 {
   font-size: 34px;
   color: #3b3b3b;
   text-align: center;
@@ -277,7 +281,7 @@ export default {
   background: url("../../assets/banner2.jpg") 100% / cover repeat-x;
   padding: 20px 0;
 }
-.securiptProductContainer h3 {
+.securiptProductContainer h1 {
   color: white;
   font-family: URW Chancery L, cursive;
 }
@@ -398,9 +402,11 @@ export default {
   position: relative;
   margin: 0 auto;
   color: white;
+}
+.publicityContent .publicityItem {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-content: center;
 }
 .publicityContentColumnNumber {
   font-size: 48px;
@@ -410,7 +416,7 @@ export default {
   font-size: 16px;
   margin-top: 10px;
 }
-.publicityContentColumn h3 {
+.publicityContentColumn h1 {
   font-family: URW Chancery L, cursive;
 }
 .publicityContent .vortex {

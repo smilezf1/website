@@ -5,12 +5,12 @@
         <img src="../../assets/img12.jpg" />
         <div class="productBannerContent">
           <!-- 移动应用源码虚拟化编译器 -->
-          <h3>蛮犀安全移动应用源码虚拟化编译器</h3>
+          <h1>蛮犀安全移动应用源码虚拟化编译器</h1>
           <article>
-           蛮犀安全移动应用源码虚拟化编译器是针对C/C++/汇编代码进行指令级别的安全保护，提升运行在移动终端上的应用、插件的安全能力。
+            蛮犀安全移动应用源码虚拟化编译器是针对C/C++/汇编代码进行指令级别的安全保护，提升运行在移动终端上的应用、插件的安全能力。
           </article>
           <router-link
-            to="/Gain"
+            to="/gain"
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
             @mouseover.native="getUse()"
@@ -22,14 +22,14 @@
       <!-- 产品介绍 -->
       <div class="productBox">
         <div class="productIntroduce">
-          <h3>产品介绍</h3>
+          <h1>产品介绍</h1>
           <p>
             蛮犀安全移动应用源码虚拟化编译器是一款源代码加密工具，采用LLVM编译器技术实现，将C/C++等源代码编译成二进制代码过程中对源码进行高强度的保护，对C/C++源码进行虚拟化保护，实现数据隐藏、自定义指令集、防代码Dump，增加逆向分析的难度。
           </p>
         </div>
         <!-- 产品特点 -->
         <div class="produtctTrait">
-          <h3>产品特点</h3>
+          <h1>产品特点</h1>
           <ul class="productTraitContent">
             <li v-for="(item, index) in traitList" :key="index">
               <div class="productTraitContentTop">
