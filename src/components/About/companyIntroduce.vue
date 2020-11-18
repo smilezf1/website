@@ -2,7 +2,6 @@
   <div class="companyIntroduce">
     <div class="companyIntroduceBanner">
       <img src="../../assets/banner11.jpg" />
-      <!-- <img src="../../assets/img22.jpg" /> -->
       <div class="companyIntroduceBannerContent">
         <h1>蛮犀科技,创建智慧安全生活</h1>
       </div>

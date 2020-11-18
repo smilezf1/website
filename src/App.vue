@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      isRouterAlive: true, //控制视图是否显示的变量
+      isRouterAlive: true,
 
       articleListItem: [
         {
@@ -91,7 +91,8 @@ a {
 }
 html,
 body {
-  height: 100%;
+  /* height: 100%; 导致scrollTop一直为0 */
+  max-height: 100%;
   min-width: 1240px;
 }
 #app {

@@ -1,6 +1,5 @@
 <template>
   <div class="gain">
-    <!-- 图片 -->
     <div class="gainBanner">
       <img src="../../assets/img12.jpg" />
       <div class="gainBannerContent">

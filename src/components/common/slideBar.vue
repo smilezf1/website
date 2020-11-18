@@ -1,7 +1,6 @@
 <template>
-  <!-- v-show="showSlideBar" -->
   <div class="slideBar">
-    <div class="slideBarContent">
+    <div class="slideBarContent" v-show="showSlideBar">
       <div
         class="bar"
         v-for="(item, index) in listItem"
