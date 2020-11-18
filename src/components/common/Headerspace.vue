@@ -181,7 +181,7 @@ export default {
       this.getUseIndex = 0;
     },
     jumpSecurityManagePlat() {
-      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_self");
     }
   }
 };
