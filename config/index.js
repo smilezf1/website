@@ -41,7 +41,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../manxi-website-web'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/', //将/改为./
+    assetsPublicPath: '/manxi-website-web/', //将/改为/manxi-website-web/
 
     /**
      * Source Maps

@@ -24,7 +24,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
-    publicPath: './',//添加publicPath:'./' 原本没有
+    publicPath: '/manxi-website-web/',//添加publicPath:'/manxi-website-web/' 原本没有
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
@@ -115,6 +115,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      },
+      {//新增
+        from: path.resolve(__dirname, '../WEB-INF'),
+        to: 'WEB-INF',
         ignore: ['.*']
       }
     ])

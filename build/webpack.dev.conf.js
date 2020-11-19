@@ -38,12 +38,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ? { warnings: false, errors: true }
       : false,
     publicPath: config.dev.assetsPublicPath,
-    /* proxy: config.dev.proxyTable, */
-    proxy: {
+    proxy: config.dev.proxyTable,
+    /* proxy: {
       "/manxi-website": {
         target: "http://192.168.3.58:8080"
       }
-    },
+    }, */
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
@@ -57,16 +57,21 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
+    new HtmlWebpackPlugin(
+      {
+        filename: 'index.html',
+        template: 'index.html',
+        inject: true
+      }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
         to: config.dev.assetsSubDirectory,
+        ignore: ['.*']
+      }, {//新增
+        from: path.resolve(__dirname, '../WEB-INF'),
+        to: 'WEB-INF',
         ignore: ['.*']
       }
     ])

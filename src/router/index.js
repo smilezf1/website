@@ -3,7 +3,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
-  base: '/',
+  base: '/manxi-website-web/',
   routes: [{
     path: "/",
     name: "Index",

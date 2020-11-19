@@ -2,7 +2,7 @@
   <div class="percolationTest">
     <!-- banner -->
     <div class="percolationTestBanner">
-      <img src="../../assets/banner7.jpeg" />
+      <img src="../../assets/banner7.png" />
       <div class="percolationTestBannerContent">
         <h1>蛮犀安全渗透测试服务</h1>
         <article>蛮犀安全渗透测试是基于移动应用程序数据的全生命周期的安全测试服务，以黑客思维对应用中的代码、数据、业务等方面的全量渗透测试。</article>
