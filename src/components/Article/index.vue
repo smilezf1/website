@@ -10,9 +10,13 @@
     <div class="ArticleContent">
       <div class="ArticleContentBody">
         <ul>
-          <li v-for="(item, index) in listItem" :key="item.id">
+          <li v-for="(item, index) in newsList" :key="item.informationId">
             <div class="img">
-              <img :src="item.imgSrc" />
+              <img
+                :src="
+                  `${getBaseUrl}/manxi-platform-manager/common/viewFile/${item.informationIconKey}`
+                "
+              />
             </div>
             <div class="txt">
               <h1
@@ -21,28 +25,23 @@
                 @mouseout="recoverColor(index)"
                 :class="{ titleSelect: SelectIndex == index }"
               >
-                <span
-                  @click="more(item.id, item.time, item.title, item.content)"
-                >
-                  {{ item.title }}</span
+                <span @click="more(item.informationId)">
+                  {{ item.informationTitle }}</span
                 >
               </h1>
               <p class="info">
                 <span
-                  @click="more(item.id, item.time, item.title, item.content)"
-                  v-html="item.content"
+                  @click="more(item.informationId)"
+                  v-text="toText(item.informationContent)"
                 >
                 </span>
               </p>
               <p class="bottom">
                 <span class="time">
                   <img src="../../assets/time.png" />
-                  {{ item.time }}</span
+                  {{ item.createTime }}</span
                 >
-                <span
-                  class="more"
-                  @click="more(item.id, item.time, item.title, item.content)"
-                >
+                <span class="more" @click="more(item.informationId)">
                   更多
                   <img src="../../assets/more1.png" />
                 </span>
@@ -61,15 +60,20 @@ export default {
   components: {
     Header
   },
-  inject: ["articleListItem"],
   data() {
     return {
       SelectIndex: -1,
-      listItem: []
+      listItem: [],
+      newsList: []
     };
   },
+  computed: {
+    getBaseUrl() {
+      return config.baseUrl;
+    }
+  },
   created() {
-    this.listItem = this.articleListItem;
+    this.newsList = this.$store.state.newsList;
   },
   methods: {
     changeColor(index) {
@@ -81,8 +85,19 @@ export default {
     more(id, time, title, content) {
       this.$router.push({
         path: "article/detail",
-        query: { id, time, title, content }
+        query: { id }
       });
+    },
+    //将html 格式转化为存文本
+    toText(HTML) {
+      let input = HTML;
+      return input
+        .replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi, "")
+        .replace(/<[^>]+?>/g, "")
+        .replace(/\s+/g, " ")
+        .replace(/ /g, " ")
+        .replace(/>/g, " ")
+        .replace(/&nbsp;/g, "");
     }
   }
 };
@@ -151,7 +166,7 @@ export default {
   color: #707070;
   font-size: 12px;
   line-height: 25px;
-  font-weight: normal;
+  font-weight: normal !important;
   padding-right: 12px;
   height: 70px;
   overflow: hidden;

@@ -1,17 +1,7 @@
 import axios from 'axios';
-import router from '../../router';
 import Vue from 'vue';
 let v = new Vue();
-//环境的切换
-if (process.env.NODE_ENV == 'development') {//开发环境
-    axios.defaults.baseURL = "https://www.manxi-inc.com/manxi-website";
-
-} else if (process.env.NODE_ENV == 'debug') {//测试环境
-    axios.defaults.baseURL = "https://www.manxi-inc.com/manxi-website";
-
-} else if (process.env.NODE_ENV == 'production') {
-    axios.defaults.baseURL = "https://www.manxi-inc.com/manxi-website"
-}
+axios.defaults.baseURL = config.baseUrl;
 axios.defaults.timeout = 100000;
 axios.defaults.withCredentials = false;
 axios.defaults.headers.post['Content-Type'] = "application/json"

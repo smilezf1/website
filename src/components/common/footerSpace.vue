@@ -97,7 +97,7 @@ export default {
           id: 3,
           title: "联系我们",
           child: [
-            { name: "联系电话:021-57677921", src: "/Connect" },
+            { name: "联系电话:4000-618-266", src: "/Connect" },
             { name: "联系邮箱:service@manxi-inc.com", src: "/Connect" },
             { name: "市场合作:mkt@manxi-inc.com", src: "/Connect" }
           ]

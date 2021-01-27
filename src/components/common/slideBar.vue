@@ -33,7 +33,7 @@ export default {
           id: 1,
           name: "电话",
           imgSrc: require("../../assets/phone.png"),
-          data: "021-57677921",
+          data: "4000-618-266",
           showToolTip: false
         },
         {

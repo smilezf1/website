@@ -1,6 +1,6 @@
 <template>
   <div class="articleDetail">
-     <headerSpace></headerSpace>
+    <headerSpace></headerSpace>
     <div class="articleDetailBody">
       <div class="articleDetailBodyBox">
         <div class="newsContent">
@@ -16,21 +16,44 @@
 </template>
 <script>
 import headerSpace from "@/components/common/headerSpace.vue";
+import articleApi from "../request/api/article";
 export default {
   name: "articleDetail",
-  components: { headerSpace},
+  components: { headerSpace },
   data() {
     return {
       id: 0,
       time: null,
       title: "",
-      content: ""
+      content: "",
+      newsList: null
     };
   },
-  mounted() {
-    const { time, title, content } = this.$route.query;
-    this.time = time;
-    (this.title = title), (this.content = content);
+  created() {
+    const id = this.$route.query.id;
+    /*  this.getArticleDetial(this.$store.state.newsList, id); */
+    this.getArticleDetailById(id);
+  },
+  methods: {
+    /* getArticleDetial(array, id) {
+      array.forEach(v => {
+        if (v.informationId == id) {
+          this.time = v.createTime;
+          this.title = v.informationTitle;
+          this.content = v.informationContent;
+        }
+      });
+    } */
+    getArticleDetailById(id) {
+      articleApi.searchArticleById(id).then(res => {
+        if (res.code == "200") {
+          const data = res.result;
+          this.time = data.createTime;
+          this.title = data.informationTitle;
+          this.content = data.informationContent;
+        }
+      });
+    }
   }
 };
 </script>
@@ -49,6 +72,7 @@ export default {
   margin: 0 auto;
   padding-top: 84px;
 }
+
 .articleDetailBodyBox .newsContent {
   margin-top: 20px;
 }
@@ -75,13 +99,6 @@ export default {
   color: #3d464d;
   text-align: justify;
   min-height: 700px;
-  white-space: pre-line;
-}
-.newsContentBody h3 {
-  display: block !important;
-}
-.newsContentBody p {
-  display: block !important;
 }
 .newsContentBody img {
   width: 70%;

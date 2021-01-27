@@ -85,7 +85,7 @@ export default {
               { content: "移动应用评测系统", src: "/product/evaluating" },
               {
                 content: "移动应用合规评测系统",
-                src: "/Product/ComplianceEvaluating"
+                src: "/product/complianceEvaluating"
               },
               { content: "移动应用加固系统", src: "/product/reinforce" },
               { content: "移动应用源码加固编译器", src: "/product/code" },
@@ -117,7 +117,8 @@ export default {
             show: false,
             childContent: [
               { content: "公司简介", src: "/about/companyIntroduce" },
-              { content: "发展历程", src: "/about/devHistroy" }
+              { content: "发展历程", src: "/about/devHistroy" },
+              { content: "蛮犀资讯", src: "/article" }
             ]
           }
         },
@@ -181,7 +182,7 @@ export default {
       this.getUseIndex = 0;
     },
     jumpSecurityManagePlat() {
-      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_self");
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };

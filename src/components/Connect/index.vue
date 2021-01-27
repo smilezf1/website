@@ -19,7 +19,7 @@
             <img src="../../assets/call.png" />
             <div class="txt">
               <h3>电话</h3>
-              <p>021-57677921</p>
+              <p>4000-618-266</p>
             </div>
           </div>
           <div class="box">

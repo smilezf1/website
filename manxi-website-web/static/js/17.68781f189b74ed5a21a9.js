@@ -1,2 +1,0 @@
-webpackJsonp([17],{G1cI:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r={render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"About"},[e("router-view")],1)},staticRenderFns:[]};var i=n("VU/8")({name:"About",data:function(){return{aboutList:[{id:1,title:"公司简介",imgSrc:""}]}}},r,!1,function(t){n("HXzI")},null,null);e.default=i.exports},HXzI:function(t,e){}});
-//# sourceMappingURL=17.68781f189b74ed5a21a9.js.map

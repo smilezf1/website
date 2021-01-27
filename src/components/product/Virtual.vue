@@ -9,13 +9,13 @@
           <article>
             蛮犀安全移动应用源码虚拟化编译器是针对C/C++/汇编代码进行指令级别的安全保护，提升运行在移动终端上的应用、插件的安全能力。
           </article>
-          <router-link
-            to="/gain"
+          <span
             class="productBannerUse"
             :class="{ getUseSelect: getUseIndex == 1 }"
-            @mouseover.native="getUse()"
-            @mouseout.native="recovergetUse()"
-            >立即获取使用</router-link
+            @mouseover="getUse()"
+            @mouseout="recovergetUse()"
+            @click="jumpSecurityManagePlat"
+            >立即获取使用</span
           >
         </div>
       </div>
@@ -90,6 +90,9 @@ export default {
     },
     recovergetUse() {
       this.getUseIndex = 0;
+    },
+    jumpSecurityManagePlat() {
+      window.open("https://www.manxi-inc.com/manxi-platform-web/", "_blank");
     }
   }
 };

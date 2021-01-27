@@ -11,20 +11,15 @@
             </p>
             <div class="newsItem">
               <transition class="newsItemContent" name="slide" mode="out-in">
-                <p :key="text.number">
+                <p :key="number" v-if="newsList[number]">
                   <router-link
                     :to="{
-                      path: 'Article',
-                      query: {
-                        id: text.id,
-                        time: text.time,
-                        title: text.title,
-                        content: text.content
-                      }
+                      path: 'article/detail',
+                      query: { id: newsList[number].informationId }
                     }"
                     @mouseover.native="stopRoll()"
                     @mouseout.native="beginRoll()"
-                    >{{ text.title }}</router-link
+                    >{{ newsList[number].informationTitle }}</router-link
                   >
                 </p>
               </transition>
@@ -109,9 +104,10 @@
 <script>
 import whirlpools from "../../components/utils/whirlpools";
 import Banner from "@/components/page/Banner.vue";
+import articleApi from "../request/api/article";
 export default {
   name: "homePage",
-  components: { whirlpools, Banner},
+  components: { whirlpools, Banner },
   data() {
     return {
       securityProductList: [
@@ -168,20 +164,8 @@ export default {
       showIcon: false
     };
   },
-  inject: ["articleListItem"],
-  computed: {
-    text() {
-      return {
-        number: this.number,
-        id: this.newsList[this.number].id,
-        title: this.newsList[this.number].title,
-        time: this.newsList[this.number].time,
-        content: this.newsList[this.number].content
-      };
-    }
-  },
   created() {
-    this.newsList = this.articleListItem;
+    this.getArticleList({ current: 1, size: 100 });
   },
   mounted() {
     this.startMove();
@@ -202,6 +186,15 @@ export default {
     },
     beginRoll() {
       this.startMove();
+    },
+    //获取文章列表
+    getArticleList(params) {
+      articleApi.articleList(params).then(res => {
+        if (res.code == "200") {
+          this.newsList = res.result.records;
+          this.$store.commit("setArticleList", this.newsList);
+        }
+      });
     }
   }
 };
