@@ -31,19 +31,9 @@ export default {
   },
   created() {
     const id = this.$route.query.id;
-    /*  this.getArticleDetial(this.$store.state.newsList, id); */
     this.getArticleDetailById(id);
   },
   methods: {
-    /* getArticleDetial(array, id) {
-      array.forEach(v => {
-        if (v.informationId == id) {
-          this.time = v.createTime;
-          this.title = v.informationTitle;
-          this.content = v.informationContent;
-        }
-      });
-    } */
     getArticleDetailById(id) {
       articleApi.searchArticleById(id).then(res => {
         if (res.code == "200") {

@@ -49,12 +49,21 @@
             </div>
           </li>
         </ul>
+        <el-button
+          class="loadMore"
+          @click="loadMore"
+          v-if="this.newsList.length < this.total"
+          >加载更多</el-button
+        >
+        <el-button v-else class="noMore">没有更多了</el-button>
       </div>
     </div>
+    <footer></footer>
   </div>
 </template>
 <script>
 import Header from "@/components/common/headerSpace.vue";
+import articleApi from "../request/api/article";
 export default {
   name: "Article",
   components: {
@@ -63,8 +72,10 @@ export default {
   data() {
     return {
       SelectIndex: -1,
-      listItem: [],
-      newsList: []
+      newsList: [],
+      curPage: 0,
+      limit: 8,
+      total: 0
     };
   },
   computed: {
@@ -73,22 +84,42 @@ export default {
     }
   },
   created() {
-    this.newsList = this.$store.state.newsList;
+    this.getArticleList();
   },
   methods: {
+    getArticleList() {
+      this.curPage += 1;
+      const params = { current: this.curPage, size: this.limit };
+      articleApi
+        .articleList(params)
+        .then(res => {
+          if (res.code == "200") {
+            const data = res.result;
+            this.newsList = this.newsList.concat(data.records);
+            this.total = data.total;
+          }
+        })
+        .catch(err => {
+          this.$message({ message: "系统开小差,请重试" });
+        });
+    },
+    //加载更多
+    loadMore() {
+      this.getArticleList();
+    },
     changeColor(index) {
       this.SelectIndex = index;
     },
     recoverColor() {
       this.SelectIndex = -1;
     },
-    more(id, time, title, content) {
+    more(id) {
       this.$router.push({
         path: "article/detail",
         query: { id }
       });
     },
-    //将html 格式转化为存文本
+    //将html 格式转化为
     toText(HTML) {
       let input = HTML;
       return input
@@ -128,6 +159,13 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+.ArticleContentBody .loadMore,
+.ArticleContentBody .noMore {
+  width: 100%;
+  background: white;
+  color: #939393;
+  line-height: 24px;
 }
 .ArticleBannerContent h1 {
   font-size: 56px;
