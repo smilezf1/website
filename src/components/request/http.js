@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 let v = new Vue();
+console.log(config, "config")
 axios.defaults.baseURL = config.baseUrl;
 axios.defaults.timeout = 100000;
 axios.defaults.withCredentials = false;

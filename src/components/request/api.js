@@ -1,5 +1,5 @@
 
-const baseUrl = "https://www.manxi-inc.com/manxi-website";
+/* const baseUrl = "https://www.manxi-inc.com/manxi-website";
 import { fetchGet, fetchPost } from './http'
 //获取Guid
 let guidService = {
@@ -14,4 +14,4 @@ let userInfoService = {
 }
 export default {
     baseUrl, guidService, userInfoService
-}
+} */

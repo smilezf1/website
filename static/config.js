@@ -1,1 +1,1 @@
-let config = { baseUrl: 'http://192.168.3.58:8089' }
+let config = { baseUrl: 'http://192.168.3.58:8089/manxi-platform-manager' }

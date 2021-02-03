@@ -14,7 +14,7 @@
             <div class="img">
               <img
                 :src="
-                  `${getBaseUrl}/manxi-platform-manager/common/viewFile/${item.informationIconKey}`
+                  `${getBaseUrl}/common/viewFile/${item.informationIconKey}`
                 "
               />
             </div>
